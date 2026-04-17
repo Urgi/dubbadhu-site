@@ -39,9 +39,8 @@ export default function App() {
           <span className="hero-app-tagline">SPEAK · LEARN · PRESERVE</span>
         </h1>
         <p className="hero-sub">
-          Content is validated by professors back home and supported by UI that keeps you engaged. Each series includes video
-          of real actors acting the words out. Starting with Afaan Oromo, our goal is to make more African languages accessible
-          to the diaspora and give back to those communities.
+          Content validated by professors back home and supported by UI that keeps it engaging. Each series includes video examples of concepts and phrases acted out. Starting with Afaan Oromo, we will make African languages accessible
+          to the diaspora and invest into giving back to those communities.
         </p>
         <div className="hero-actions">
           <a href="#waitlist" className="btn-primary">
@@ -62,9 +61,8 @@ export default function App() {
       <section className="about" id="about">
         <div className="section-label">About Dubbadhu</div>
         <p className="about-intro">
-          The name <strong style={{ fontWeight: 500, color: "var(--text)" }}>&ldquo;Dubbadhu&rdquo;</strong> translates
-          to <strong style={{ fontWeight: 500, color: "var(--text)" }}>&ldquo;Speak.&rdquo;</strong> — a command, not a
-          slogan. The pillars below are how we turn that into something you can use every day.
+          <strong style={{ fontWeight: 500, color: "var(--text)" }}>&ldquo;Dubbadhu&rdquo;</strong> translates
+          to <strong style={{ fontWeight: 500, color: "var(--text)" }}>&ldquo;Speak.&rdquo;</strong> — a command. There is no reason to be embarrassed when someone speaks to you in a language native to your family. Speak With Confidence. Dubbadhu! Here are the pillars that make this possible.
         </p>
         <div className="about-features">
           <div className="feature-item">
@@ -120,12 +118,6 @@ export default function App() {
             There is a real gap between wanting to speak the language and having accessible, high-quality ways to
             practice and stay motivated. We are building Dubbadhu to close that gap: clearer paths to progress, feedback
             that helps you improve, and a learning home you can return to every day.
-          </p>
-          <p>
-            Dubbadhu is operated by{" "}
-            <strong style={{ fontWeight: 500, color: "var(--text)" }}>Afaan LLC</strong>, an Arizona-based company
-            building the language infrastructure the Horn of Africa deserves—starting with the app learners hold in
-            their hands, and the production tools our team uses to capture real speech and ship it responsibly.
           </p>
         </div>
       </section>
