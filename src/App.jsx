@@ -131,8 +131,8 @@ export default function App() {
 
       <section className="languages" id="languages">
         <div className="section-label">Languages</div>
-        <h2 className="languages-head">Same choices as in the app.</h2>
-        <p className="languages-intro">Browse available languages on Dubbadhu on this map.</p>
+        <h2 className="languages-head">Afaan Oromo, Amharic, and Tigrinya</h2>
+        <p className="languages-intro">Browse where each language sits on this map of eastern Africa.</p>
         <div id="country-picker-root" className="country-picker" aria-label="Regional language picker">
           <EastAfricaPicker />
         </div>
