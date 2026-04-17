@@ -34,11 +34,19 @@ export default function CurriculumCatalog() {
       try {
         const { data: series, error: seriesErr } = await supabase
           .from("lesson_series")
-          .select("id,title,sort_order,list_cover_url")
+          .select("id,title,sort_order,list_cover_url,series_status")
           .order("sort_order", { ascending: true });
         if (seriesErr) throw seriesErr;
 
-        const seriesIds = (series || []).map((s) => s.id).filter(Boolean);
+        const allowed = new Set(["approved", "complete", "published"]);
+        const filteredSeries = (series || []).filter((s) => {
+          const st = typeof s?.series_status === "string" ? s.series_status : "";
+          // Backwards-compat: if status column is missing/null, show it (older DBs).
+          if (!st) return true;
+          return allowed.has(st);
+        });
+
+        const seriesIds = filteredSeries.map((s) => s.id).filter(Boolean);
         const { data: lessons, error: lessonErr } = await supabase
           .from("lessons")
           .select("id,series_id,lesson_number,title")
@@ -46,7 +54,7 @@ export default function CurriculumCatalog() {
         if (lessonErr) throw lessonErr;
 
         if (cancelled) return;
-        setSeriesRows(Array.isArray(series) ? series : []);
+        setSeriesRows(Array.isArray(filteredSeries) ? filteredSeries : []);
         setLessonRows(Array.isArray(lessons) ? lessons : []);
       } catch (e) {
         if (cancelled) return;
