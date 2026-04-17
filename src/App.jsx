@@ -33,7 +33,7 @@ export default function App() {
         <div className="hero-bg" />
         <div className="hero-tag">Coming Soon — iOS</div>
         <h1>
-          Learn Afaan Oromo.
+          Learn Your Language
           <br />
           <span className="hero-app-tagline">SPEAK · LEARN · PRESERVE</span>
         </h1>
@@ -112,7 +112,7 @@ export default function App() {
           <div className="section-label">Why we exist</div>
           <h2>We believe language is culture in motion.</h2>
           <p>
-            Preserving and passing on Afaan Oromo matters—not only in textbooks, but in voices, stories, and everyday
+            Preserving and passing on African Languages matters—not only in textbooks, but in voices, stories, and everyday
             conversation. That value guides what we build and how we grow.
           </p>
           <p>
@@ -131,7 +131,7 @@ export default function App() {
 
       <section className="languages" id="languages">
         <div className="section-label">Languages</div>
-        <h2 className="languages-head">Afaan Oromo, Amharic, and Tigrinya</h2>
+        <h2 className="languages-head">Available Languages</h2>
         <p className="languages-intro">Browse where each language sits on this map of eastern Africa.</p>
         <div id="country-picker-root" className="country-picker" aria-label="Regional language picker">
           <EastAfricaPicker />
