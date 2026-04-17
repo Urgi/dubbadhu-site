@@ -13,7 +13,7 @@ import { createClient } from "@supabase/supabase-js";
 
 const rawIosLang = import.meta.env.VITE_WAITLIST_IOS_LANGUAGE;
 export const IOS_WEB_WAITLIST_LANGUAGE =
-  typeof rawIosLang === "string" && rawIosLang.trim() ? rawIosLang.trim() : "Dubbadhu iOS";
+  typeof rawIosLang === "string" && rawIosLang.trim() ? rawIosLang.trim() : "Afaan Oromo";
 
 const url = (import.meta.env.VITE_SUPABASE_URL || "").trim();
 const anon = (import.meta.env.VITE_SUPABASE_ANON_KEY || "").trim();

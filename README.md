@@ -35,7 +35,7 @@ Copy `.env.example` to `.env`. Required for waitlist RPC calls in the browser:
 
 Optional:
 
-- **`VITE_WAITLIST_IOS_LANGUAGE`** — value stored as `language` for the main site waitlist (default in code if unset)
+- **`VITE_WAITLIST_IOS_LANGUAGE`** — value stored as `language` for the main site waitlist (defaults to **Afaan Oromo** in code if unset)
 
 Waitlist flows use the **`check_and_join_waitlist`** RPC and **`waitlist_signups`** table; configure the same project you use for the mobile app if you want unified signups.
 
