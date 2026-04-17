@@ -463,7 +463,7 @@
       font-size: 16px;
       color: var(--text-sec);
       line-height: 1.75;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
     }
 
     .languages-head {
@@ -526,19 +526,23 @@
     }
 
     .curriculum-cover {
-      height: 140px;
+      /* Match mobile app Speak tab "Coming up" strip framing. */
+      aspect-ratio: 1.4564738292011018; /* (961/726) * 1.1 */
       background: rgba(255, 255, 255, 0.04);
       border-bottom: 1px solid var(--border);
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 10px;
     }
 
     .curriculum-cover-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       filter: saturate(0.95);
-      transform: scale(1.02);
     }
 
     .curriculum-cover-fallback {
