@@ -40,7 +40,7 @@ export default function App() {
         </h1>
         <p className="hero-sub">
           Content validated by professors back home and supported by UI that keeps it engaging. Each series includes video examples of concepts and phrases acted out. Starting with Afaan Oromo, we will make African languages accessible
-          to the diaspora and invest into giving back to those communities.
+          to the diaspora and invest a portion of proceeds into giving back to those communities.
         </p>
         <div className="hero-actions">
           <a href="#waitlist" className="btn-primary">
