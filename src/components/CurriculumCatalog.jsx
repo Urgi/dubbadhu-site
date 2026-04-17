@@ -38,7 +38,7 @@ export default function CurriculumCatalog() {
           .order("sort_order", { ascending: true });
         if (seriesErr) throw seriesErr;
 
-        const allowed = new Set(["approved", "complete", "published"]);
+        const allowed = new Set(["admin_draft", "approved", "complete", "published"]);
         const filteredSeries = (series || []).filter((s) => {
           const st = typeof s?.series_status === "string" ? s.series_status : "";
           // Backwards-compat: if status column is missing/null, show it (older DBs).
