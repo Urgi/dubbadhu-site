@@ -39,9 +39,11 @@ export default function App() {
           <span className="hero-app-tagline">SPEAK · LEARN · PRESERVE</span>
         </h1>
         <p className="hero-sub">
-          Dubbadhu exists so more people can speak with confidence—through real speaking practice, structured lessons, and
-          tools that meet learners where they are. Dubbadhu started with Afaan Oromo, and we&apos;re building toward a
-          future where learning any African language feels just as accessible, high-quality, and community-supported.
+          What sets Dubbadhu apart is curriculum shaped in Oromia, paired with today&apos;s AI so speaking practice feels
+          immediate, personal, and grounded in real life. Each series is paired with video of actors performing the
+          language in scene—not stock phrases read from a slide. Linguists and professors review the material before it
+          ships, while software engineers build the app for a smooth, respectful experience. We began with Afaan Oromo and
+          are committed to culturally rich paths across African languages—accessible, rigorous, and community-rooted.
         </p>
         <div className="hero-actions">
           <a href="#waitlist" className="btn-primary">
