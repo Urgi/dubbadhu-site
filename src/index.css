@@ -422,6 +422,159 @@
       max-width: 640px;
     }
 
+    /* ─── CURRICULUM ─── */
+    .curriculum {
+      padding: 100px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .curriculum-intro {
+      max-width: 640px;
+      font-size: 16px;
+      color: var(--text-sec);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .curriculum-head {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      max-width: 640px;
+    }
+
+    .curriculum-state {
+      color: var(--text-sec);
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .curriculum-state--err {
+      color: #e57373;
+    }
+
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .curriculum-card {
+      border: 1px solid var(--border);
+      background: rgba(4, 12, 8, 0.55);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.34);
+    }
+
+    .curriculum-cover {
+      height: 140px;
+      background: rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .curriculum-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(0.95);
+      transform: scale(1.02);
+    }
+
+    .curriculum-cover-fallback {
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse 55% 70% at 30% 40%, rgba(45, 178, 125, 0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 70% at 80% 10%, rgba(201, 151, 58, 0.14) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    }
+
+    .curriculum-card-body {
+      padding: 16px 16px 14px;
+    }
+
+    .curriculum-series-title {
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .curriculum-series-meta {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .curriculum-lessons {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .curriculum-lesson {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(5, 14, 8, 0.55);
+    }
+
+    .curriculum-lesson-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      flex: 0 0 44px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .curriculum-lesson-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(0.95);
+    }
+
+    .curriculum-lesson-txt {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .curriculum-lesson-name {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.25;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .curriculum-lesson-meta {
+      margin-top: 4px;
+      color: var(--text-muted);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
     /* ─── Country / language map picker (web port of Dubbadhu EastAfricaLanguageSelectorView) ─── */
     #country-picker-root.country-picker {
       width: 100%;
@@ -953,5 +1106,7 @@
       footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
       .waitlist-form { flex-direction: column; }
       .languages { padding: 64px 24px; }
+      .curriculum { padding: 64px 24px; }
+      .curriculum-grid { grid-template-columns: 1fr; }
       .country-picker-foot-form { flex-direction: column; align-items: stretch; }
     }

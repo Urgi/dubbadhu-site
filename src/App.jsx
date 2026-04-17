@@ -1,5 +1,6 @@
 import EastAfricaPicker from "./components/EastAfricaPicker.jsx";
 import WaitlistSection from "./components/WaitlistSection.jsx";
+import CurriculumCatalog from "./components/CurriculumCatalog.jsx";
 
 export default function App() {
   return (
@@ -137,6 +138,8 @@ export default function App() {
           <EastAfricaPicker />
         </div>
       </section>
+
+      <CurriculumCatalog />
 
       <WaitlistSection />
 
