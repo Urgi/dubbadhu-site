@@ -17,7 +17,6 @@ export default function CurriculumCatalog() {
   const [err, setErr] = useState("");
   const [seriesRows, setSeriesRows] = useState([]);
   const [lessonRows, setLessonRows] = useState([]);
-  const [openSeries, setOpenSeries] = useState(() => new Set());
 
   useEffect(() => {
     let cancelled = false;
@@ -96,7 +95,7 @@ export default function CurriculumCatalog() {
       <div className="section-label">Curriculum</div>
       <h2 className="curriculum-head">Series & lessons</h2>
       <p className="curriculum-intro">
-        Browse series and expand to see lesson titles.
+        Browse series and see what ships with the app.
       </p>
 
       {loading ? <p className="curriculum-state">Loading…</p> : null}
@@ -107,53 +106,21 @@ export default function CurriculumCatalog() {
           {series.map((s) => {
             const cover = coverForSeries(s);
             const lessons = bySeries[s.id] || [];
-            const isOpen = openSeries.has(s.id);
             return (
               <article key={s.id} className="curriculum-card">
-                <button
-                  type="button"
-                  className="curriculum-series-btn"
-                  aria-expanded={isOpen}
-                  onClick={() => {
-                    setOpenSeries((prev) => {
-                      const next = new Set(prev);
-                      if (next.has(s.id)) next.delete(s.id);
-                      else next.add(s.id);
-                      return next;
-                    });
-                  }}
-                >
-                  <div className="curriculum-cover">
-                    {cover ? (
-                      <img className="curriculum-cover-img" src={cover} alt="" loading="lazy" />
-                    ) : (
-                      <div className="curriculum-cover-fallback" aria-hidden="true" />
-                    )}
-                  </div>
+                <div className="curriculum-cover">
+                  {cover ? (
+                    <img className="curriculum-cover-img" src={cover} alt="" loading="lazy" />
+                  ) : (
+                    <div className="curriculum-cover-fallback" aria-hidden="true" />
+                  )}
+                </div>
 
-                  <div className="curriculum-card-body">
-                    <div className="curriculum-series-row">
-                      <div className="curriculum-series-title">{s.title || s.id}</div>
-                      <span className="curriculum-series-chevron" aria-hidden="true">
-                        {isOpen ? "▾" : "▸"}
-                      </span>
-                    </div>
-                    <div className="curriculum-series-meta">{lessons.length} lessons</div>
-                  </div>
-                </button>
-
-                {isOpen ? (
-                  <div className="curriculum-lessons" role="region" aria-label={`${s.title || s.id} lessons`}>
-                    {lessons.map((l) => (
-                      <div key={l.id} className="curriculum-lesson">
-                        <div className="curriculum-lesson-txt">
-                          <div className="curriculum-lesson-name">{l.title || l.id}</div>
-                          <div className="curriculum-lesson-meta">{l.n ? `Lesson ${l.n}` : l.id}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
+                <div className="curriculum-card-body">
+                  <div className="curriculum-series-title">{s.title || s.id}</div>
+                  <div className="curriculum-series-meta">{lessons.length} lessons</div>
+                  <div className="curriculum-series-note">Lessons released with app</div>
+                </div>
               </article>
             );
           })}
