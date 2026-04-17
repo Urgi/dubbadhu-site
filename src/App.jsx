@@ -40,9 +40,8 @@ export default function App() {
         </h1>
         <p className="hero-sub">
           Content is validated by professors back home and supported by UI that keeps you engaged. Each series includes video
-          of real actors acting the words out. Lessons are made in Oromia with the latest AI for real speaking practice;
-          software engineers built the app. We started with Afaan Oromo and are dedicated to smooth, culturally rich learning
-          across African languages.
+          of real actors acting the words out. Starting with Afaan Oromo, our goal is to make more African languages accessible
+          to the diaspora and give back to those communities.
         </p>
         <div className="hero-actions">
           <a href="#waitlist" className="btn-primary">
