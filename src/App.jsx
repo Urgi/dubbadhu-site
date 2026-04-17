@@ -39,9 +39,10 @@ export default function App() {
           <span className="hero-app-tagline">SPEAK · LEARN · PRESERVE</span>
         </h1>
         <p className="hero-sub">
-          Content is made in Oromia and paired with the latest AI for real speaking practice. Each series includes video of
-          real actors acting the words out. Professors validate the curriculum; software engineers built the app. We started
-          with Afaan Oromo and are dedicated to smooth, culturally rich learning across African languages.
+          Content is validated by professors back home and supported by UI that keeps you engaged. Each series includes video
+          of real actors acting the words out. Lessons are made in Oromia with the latest AI for real speaking practice;
+          software engineers built the app. We started with Afaan Oromo and are dedicated to smooth, culturally rich learning
+          across African languages.
         </p>
         <div className="hero-actions">
           <a href="#waitlist" className="btn-primary">
