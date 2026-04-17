@@ -1,7 +1,13 @@
 /**
- * Waitlist signups use the same Supabase RPC as the Dubbadhu app:
- * `check_and_join_waitlist` (SECURITY DEFINER) → inserts into `waitlist_signups` (email + language).
- * Use the same project URL and anon key as `SUPABASE_URL` / `SUPABASE_ANON_KEY` in the mobile app.
+ * Waitlist signups use the same Supabase RPC as the Dubbadhu mobile app:
+ * `check_and_join_waitlist(p_email, p_language)` (SECURITY DEFINER) → `waitlist_signups` (unique on lower(email)+language).
+ *
+ * Parity with app: `p_language` is the display language name (e.g. "Amharic", "Tigrinya"), same as
+ * `EAST_AFRICA_LANGS[i].name` in `ProfileLanguageSelectScreen.js` / `OnboardingScreen.js` → `supabase.rpc(...)`.
+ * Schema / RPC: Dubbadhu repo `supabase/migrations/20260313_create_waitlist_signups.sql` and
+ * `20260314_waitlist_check_and_join_rpc.sql`.
+ *
+ * Use the same Supabase project as `SUPABASE_URL` / `SUPABASE_ANON_KEY` in the mobile app.
  */
 import { createClient } from "@supabase/supabase-js";
 

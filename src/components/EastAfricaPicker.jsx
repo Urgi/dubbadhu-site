@@ -14,6 +14,7 @@ import {
   OROMIA_ZOOM_START_SCALE,
   OROMIA_ZOOM_FROM_RIGHT_OFFSET,
   LANGUAGE_IDS_WAITLIST,
+  waitlistLanguageFromIndex,
 } from "../config/eastAfricaLanguagesConfig.js";
 import {
   mountEastAfricaMap,
@@ -384,9 +385,11 @@ export default function EastAfricaPicker() {
 
   const onFooterSubmit = async (e) => {
     e.preventDefault();
+    const pLanguage = waitlistLanguageFromIndex(activeIndex);
+    if (!pLanguage) return;
     setFootBusy(true);
     setFootMsg("");
-    const res = await joinWaitlist(footEmail, lang.name);
+    const res = await joinWaitlist(footEmail, pLanguage);
     setFootBusy(false);
     setFootMsg(res.message || "");
     setFootErr(!res.ok);

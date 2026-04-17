@@ -70,3 +70,14 @@ export const OROMIA_ZOOM_FROM_RIGHT_OFFSET = 18;
 
 /** Same as Dubbadhu onboarding / Profile language screen. */
 export const LANGUAGE_IDS_WAITLIST = [1, 2];
+
+/**
+ * Value for Supabase RPC `check_and_join_waitlist` → column `waitlist_signups.language`.
+ * Must stay identical to the mobile app: `p_language: EAST_AFRICA_LANGS[i].name`
+ * (see Dubbadhu `ProfileLanguageSelectScreen.js` / `OnboardingScreen.js`).
+ */
+export function waitlistLanguageFromIndex(index) {
+  if (!LANGUAGE_IDS_WAITLIST.includes(index)) return null;
+  const lg = EAST_AFRICA_LANGS[index];
+  return lg?.name?.trim() || null;
+}
