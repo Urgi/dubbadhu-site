@@ -7,7 +7,16 @@ export default function App() {
     <>
       <nav>
         <a href="./" className="nav-logo">
-          Dubbadhu<span>.</span>
+          <img
+            className="nav-logo-mark"
+            src="/assets/talking.png"
+            alt=""
+            width={32}
+            height={32}
+          />
+          <span className="nav-logo-text">
+            Dubbadhu<span className="nav-logo-dot">.</span>
+          </span>
         </a>
         <ul className="nav-links">
           <li className="nav-desktop-only">

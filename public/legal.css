@@ -64,6 +64,9 @@ body.legal-body::before {
 }
 
 .legal-nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
   font-weight: 600;
@@ -72,7 +75,14 @@ body.legal-body::before {
   text-decoration: none;
 }
 
-.legal-nav-logo span {
+.legal-nav-logo-mark {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.legal-nav-logo span span {
   color: var(--green);
 }
 

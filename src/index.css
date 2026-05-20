@@ -46,6 +46,9 @@
     }
 
     .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-family: 'Cormorant Garamond', serif;
       font-size: 22px;
       font-weight: 600;
@@ -53,7 +56,14 @@
       letter-spacing: 0.02em;
     }
 
-    .nav-logo span { color: var(--green); }
+    .nav-logo-mark {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-dot { color: var(--green); }
 
     .nav-links {
       display: flex;
