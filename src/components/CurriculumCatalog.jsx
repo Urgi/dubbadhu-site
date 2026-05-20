@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabaseClient.js";
+import { launchLabel, seriesEditorial } from "../config/seriesCopy.js";
 
 function sortByOrder(a, b) {
   const ao = typeof a?.sort_order === "number" ? a.sort_order : 0;
@@ -40,7 +41,6 @@ export default function CurriculumCatalog() {
         const allowed = new Set(["admin_draft", "approved", "complete", "published"]);
         const filteredSeries = (series || []).filter((s) => {
           const st = typeof s?.series_status === "string" ? s.series_status : "";
-          // Backwards-compat: if status column is missing/null, show it (older DBs).
           if (!st) return true;
           return allowed.has(st);
         });
@@ -70,7 +70,6 @@ export default function CurriculumCatalog() {
   }, []);
 
   const bySeries = useMemo(() => {
-    /** @type {Record<string, {id:string, title:string, n:number}[]>} */
     const bucket = {};
     for (const row of lessonRows) {
       const sid = row?.series_id;
@@ -86,40 +85,73 @@ export default function CurriculumCatalog() {
     return bucket;
   }, [lessonRows]);
 
-  const series = useMemo(() => {
-    return [...seriesRows].sort(sortByOrder);
-  }, [seriesRows]);
+  const series = useMemo(() => [...seriesRows].sort(sortByOrder), [seriesRows]);
 
   return (
-    <section className="curriculum" id="curriculum">
-      <div className="section-label">Curriculum</div>
-      <h2 className="curriculum-head">Series & lessons</h2>
-      <p className="curriculum-intro">
-        Browse series and see what ships with the app.
-      </p>
+    <section className="curriculum" id="curriculum" aria-labelledby="curriculum-heading">
+      <div className="curriculum-header">
+        <p className="section-label">Curriculum</p>
+        <h2 id="curriculum-heading" className="section-title">
+          Real series—not placeholder cards
+        </h2>
+        <p className="curriculum-intro">
+          Lesson series from the same catalog learners see in the app: native-speaker video, structured
+          progression, and content reviewed with professors back home.
+        </p>
+      </div>
 
-      {loading ? <p className="curriculum-state">Loading…</p> : null}
-      {!loading && err ? <p className="curriculum-state curriculum-state--err">{err}</p> : null}
+      {loading ? (
+        <p className="curriculum-state" role="status">
+          Loading curriculum…
+        </p>
+      ) : null}
+      {!loading && err ? (
+        <p className="curriculum-state curriculum-state--err" role="alert">
+          {err}
+        </p>
+      ) : null}
 
       {!loading && !err ? (
         <div className="curriculum-grid">
           {series.map((s) => {
             const cover = coverForSeries(s);
             const lessons = bySeries[s.id] || [];
+            const title = s.title || s.id;
+            const editorial = seriesEditorial(title);
+            const status = launchLabel(s.series_status);
             return (
               <article key={s.id} className="curriculum-card">
                 <div className="curriculum-cover">
                   {cover ? (
-                    <img className="curriculum-cover-img" src={cover} alt="" loading="lazy" />
+                    <img
+                      className="curriculum-cover-img"
+                      src={cover}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
                   ) : (
                     <div className="curriculum-cover-fallback" aria-hidden="true" />
                   )}
+                  <span className={`curriculum-badge curriculum-badge--${status.tone}`}>
+                    {status.label}
+                  </span>
                 </div>
 
                 <div className="curriculum-card-body">
-                  <div className="curriculum-series-title">{s.title || s.id}</div>
-                  <div className="curriculum-series-meta">{lessons.length} lessons</div>
-                  <div className="curriculum-series-note">Lessons released with app</div>
+                  <h3 className="curriculum-series-title">{title}</h3>
+                  <p className="curriculum-series-focus">{editorial.focus}</p>
+                  <p className="curriculum-series-blurb">{editorial.blurb}</p>
+                  <dl className="curriculum-meta">
+                    <div>
+                      <dt>Lessons</dt>
+                      <dd>{lessons.length || "—"}</dd>
+                    </div>
+                    <div>
+                      <dt>Format</dt>
+                      <dd>{editorial.statusNote}</dd>
+                    </div>
+                  </dl>
                 </div>
               </article>
             );
@@ -129,4 +161,3 @@ export default function CurriculumCatalog() {
     </section>
   );
 }
-

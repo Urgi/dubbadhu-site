@@ -10,6 +10,7 @@
  * Use the same Supabase project as `SUPABASE_URL` / `SUPABASE_ANON_KEY` in the mobile app.
  */
 import { createClient } from "@supabase/supabase-js";
+import { isValidEmail } from "./validateEmail.js";
 
 const rawIosLang = import.meta.env.VITE_WAITLIST_IOS_LANGUAGE;
 export const IOS_WEB_WAITLIST_LANGUAGE =
@@ -22,7 +23,7 @@ let devMissingEnvWarned = false;
 
 export async function joinWaitlist(email, languageName) {
   const trimmed = (email || "").trim();
-  if (!trimmed || !trimmed.includes("@") || !trimmed.includes(".")) {
+  if (!isValidEmail(trimmed)) {
     return { ok: false, code: "validation", message: "Please enter a valid email address." };
   }
   if (!languageName || !String(languageName).trim()) {
