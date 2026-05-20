@@ -4,10 +4,6 @@ export default function Hero() {
       <div className="hero-pattern" aria-hidden="true" />
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="hero-eyebrow">
-            <span className="hero-eyebrow-dot" aria-hidden="true" />
-            On iOS · Android next
-          </p>
           <h1 id="hero-heading">
             African languages,
             <br />
@@ -17,9 +13,9 @@ export default function Hero() {
             Speak · Learn · Preserve
           </p>
           <p className="hero-sub">
-            Dubbadhu means &ldquo;speak&rdquo; in Afaan Oromo. An interactive platform that makes African
-            languages more accessible—structured lessons, native-speaker video, and engaging practice designed
-            so learners speak out loud with confidence.
+            Dubbadhu means &ldquo;speak&rdquo; in Afaan Oromo. An African language learning platform where
+            culture and language go hand in hand—Afaan Oromo on iOS, with structured lessons, native-speaker
+            video, and pronunciation practice.
           </p>
           <div className="hero-actions">
             <a href="#waitlist" className="btn btn-primary">
@@ -30,9 +26,9 @@ export default function Hero() {
             </a>
           </div>
           <ul className="hero-proof">
-            <li>Engaging, interactive lessons</li>
+            <li>Interactive lessons</li>
             <li>Native-speaker video</li>
-            <li>Modern pronunciation tools</li>
+            <li>Pronunciation tools</li>
           </ul>
         </div>
 
@@ -48,7 +44,7 @@ export default function Hero() {
               />
               <div>
                 <div className="hero-card-app">Dubbadhu</div>
-                <div className="hero-card-series">Series · First conversations</div>
+                <div className="hero-card-series">Afaan Oromo · First conversations</div>
               </div>
             </div>
             <div className="hero-card-lesson">
@@ -65,7 +61,6 @@ export default function Hero() {
               <span className="wave-bar" />
               <span className="wave-bar" />
             </div>
-            <p className="hero-card-foot">Tap to hear · Repeat out loud</p>
           </div>
           <div className="hero-card-glow" aria-hidden="true" />
         </div>

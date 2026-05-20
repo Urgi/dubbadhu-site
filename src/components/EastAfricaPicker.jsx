@@ -424,7 +424,7 @@ export default function EastAfricaPicker() {
 
         <div className="country-picker-header">
           <div className="country-picker-header-eyebrow">Languages</div>
-          <p className="country-picker-header-lede">Swipe for Amharic, Tigrinya &amp; more</p>
+          <p className="country-picker-header-lede">Afaan Oromo on iOS · swipe for more</p>
         </div>
       </div>
 
@@ -541,7 +541,7 @@ export default function EastAfricaPicker() {
                   (activeIndex === 2 ? " country-picker-foot-hint--facts-gap" : "")
                 }
               >
-                We&apos;ll notify you when this language is available.
+                Notifications when this language launches.
               </p>
               <form className="country-picker-foot-form" onSubmit={onFooterSubmit}>
                 <input

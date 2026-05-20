@@ -38,16 +38,15 @@ export default function WaitlistSection() {
         <div className="waitlist-copy">
           <p className="section-label">Get Dubbadhu</p>
           <h2 id="waitlist-heading" className="section-title">
-            Learn Afaan Oromo on iOS today
+            Afaan Oromo on iOS
           </h2>
           <p className="waitlist-lede">
-            Dubbadhu is on the App Store for Afaan Oromo. Leave your email for Android and additional
-            languages—we send updates only when there is news, not a weekly newsletter.
+            Available on the App Store. Join for Android and future language releases.
           </p>
           <ul className="waitlist-trust">
             <li>No spam</li>
-            <li>Product updates only</li>
-            <li>iOS available now · Android next</li>
+            <li>Launch updates only</li>
+            <li>Android next</li>
           </ul>
           <div className="waitlist-brand" aria-label="Dubbadhu on the App Store">
             <img className="waitlist-brand-logo" src="/assets/talking.png" alt="" width={36} height={36} />
@@ -95,8 +94,8 @@ export default function WaitlistSection() {
             </div>
             <p id="waitlist-hint" className="waitlist-hint">
               {done
-                ? "You're on the list. We'll email you when new platforms and languages ship."
-                : "We only use your email for Dubbadhu updates."}
+                ? "On the list. Updates when new platforms and languages ship."
+                : "Email used for product updates only."}
             </p>
           </form>
           <p

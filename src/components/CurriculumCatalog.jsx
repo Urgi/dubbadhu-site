@@ -92,11 +92,10 @@ export default function CurriculumCatalog() {
       <div className="curriculum-header">
         <p className="section-label">Curriculum</p>
         <h2 id="curriculum-heading" className="section-title">
-          The curriculum inside the app
+          Afaan Oromo curriculum
         </h2>
         <p className="curriculum-intro">
-          Live lesson series from the Dubbadhu catalog: native-speaker video, structured progression, and
-          content developed with academic partners and language specialists.
+          Lesson series with native video, structured progression, and linguist-reviewed content.
         </p>
       </div>
 

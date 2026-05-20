@@ -11,8 +11,7 @@ export default function SiteFooter() {
             </span>
           </div>
           <p className="footer-tagline">
-            Making African languages more accessible through interactive, technology-forward learning. Speak ·
-            Learn · Preserve.
+            African language learning. Afaan Oromo on iOS. Speak · Learn · Preserve.
           </p>
         </div>
         <nav className="footer-nav" aria-label="Footer">
