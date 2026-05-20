@@ -84,7 +84,7 @@ export default function EastAfricaPicker() {
       const node = africaMoverRef.current;
       if (!node) return;
       const { W, H } = measure();
-      const t0y = (H * 6) / 100;
+      const t0y = (H * 8) / 100;
       const endTx = W * AFRICA_ZOOM_END.tx;
       const endTy = t0y + H * AFRICA_ZOOM_END.ty;
       const endSc = AFRICA_ZOOM_END.scale;
@@ -267,7 +267,7 @@ export default function EastAfricaPicker() {
       const node = africaMoverRef.current;
       if (!node) return;
       const { W, H } = measure();
-      const t0y = (H * 6) / 100;
+      const t0y = (H * 8) / 100;
       const endTx = W * AFRICA_ZOOM_END.tx;
       const endTy = t0y + H * AFRICA_ZOOM_END.ty;
       const endSc = AFRICA_ZOOM_END.scale;
@@ -400,30 +400,32 @@ export default function EastAfricaPicker() {
 
   return (
     <div className="country-picker-inner">
-      <div ref={mapBgRef} className="country-picker-mapbg">
-        <div ref={africaLayerRef} className="country-picker-africa-layer">
-          <div ref={africaMoverRef} className="country-picker-africa-mover">
-            <img
-              className="country-picker-africa-img"
-              src="/assets/Blank_Map-Africa.svg"
-              alt=""
-            />
+      <div className="country-picker-map-stage">
+        <div ref={mapBgRef} className="country-picker-mapbg">
+          <div ref={africaLayerRef} className="country-picker-africa-layer">
+            <div ref={africaMoverRef} className="country-picker-africa-mover">
+              <img
+                className="country-picker-africa-img"
+                src="/assets/Blank_Map-Africa.svg"
+                alt=""
+              />
+            </div>
           </div>
+          <div
+            ref={eastLayerRef}
+            className="country-picker-east-layer"
+            style={{ display: "none" }}
+          >
+            <div ref={eastMoverRef} className="country-picker-east-mover" />
+          </div>
+          <div className="country-picker-grad country-picker-grad--top" aria-hidden="true" />
+          <div className="country-picker-grad country-picker-grad--bottom" aria-hidden="true" />
         </div>
-        <div
-          ref={eastLayerRef}
-          className="country-picker-east-layer"
-          style={{ display: "none" }}
-        >
-          <div ref={eastMoverRef} className="country-picker-east-mover" />
-        </div>
-        <div className="country-picker-grad country-picker-grad--top" />
-        <div className="country-picker-grad country-picker-grad--bottom" />
-      </div>
 
-      <div className="country-picker-header">
-        <div className="country-picker-header-eyebrow">Languages</div>
-        <p className="country-picker-header-lede">Browse available languages on Dubbadhu on this map.</p>
+        <div className="country-picker-header">
+          <div className="country-picker-header-eyebrow">Languages</div>
+          <p className="country-picker-header-lede">Swipe for Amharic, Tigrinya &amp; more</p>
+        </div>
       </div>
 
       <div ref={bottomRef} className="country-picker-bottom">
@@ -576,7 +578,7 @@ export default function EastAfricaPicker() {
           ) : (
             <div className="country-picker-foot-cta">
               <a className="country-picker-foot-link" href="#waitlist">
-                iOS launch waitlist →
+                Get Dubbadhu →
               </a>
             </div>
           )}

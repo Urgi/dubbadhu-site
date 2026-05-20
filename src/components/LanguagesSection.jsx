@@ -11,22 +11,23 @@ export default function LanguagesSection() {
           </h2>
           <p className="languages-intro">
             Underrepresented languages deserve the same depth, interactivity, and production quality learners
-            expect elsewhere. Dubbadhu launches with <strong className="text-em">Afaan Oromo</strong>—one of
-            Africa&apos;s most widely spoken languages—and grows deliberately into Amharic, Tigrinya, and more.
-            Each language receives dedicated curriculum and native expertise, not a one-size-fits-all port.
+            expect elsewhere. Dubbadhu currently offers <strong className="text-em">Afaan Oromo</strong> on
+            iOS—one of Africa&apos;s most widely spoken languages—with Amharic, Tigrinya, and more on the
+            roadmap. Each language receives dedicated curriculum and native expertise, not a one-size-fits-all
+            port.
           </p>
           <ul className="languages-roadmap">
             <li>
               <span className="roadmap-badge roadmap-badge--live">Now</span>
-              <span>Afaan Oromo — launch language on iOS</span>
+              <span>Afaan Oromo — available on iOS</span>
             </li>
             <li>
               <span className="roadmap-badge">Next</span>
-              <span>Amharic &amp; Tigrinya — waitlist by language</span>
+              <span>Amharic &amp; Tigrinya — notify me when ready</span>
             </li>
             <li>
               <span className="roadmap-badge">Future</span>
-              <span>Additional Horn &amp; East African languages as we scale</span>
+              <span>Additional Horn &amp; East African languages</span>
             </li>
           </ul>
         </div>

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
 const LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#mission", label: "Mission" },
   { href: "#curriculum", label: "Curriculum" },
   { href: "#languages", label: "Languages" },
   { href: "#contact", label: "Contact" },
@@ -70,9 +68,9 @@ export default function SiteNav() {
               </li>
             ))}
             <li className="nav-links-cta">
-              <a href="#waitlist" className="nav-cta" onClick={closeMenu}>
-                Join Waitlist
-              </a>
+            <a href="#waitlist" className="nav-cta" onClick={closeMenu}>
+              Get the app
+            </a>
             </li>
           </ul>
         </div>

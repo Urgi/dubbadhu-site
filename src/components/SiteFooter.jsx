@@ -11,15 +11,15 @@ export default function SiteFooter() {
             </span>
           </div>
           <p className="footer-tagline">
-            Afaan LLC — making African languages more accessible through interactive, technology-forward
-            learning. Speak · Learn · Preserve.
+            Making African languages more accessible through interactive, technology-forward learning. Speak ·
+            Learn · Preserve.
           </p>
         </div>
         <nav className="footer-nav" aria-label="Footer">
           <a href="/privacy/">Privacy</a>
           <a href="/terms/">Terms</a>
           <a href="mailto:admin@afaantech.com">admin@afaantech.com</a>
-          <a href="#waitlist">Waitlist</a>
+          <a href="#waitlist">Get the app</a>
         </nav>
         <p className="footer-copy">© {year} Afaan LLC. All rights reserved.</p>
       </div>

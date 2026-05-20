@@ -1,6 +1,7 @@
 /**
  * East Africa languages selector — aligned with Dubbadhu `config/eastAfricaLanguagesConfig.js` facts/copy.
- * `pan` (tx, ty, s, optional origin) is tuned for the web picker so more of the Horn fits on screen and each language reads centered.
+ * `pan` (tx, ty, s, optional origin) is tuned for the web picker.
+ * Higher `ty` moves the map graphic **down** on screen (reveals the north Horn); lower/negative `ty` moves it **up** (clips the north).
  * `origin` is CSS `transform-origin` on the east map mover (helps Tigrinya zoom stay on the Horn).
  */
 
@@ -12,7 +13,7 @@ export const EAST_AFRICA_LANGS = [
     speakers: "40M",
     id: 0,
     accent: "#c07828",
-    pan: { tx: 9.5, ty: -19.8, s: 1.08 },
+    pan: { tx: 2, ty: 11, s: 1.2, origin: "50% 52%" },
     facts: [
       "Africa's most spoken Cushitic language.",
       "Official language of Gadaa — earth's oldest recognized democracies.",
@@ -26,7 +27,7 @@ export const EAST_AFRICA_LANGS = [
     speakers: "57M",
     id: 1,
     accent: "#1e8c7a",
-    pan: { tx: -1.5, ty: -17.2, s: 0.86 },
+    pan: { tx: -3, ty: 9, s: 1.05, origin: "50% 50%" },
     facts: [
       "Written in Ge'ez script — second most spoken Semitic language after Arabic.",
       "Ethiopia's administrative language since the 13th century.",
@@ -40,11 +41,12 @@ export const EAST_AFRICA_LANGS = [
     speakers: "10M",
     id: 2,
     accent: "#8b5cf6",
+    /* Positive ty shifts the SVG down so the north Horn (Eritrea/Tigray) sits in the upper frame */
     pan: {
-      tx: 6.3,
-      ty: 8.5,
-      s: 1.28,
-      origin: "50% 42%",
+      tx: 2,
+      ty: 21,
+      s: 1.58,
+      origin: "52% 30%",
     },
     facts: [
       "Uses Ge'ez script — not mutually intelligible with Amharic.",
@@ -66,7 +68,7 @@ export const AFRICA_ZOOM_MS = 1200;
 export const HANDOFF_OVERLAP_MS = 300;
 export const OROMIA_ZOOM_MS = 1650;
 export const OROMIA_ZOOM_START_SCALE = 0.82;
-export const OROMIA_ZOOM_FROM_RIGHT_OFFSET = 18;
+export const OROMIA_ZOOM_FROM_RIGHT_OFFSET = 8;
 
 /** Same as Dubbadhu onboarding / Profile language screen. */
 export const LANGUAGE_IDS_WAITLIST = [1, 2];

@@ -6,7 +6,7 @@ export default function Hero() {
         <div className="hero-copy">
           <p className="hero-eyebrow">
             <span className="hero-eyebrow-dot" aria-hidden="true" />
-            From Afaan LLC · iOS first
+            On iOS · Android next
           </p>
           <h1 id="hero-heading">
             African languages,
@@ -17,16 +17,16 @@ export default function Hero() {
             Speak · Learn · Preserve
           </p>
           <p className="hero-sub">
-            Dubbadhu means &ldquo;speak&rdquo; in Afaan Oromo. Afaan LLC is building an interactive learning
-            platform to make African languages more accessible—structured lessons, native-speaker video, and
-            techniques that keep practice engaging so learners actually use the language out loud.
+            Dubbadhu means &ldquo;speak&rdquo; in Afaan Oromo. An interactive platform that makes African
+            languages more accessible—structured lessons, native-speaker video, and engaging practice designed
+            so learners speak out loud with confidence.
           </p>
           <div className="hero-actions">
             <a href="#waitlist" className="btn btn-primary">
-              Join the waitlist
+              Get Dubbadhu
             </a>
-            <a href="#mission" className="btn btn-secondary">
-              Our mission
+            <a href="#curriculum" className="btn btn-secondary">
+              See curriculum
             </a>
           </div>
           <ul className="hero-proof">

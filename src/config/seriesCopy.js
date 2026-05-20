@@ -46,10 +46,10 @@ const DEFAULT = {
 
 export function launchLabel(seriesStatus) {
   const st = typeof seriesStatus === "string" ? seriesStatus : "";
-  if (st === "published") return { label: "Launch series", tone: "live" };
-  if (st === "approved" || st === "complete") return { label: "Ready in app", tone: "ready" };
-  if (st === "admin_draft") return { label: "In production", tone: "draft" };
-  return { label: "Coming with app", tone: "ready" };
+  if (st === "published") return { label: "Available now", tone: "live" };
+  if (st === "approved" || st === "complete") return { label: "In the app", tone: "ready" };
+  if (st === "admin_draft") return { label: "In the app", tone: "ready" };
+  return { label: "In the app", tone: "ready" };
 }
 
 export function seriesEditorial(title) {

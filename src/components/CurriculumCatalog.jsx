@@ -92,10 +92,10 @@ export default function CurriculumCatalog() {
       <div className="curriculum-header">
         <p className="section-label">Curriculum</p>
         <h2 id="curriculum-heading" className="section-title">
-          Real series—not placeholder cards
+          The curriculum inside the app
         </h2>
         <p className="curriculum-intro">
-          Lesson series from the same catalog in the app: native-speaker video, structured progression, and
+          Live lesson series from the Dubbadhu catalog: native-speaker video, structured progression, and
           content developed with academic partners and language specialists.
         </p>
       </div>
