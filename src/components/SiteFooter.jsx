@@ -11,7 +11,8 @@ export default function SiteFooter() {
             </span>
           </div>
           <p className="footer-tagline">
-            Speak · Learn · Preserve — Afaan Oromo for the diaspora, from Afaan LLC.
+            Afaan LLC — making African languages more accessible through interactive, technology-forward
+            learning. Speak · Learn · Preserve.
           </p>
         </div>
         <nav className="footer-nav" aria-label="Footer">

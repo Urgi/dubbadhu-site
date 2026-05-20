@@ -3,13 +3,13 @@ const BY_TITLE = [
   {
     match: ["greeting", "hello", "salam"],
     focus: "Everyday hellos & introductions",
-    blurb: "Start with phrases you hear at home, at the mosque, and on the phone with family.",
+    blurb: "Start with high-frequency greetings and introductions used in everyday conversation.",
     statusNote: "Foundational series",
   },
   {
     match: ["family", "home"],
-    focus: "Family & household",
-    blurb: "Names, relationships, and the language of home—so visits feel natural, not rehearsed.",
+    focus: "Relationships & daily life",
+    blurb: "Names, relationships, and household vocabulary for natural dialogue in common situations.",
     statusNote: "Conversation-first",
   },
   {
@@ -21,7 +21,7 @@ const BY_TITLE = [
   {
     match: ["travel", "market", "shop"],
     focus: "Out & about",
-    blurb: "Markets, directions, and practical exchanges for trips back or life abroad.",
+    blurb: "Markets, directions, and practical exchanges for travel and daily errands.",
     statusNote: "Real situations",
   },
   {

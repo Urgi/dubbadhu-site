@@ -95,8 +95,8 @@ export default function CurriculumCatalog() {
           Real series—not placeholder cards
         </h2>
         <p className="curriculum-intro">
-          Lesson series from the same catalog learners see in the app: native-speaker video, structured
-          progression, and content reviewed with professors back home.
+          Lesson series from the same catalog in the app: native-speaker video, structured progression, and
+          content developed with academic partners and language specialists.
         </p>
       </div>
 

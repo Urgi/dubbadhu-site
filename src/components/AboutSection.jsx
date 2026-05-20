@@ -1,23 +1,23 @@
 const PILLARS = [
   {
     num: "01",
-    title: "Speak out loud",
-    desc: "Confidence comes from saying phrases yourself—not only reading them. Exercises push your voice, with feedback shaped for pronunciation.",
+    title: "Confidence in speech",
+    desc: "Learners build real speaking habits—not passive reading. Pronunciation feedback and out-loud exercises are core to every series.",
   },
   {
     num: "02",
-    title: "Learn with structure",
-    desc: "Clear series and lessons so you always know what to do next—the same learning home you open in the app, built for steady progress.",
+    title: "Structured & clear",
+    desc: "Progressive lesson paths so learners always know what to practice next—designed for consistency, not confusion.",
   },
   {
     num: "03",
-    title: "Preserve what matters",
-    desc: "Language lives in family, faith, music, and stories—not only textbooks. Content reflects how Oromo is actually spoken at home.",
+    title: "Engaging by design",
+    desc: "Interactive formats, native video, and varied activities keep sessions enjoyable so people return and keep speaking.",
   },
   {
     num: "04",
-    title: "Built to grow",
-    desc: "Afaan Oromo is our foundation. We are designing Dubbadhu so more Horn and East African languages can receive the same care.",
+    title: "Technology-forward",
+    desc: "Modern mobile learning tools paired with rigorous content—starting with Afaan Oromo, expanding to more African languages over time.",
   },
 ];
 
@@ -28,12 +28,12 @@ export default function AboutSection() {
         <div className="about-lead">
           <p className="section-label">About Dubbadhu</p>
           <h2 id="about-heading" className="section-title">
-            A command, not a suggestion
+            Built by Afaan LLC for African language learners
           </h2>
           <p className="about-intro">
-            <strong className="text-em">Dubbadhu</strong> means &ldquo;speak.&rdquo; Too many of us grew up
-            understanding our parents but answering in English. The app is for learners who want to show up in
-            family conversations—with lessons grounded in real speech, not phrasebook trivia.
+            <strong className="text-em">Dubbadhu</strong> means &ldquo;speak.&rdquo; Afaan LLC is an organization
+            focused on a single mission: make African languages more accessible, interactive, and effective to
+            learn—so more people speak with confidence, not just recognize words on a screen.
           </p>
         </div>
         <div className="about-features">

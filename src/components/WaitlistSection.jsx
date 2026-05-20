@@ -41,8 +41,8 @@ export default function WaitlistSection() {
             Be first when Dubbadhu lands on the App Store
           </h2>
           <p className="waitlist-lede">
-            We are finishing the iOS app now. Join the list for launch updates—one email when it matters, not
-            a weekly newsletter.
+            Afaan LLC is launching Dubbadhu on iOS first. Join the list for release updates—one email when it
+            matters, not a weekly newsletter.
           </p>
           <ul className="waitlist-trust">
             <li>No spam</li>

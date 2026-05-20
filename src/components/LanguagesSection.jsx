@@ -7,26 +7,26 @@ export default function LanguagesSection() {
         <div className="languages-copy">
           <p className="section-label">Languages</p>
           <h2 id="languages-heading" className="section-title">
-            Starting with Oromo, built for languages that deserve better tools
+            Starting with Oromo, expanding across the continent
           </h2>
           <p className="languages-intro">
-            Major apps rarely invest in Afaan Oromo, Amharic, or Tigrinya with the same depth they give
-            European languages. Dubbadhu begins with <strong className="text-em">Afaan Oromo</strong>—40+
-            million speakers, a living culture, and a diaspora that wants to pass it on. The map shows where we
-            are headed next; each language will earn the same rigor, not a translated template.
+            Underrepresented languages deserve the same depth, interactivity, and production quality learners
+            expect elsewhere. Dubbadhu launches with <strong className="text-em">Afaan Oromo</strong>—one of
+            Africa&apos;s most widely spoken languages—and grows deliberately into Amharic, Tigrinya, and more.
+            Each language receives dedicated curriculum and native expertise, not a one-size-fits-all port.
           </p>
           <ul className="languages-roadmap">
             <li>
               <span className="roadmap-badge roadmap-badge--live">Now</span>
-              <span>Afaan Oromo — launch language</span>
+              <span>Afaan Oromo — launch language on iOS</span>
             </li>
             <li>
               <span className="roadmap-badge">Next</span>
-              <span>Amharic &amp; Tigrinya — join the waitlist per language</span>
+              <span>Amharic &amp; Tigrinya — waitlist by language</span>
             </li>
             <li>
               <span className="roadmap-badge">Future</span>
-              <span>More Horn &amp; East African languages as quality allows</span>
+              <span>Additional Horn &amp; East African languages as we scale</span>
             </li>
           </ul>
         </div>
