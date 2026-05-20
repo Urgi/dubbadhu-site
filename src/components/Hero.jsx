@@ -1,4 +1,44 @@
+import { useEffect, useState } from "react";
+import { fetchTodayWordOfTheDay, wordOfTheDayDateLabel } from "../lib/wordOfTheDay.js";
+
+const FALLBACK_WOTD = {
+  oromo: "Akkam jirta?",
+  english: "How are you?",
+  partOfSpeech: "phrase",
+  example: "",
+};
+
+function formatPos(pos) {
+  const p = (pos || "").trim();
+  if (!p) return "";
+  const lower = p.toLowerCase();
+  const abbr = {
+    noun: "n.",
+    verb: "v.",
+    adjective: "adj.",
+    adverb: "adv.",
+    phrase: "phr.",
+    interjection: "interj.",
+  };
+  return abbr[lower] || (p.length <= 6 ? `${p}.` : p);
+}
+
 export default function Hero() {
+  const [wotd, setWotd] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    void fetchTodayWordOfTheDay().then((row) => {
+      if (!cancelled && row) setWotd(row);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const word = wotd ?? FALLBACK_WOTD;
+  const pos = formatPos(word.partOfSpeech);
+
   return (
     <section className="hero" aria-labelledby="hero-heading">
       <div className="hero-pattern" aria-hidden="true" />
@@ -44,23 +84,26 @@ export default function Hero() {
               />
               <div>
                 <div className="hero-card-app">Dubbadhu</div>
-                <div className="hero-card-series">Afaan Oromo · First conversations</div>
+                <div className="hero-card-series">Afaan Oromo · Vocabulary</div>
               </div>
             </div>
-            <div className="hero-card-lesson">
-              <span className="hero-card-label">Today&apos;s phrase</span>
-              <p className="hero-card-oromo">Akkam jirta?</p>
-              <p className="hero-card-english">How are you? (informal)</p>
-            </div>
-            <div className="hero-card-audio" aria-hidden="true">
-              <span className="wave-bar" />
-              <span className="wave-bar" />
-              <span className="wave-bar" />
-              <span className="wave-bar" />
-              <span className="wave-bar" />
-              <span className="wave-bar" />
-              <span className="wave-bar" />
-            </div>
+
+            <article className="hero-card-dict" aria-live="polite">
+              <div className="hero-card-dict-head">
+                <p className="hero-card-label">Word of the day</p>
+                <time className="hero-card-date" dateTime={new Date().toISOString().slice(0, 10)}>
+                  {wordOfTheDayDateLabel()}
+                </time>
+              </div>
+              <div className="hero-card-headword-row">
+                <h3 className="hero-card-headword">{word.oromo}</h3>
+                {pos ? <span className="hero-card-pos">{pos}</span> : null}
+              </div>
+              <p className="hero-card-def">{word.english}</p>
+              {word.example ? (
+                <p className="hero-card-example">&ldquo;{word.example}&rdquo;</p>
+              ) : null}
+            </article>
           </div>
           <div className="hero-card-glow" aria-hidden="true" />
         </div>
