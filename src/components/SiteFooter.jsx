@@ -18,6 +18,7 @@ export default function SiteFooter() {
           <a href="/support/">Support</a>
           <a href="/privacy/">Privacy</a>
           <a href="/terms/">Terms</a>
+          <a href="/community-guidelines/">Community Guidelines</a>
           <a href="mailto:admin@afaantech.com">admin@afaantech.com</a>
           <a href="#waitlist">Get the app</a>
         </nav>
