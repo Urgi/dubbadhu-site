@@ -19,7 +19,7 @@ export default function SiteFooter() {
           <a href="/privacy/">Privacy</a>
           <a href="/terms/">Terms</a>
           <a href="/community-guidelines/">Community Guidelines</a>
-          <a href="mailto:admin@afaantech.com">admin@afaantech.com</a>
+          <a href="mailto:support@afaantech.com">support@afaantech.com</a>
           <a href="#waitlist">Get the app</a>
         </nav>
         <p className="footer-copy">© {year} Afaan LLC. All rights reserved.</p>

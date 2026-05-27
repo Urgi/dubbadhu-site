@@ -5,8 +5,8 @@ export default function ContactSection() {
         Contact
       </h2>
       <p>Press, partnerships, and community inquiries.</p>
-      <a className="contact-email" href="mailto:admin@afaantech.com">
-        admin@afaantech.com
+      <a className="contact-email" href="mailto:support@afaantech.com">
+        support@afaantech.com
       </a>
     </section>
   );
