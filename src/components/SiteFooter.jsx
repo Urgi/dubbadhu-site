@@ -15,6 +15,7 @@ export default function SiteFooter() {
           </p>
         </div>
         <nav className="footer-nav" aria-label="Footer">
+          <a href="/support/">Support</a>
           <a href="/privacy/">Privacy</a>
           <a href="/terms/">Terms</a>
           <a href="mailto:admin@afaantech.com">admin@afaantech.com</a>
