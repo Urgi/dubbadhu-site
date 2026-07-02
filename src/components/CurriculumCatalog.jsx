@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabaseClient.js";
 import { launchLabel, seriesEditorial } from "../config/seriesCopy.js";
+import SectionHeader from "./SectionHeader.jsx";
 
 function sortByOrder(a, b) {
   const ao = typeof a?.sort_order === "number" ? a.sort_order : 0;
@@ -89,15 +90,12 @@ export default function CurriculumCatalog() {
 
   return (
     <section className="curriculum" id="curriculum" aria-labelledby="curriculum-heading">
-      <div className="curriculum-header">
-        <p className="section-label">Curriculum</p>
-        <h2 id="curriculum-heading" className="section-title">
-          Afaan Oromo curriculum
-        </h2>
-        <p className="curriculum-intro">
-          Lesson series with native video, structured progression, and linguist-reviewed content.
-        </p>
-      </div>
+      <SectionHeader
+        id="curriculum-heading"
+        label="Curriculum"
+        title="Explore the Afaan Oromo curriculum"
+        lede="Lesson series with native video, structured progression, and linguist-reviewed content—each built for real conversation."
+      />
 
       {loading ? (
         <p className="curriculum-state" role="status">

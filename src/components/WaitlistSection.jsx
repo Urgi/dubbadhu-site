@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { joinWaitlist, IOS_WEB_WAITLIST_LANGUAGE } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
+import SectionHeader from "./SectionHeader.jsx";
+import AppStoreLink from "./AppStoreLink.jsx";
+import { APP_STORE_URL } from "../config/appLinks.js";
 
 export default function WaitlistSection() {
   const [email, setEmail] = useState("");
@@ -36,19 +39,25 @@ export default function WaitlistSection() {
     <section className="waitlist" id="waitlist" aria-labelledby="waitlist-heading">
       <div className="waitlist-inner">
         <div className="waitlist-copy">
-          <p className="section-label">Get Dubbadhu</p>
-          <h2 id="waitlist-heading" className="section-title">
-            Afaan Oromo on iOS
-          </h2>
-          <p className="waitlist-lede">
-            Available on the App Store. Join for Android and future language releases.
-          </p>
+          <SectionHeader
+            id="waitlist-heading"
+            label="Get Dubbadhu"
+            title="Start speaking Afaan Oromo today"
+            lede="Download on the App Store today. Join the waitlist for Android and future language releases."
+          />
+          <AppStoreLink className="btn btn-primary waitlist-store-btn" />
           <ul className="waitlist-trust">
             <li>No spam</li>
             <li>Launch updates only</li>
             <li>Android next</li>
           </ul>
-          <div className="waitlist-brand" aria-label="Dubbadhu on the App Store">
+          <a
+            className="waitlist-brand"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Dubbadhu on the App Store"
+          >
             <img className="waitlist-brand-logo" src="/assets/talking.png" alt="" width={36} height={36} />
             <div>
               <div className="waitlist-brand-name">Dubbadhu</div>
@@ -59,7 +68,7 @@ export default function WaitlistSection() {
                 On the App Store
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <div className="waitlist-form-wrap">
@@ -70,7 +79,7 @@ export default function WaitlistSection() {
             aria-busy={busy}
           >
             <label className="waitlist-label" htmlFor="waitlist-email">
-              Email address
+              Android &amp; future languages
             </label>
             <div className="waitlist-form-row">
               <input

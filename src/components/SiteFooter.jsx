@@ -1,3 +1,5 @@
+import AppStoreLink from "./AppStoreLink.jsx";
+
 export default function SiteFooter() {
   const year = new Date().getFullYear();
   return (
@@ -20,7 +22,7 @@ export default function SiteFooter() {
           <a href="/terms/">Terms</a>
           <a href="/community-guidelines/">Community Guidelines</a>
           <a href="mailto:support@afaantech.com">support@afaantech.com</a>
-          <a href="#waitlist">Get the app</a>
+          <AppStoreLink className="footer-app-link">Get the app</AppStoreLink>
         </nav>
         <p className="footer-copy">© {year} Afaan LLC. All rights reserved.</p>
       </div>

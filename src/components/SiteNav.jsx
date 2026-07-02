@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import AppStoreLink from "./AppStoreLink.jsx";
 
 const LINKS = [
-  { href: "#curriculum", label: "Curriculum" },
+  { href: "#experience", label: "Experience" },
   { href: "#languages", label: "Languages" },
-  { href: "#contact", label: "Contact" },
+  { href: "#curriculum", label: "Curriculum" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export default function SiteNav() {
@@ -68,9 +70,9 @@ export default function SiteNav() {
               </li>
             ))}
             <li className="nav-links-cta">
-            <a href="#waitlist" className="nav-cta" onClick={closeMenu}>
-              Get the app
-            </a>
+              <AppStoreLink className="nav-cta" onClick={closeMenu}>
+                Get the app
+              </AppStoreLink>
             </li>
           </ul>
         </div>

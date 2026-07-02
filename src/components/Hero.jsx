@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchTodayWordOfTheDay, wordOfTheDayDateLabel } from "../lib/wordOfTheDay.js";
+import { HERO_BULLETS } from "../config/homeCopy.js";
+import AppStoreLink from "./AppStoreLink.jsx";
 
 const FALLBACK_WOTD = {
   oromo: "Akkam jirta?",
@@ -40,39 +42,30 @@ export default function Hero() {
   const pos = formatPos(word.partOfSpeech);
 
   return (
-    <section className="hero" aria-labelledby="hero-heading">
-      <div className="hero-pattern" aria-hidden="true" />
-      <div className="hero-inner">
-        <div className="hero-copy">
-          <h1 id="hero-heading">
-            African languages,
-            <br />
-            <em>spoken with confidence</em>
-          </h1>
-          <p className="hero-tagline" aria-label="Speak, learn, preserve">
-            Speak · Learn · Preserve
-          </p>
-          <p className="hero-sub">
-            Dubbadhu means &ldquo;speak&rdquo; in Afaan Oromo. An African language learning platform where
-            culture and language go hand in hand—Afaan Oromo on iOS, with structured lessons, native-speaker
-            video, and pronunciation practice.
-          </p>
-          <div className="hero-actions">
-            <a href="#waitlist" className="btn btn-primary">
-              Get Dubbadhu
-            </a>
+    <section className="product-hero" aria-labelledby="hero-heading">
+      <div className="product-hero-bg" aria-hidden="true">
+        <div className="product-hero-gradient" />
+        <div className="product-hero-grid" />
+      </div>
+
+      <div className="product-hero-inner">
+        <div className="product-hero-copy">
+          <p className="product-hero-eyebrow">Dubbadhu · Afaan Oromo</p>
+          <h1 id="hero-heading">The language learning platform for the Horn</h1>
+          <ul className="product-hero-bullets">
+            {HERO_BULLETS.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <div className="product-hero-actions">
+            <AppStoreLink />
             <a href="#curriculum" className="btn btn-secondary">
-              See curriculum
+              Explore curriculum
             </a>
           </div>
-          <ul className="hero-proof">
-            <li>Interactive lessons</li>
-            <li>Native-speaker video</li>
-            <li>Pronunciation tools</li>
-          </ul>
         </div>
 
-        <div className="hero-visual" aria-hidden="false">
+        <aside className="product-hero-aside" aria-label="Word of the day">
           <div className="hero-card">
             <div className="hero-card-top">
               <img
@@ -106,7 +99,11 @@ export default function Hero() {
             </article>
           </div>
           <div className="hero-card-glow" aria-hidden="true" />
-        </div>
+        </aside>
+      </div>
+
+      <div className="product-hero-scroll" aria-hidden="true">
+        <span>Scroll to explore</span>
       </div>
     </section>
   );
