@@ -18,6 +18,7 @@ export default function SiteFooter() {
         </div>
         <nav className="footer-nav" aria-label="Footer">
           <a href="/support/">Support</a>
+          <a href="/delete-account/">Delete account</a>
           <a href="/privacy/">Privacy</a>
           <a href="/terms/">Terms</a>
           <a href="/community-guidelines/">Community Guidelines</a>

@@ -4,7 +4,8 @@
     { "source": "/support/", "destination": "/support", "permanent": true },
     { "source": "/privacy/", "destination": "/privacy", "permanent": true },
     { "source": "/terms/", "destination": "/terms", "permanent": true },
-    { "source": "/community-guidelines/", "destination": "/community-guidelines", "permanent": true }
+    { "source": "/community-guidelines/", "destination": "/community-guidelines", "permanent": true },
+    { "source": "/delete-account/", "destination": "/delete-account", "permanent": true }
   ]
 }
 
