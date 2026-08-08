@@ -1,4 +1,5 @@
 import AppStoreLink from "./AppStoreLink.jsx";
+import PlayStoreLink from "./PlayStoreLink.jsx";
 
 export default function SiteFooter() {
   const year = new Date().getFullYear();
@@ -13,7 +14,7 @@ export default function SiteFooter() {
             </span>
           </div>
           <p className="footer-tagline">
-            African language learning. Afaan Oromo on iOS. Speak · Learn · Preserve.
+            African language learning. Afaan Oromo on iOS & Android. Speak · Learn · Preserve.
           </p>
         </div>
         <nav className="footer-nav" aria-label="Footer">
@@ -23,7 +24,8 @@ export default function SiteFooter() {
           <a href="/terms/">Terms</a>
           <a href="/community-guidelines/">Community Guidelines</a>
           <a href="mailto:support@afaantech.com">support@afaantech.com</a>
-          <AppStoreLink className="footer-app-link">Get the app</AppStoreLink>
+          <AppStoreLink className="footer-app-link">App Store</AppStoreLink>
+          <PlayStoreLink className="footer-app-link">Google Play</PlayStoreLink>
         </nav>
         <p className="footer-copy">© {year} Afaan LLC. All rights reserved.</p>
       </div>

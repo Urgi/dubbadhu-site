@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchTodayWordOfTheDay, wordOfTheDayDateLabel } from "../lib/wordOfTheDay.js";
 import { HERO_BULLETS } from "../config/homeCopy.js";
 import AppStoreLink from "./AppStoreLink.jsx";
+import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const FALLBACK_WOTD = {
   oromo: "Akkam jirta?",
@@ -59,6 +60,7 @@ export default function Hero() {
           </ul>
           <div className="product-hero-actions">
             <AppStoreLink />
+            <PlayStoreLink className="btn btn-secondary" />
             <a href="#curriculum" className="btn btn-secondary">
               Explore curriculum
             </a>

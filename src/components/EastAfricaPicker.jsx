@@ -424,7 +424,7 @@ export default function EastAfricaPicker() {
 
         <div className="country-picker-header">
           <div className="country-picker-header-eyebrow">Languages</div>
-          <p className="country-picker-header-lede">Afaan Oromo on iOS · swipe for more</p>
+          <p className="country-picker-header-lede">Afaan Oromo on iOS &amp; Android · swipe for more</p>
         </div>
       </div>
 

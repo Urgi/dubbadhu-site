@@ -11,9 +11,9 @@ export const METRICS = [
     detail: "In every lesson series",
   },
   {
-    value: "iOS",
+    value: "iOS · Android",
     label: "Available now",
-    detail: "Afaan Oromo on the App Store",
+    detail: "Afaan Oromo on App Store & Google Play",
   },
   {
     value: "3+",
@@ -64,11 +64,11 @@ export const SUPPORT_CARDS = [
 export const FAQ_ITEMS = [
   {
     q: "How do I subscribe?",
-    a: "Open the subscription screen in the Dubbadhu iOS app and choose a plan. Payment is processed securely through Apple In-App Purchases.",
+    a: "Open the subscription screen in the Dubbadhu app and choose a plan. Payment is processed securely through Apple In-App Purchases on iOS or Google Play Billing on Android.",
   },
   {
     q: "How do I cancel my subscription?",
-    a: "Subscriptions are managed by Apple. On your iPhone, go to Settings → Apple ID → Subscriptions, select Dubbadhu, and cancel.",
+    a: "On iPhone: Settings → Apple ID → Subscriptions → Dubbadhu. On Android: Play Store → profile → Payments & subscriptions → Subscriptions → Dubbadhu.",
   },
   {
     q: "How do I restore purchases?",
@@ -76,10 +76,10 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Which languages are available?",
-    a: "Afaan Oromo is available on iOS today. Amharic, Tigrinya, and additional Horn and East African languages are in development.",
+    a: "Afaan Oromo is available on iOS and Android today. Amharic, Tigrinya, and additional Horn and East African languages are in development.",
   },
   {
     q: "How do I contact support?",
-    a: "Email admin@afaantech.com with a short description of the issue, your device model, iOS version, and any screenshots.",
+    a: "Email admin@afaantech.com with a short description of the issue, your device model, OS version, and any screenshots.",
   },
 ];

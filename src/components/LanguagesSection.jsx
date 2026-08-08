@@ -6,7 +6,7 @@ const ROADMAP = [
     status: "Available",
     tone: "live",
     label: "Afaan Oromo",
-    detail: "iOS · App Store",
+    detail: "iOS · Android",
   },
   {
     status: "Next",

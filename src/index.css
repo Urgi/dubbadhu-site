@@ -1110,7 +1110,21 @@ a.nav-logo {
 }
 
 .waitlist-store-btn {
+  margin-bottom: 0;
+}
+
+.waitlist-store-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 20px;
+}
+
+.waitlist-brand-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .waitlist-brand {
