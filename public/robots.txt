@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Help crawlers and AI systems find canonical product facts
+Sitemap: https://dubbadhu.com/sitemap.xml
+LLMs-Txt: https://dubbadhu.com/llms.txt

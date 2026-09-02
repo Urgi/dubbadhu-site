@@ -1,14 +1,14 @@
 export const HERO_BULLETS = [
-  "Structured lessons with native-speaker video",
-  "Pronunciation practice built into every unit",
-  "Language preservation at the heart of the mission",
+  "Speaking conversations validated by teachers in Oromia",
+  "Native-speaker conversation video + unlimited AI practice",
+  "Afaan Oromo now · Amharic & Tigrinya coming next",
 ];
 
 export const METRICS = [
   {
     value: "Native",
     label: "Speaker video",
-    detail: "In every lesson series",
+    detail: "Conversation videos in every series",
   },
   {
     value: "iOS · Android",
@@ -16,27 +16,27 @@ export const METRICS = [
     detail: "Afaan Oromo on App Store & Google Play",
   },
   {
-    value: "3+",
-    label: "Languages planned",
-    detail: "Horn & East Africa roadmap",
+    value: "Next",
+    label: "Amharic · Tigrinya",
+    detail: "Horn languages on the roadmap",
   },
 ];
 
 export const EXPERIENCE_FEATURES = [
   {
+    value: "Teach",
+    title: "Teacher-validated conversations",
+    body: "All current and new speaking conversations, validated by professional language teachers in Oromia.",
+  },
+  {
     value: "Video",
-    title: "Video-led lessons",
-    body: "Watch native speakers in context. Each series builds vocabulary and grammar you can reuse in real conversation.",
+    title: "Native-speaker video",
+    body: "Conversation videos from native speakers so you hear how Afaan Oromo is actually spoken.",
   },
   {
-    value: "Speak",
-    title: "Pronunciation practice",
-    body: "Microphone-guided speaking exercises help you sound natural—not just read words on a screen.",
-  },
-  {
-    value: "Pro",
-    title: "Curriculum you can trust",
-    body: "Content reviewed by linguists and language professionals, structured for steady progress from day one.",
+    value: "AI",
+    title: "Unlimited AI practice",
+    body: "Premium unlocks unlimited AI practice and translate feedback, plus vocabulary audio, quizzes, and lesson discussions.",
   },
 ];
 
@@ -48,38 +48,38 @@ export const SUPPORT_CARDS = [
     cta: "Visit support",
   },
   {
-    title: "Contact us",
-    body: "Press, partnerships, and product questions. We respond to every message.",
-    href: "mailto:admin@afaantech.com",
-    cta: "Email support",
+    title: "Follow Dubbadhu",
+    body: "Product updates, roadmap news for Amharic and Tigrinya, and community posts on Instagram.",
+    href: "https://www.instagram.com/dubbadhu.app",
+    cta: "Instagram @dubbadhu.app",
   },
   {
-    title: "Community guidelines",
-    body: "How we keep Dubbadhu respectful, safe, and focused on language learning.",
-    href: "/community-guidelines",
-    cta: "Read guidelines",
+    title: "About the product",
+    body: "See what Premium includes, Free vs Premium, and why Dubbadhu is unique—same story as in the app.",
+    href: "/about",
+    cta: "Read about Dubbadhu",
   },
 ];
 
 export const FAQ_ITEMS = [
   {
-    q: "How do I subscribe?",
-    a: "Open the subscription screen in the Dubbadhu app and choose a plan. Payment is processed securely through Apple In-App Purchases on iOS or Google Play Billing on Android.",
+    q: "What does Dubbadhu Premium include?",
+    a: "Full access to every speaking conversation—current and new releases. That means all teacher-validated speaking conversations from Oromia, conversation videos from native speakers, unlimited AI practice and translate feedback, plus vocabulary audio, quizzes, and lesson discussions. A portion of each plan supports East Africa communities.",
   },
   {
-    q: "How do I cancel my subscription?",
-    a: "On iPhone: Settings → Apple ID → Subscriptions → Dubbadhu. On Android: Play Store → profile → Payments & subscriptions → Subscriptions → Dubbadhu.",
-  },
-  {
-    q: "How do I restore purchases?",
-    a: "Use Restore Purchases on the subscription screen in the app. If premium access still doesn't appear, email us with your purchase receipt.",
+    q: "Why is Dubbadhu unique for Afaan Oromo?",
+    a: "Dubbadhu focuses on speaking with content validated by professional language teachers in Oromia, native-speaker conversation video, and unlimited AI practice on Premium—not generic phrase lists. It is built for the Horn, starting with Afaan Oromo, with Amharic and Tigrinya coming next.",
   },
   {
     q: "Which languages are available?",
-    a: "Afaan Oromo is available on iOS and Android today. Amharic, Tigrinya, and additional Horn and East African languages are in development.",
+    a: "Afaan Oromo is available on iOS and Android today. Amharic and Tigrinya are coming next, with more Horn and East African languages planned. Follow @dubbadhu.app on Instagram for roadmap updates.",
   },
   {
-    q: "How do I contact support?",
-    a: "Email admin@afaantech.com with a short description of the issue, your device model, OS version, and any screenshots.",
+    q: "How do I subscribe or cancel?",
+    a: "Subscribe in the Dubbadhu app via Apple In-App Purchase or Google Play Billing. Cancel anytime in your App Store or Play Store subscription settings.",
+  },
+  {
+    q: "Where can I find Dubbadhu online?",
+    a: "Website: dubbadhu.com. Instagram and TikTok: @dubbadhu.app. App Store and Google Play: search Dubbadhu. Support: support@afaantech.com.",
   },
 ];

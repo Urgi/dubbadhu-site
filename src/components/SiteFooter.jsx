@@ -1,5 +1,6 @@
 import AppStoreLink from "./AppStoreLink.jsx";
 import PlayStoreLink from "./PlayStoreLink.jsx";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, TIKTOK_URL } from "../config/brand.js";
 
 export default function SiteFooter() {
   const year = new Date().getFullYear();
@@ -14,15 +15,24 @@ export default function SiteFooter() {
             </span>
           </div>
           <p className="footer-tagline">
-            African language learning. Afaan Oromo on iOS & Android. Speak · Learn · Preserve.
+            Afaan Oromo language learning on iOS &amp; Android. Amharic &amp; Tigrinya coming next. Speak ·
+            Learn · Preserve.
           </p>
         </div>
         <nav className="footer-nav" aria-label="Footer">
+          <a href="/about/">About</a>
+          <a href="/afaan-oromo/">Afaan Oromo</a>
+          <a href="/languages/">Languages</a>
           <a href="/support/">Support</a>
           <a href="/delete-account/">Delete account</a>
           <a href="/privacy/">Privacy</a>
           <a href="/terms/">Terms</a>
-          <a href="/community-guidelines/">Community Guidelines</a>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+            Instagram {INSTAGRAM_HANDLE}
+          </a>
+          <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer">
+            TikTok
+          </a>
           <a href="mailto:support@afaantech.com">support@afaantech.com</a>
           <AppStoreLink className="footer-app-link">App Store</AppStoreLink>
           <PlayStoreLink className="footer-app-link">Google Play</PlayStoreLink>

@@ -51,8 +51,8 @@ export default function Hero() {
 
       <div className="product-hero-inner">
         <div className="product-hero-copy">
-          <p className="product-hero-eyebrow">Dubbadhu · Afaan Oromo</p>
-          <h1 id="hero-heading">The language learning platform for the Horn</h1>
+          <p className="product-hero-eyebrow">Dubbadhu · Afaan Oromo language learning</p>
+          <h1 id="hero-heading">Speak Afaan Oromo with confidence</h1>
           <ul className="product-hero-bullets">
             {HERO_BULLETS.map((item) => (
               <li key={item}>{item}</li>

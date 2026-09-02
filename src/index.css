@@ -540,6 +540,132 @@ a.nav-logo {
   line-height: 1.5;
 }
 
+/* ─── Offers (paywall mirror) ─── */
+.offers {
+  padding: var(--section-pad) clamp(20px, 4vw, 48px);
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 55%);
+}
+
+.offers-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.offers-benefits {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-bottom: clamp(36px, 5vw, 48px);
+  max-width: 48rem;
+}
+
+.offers-benefits li {
+  position: relative;
+  padding: 16px 18px 16px 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(4, 12, 8, 0.45);
+  color: var(--text-sec);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.offers-benefits li::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 1.35em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px var(--green-dim);
+}
+
+.offers-unique-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.offers-unique-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin-bottom: clamp(36px, 5vw, 48px);
+}
+
+.offers-unique-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(4, 12, 8, 0.4);
+}
+
+.offers-unique-card h4 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--gold-soft);
+}
+
+.offers-unique-card p {
+  font-size: 14px;
+  color: var(--text-sec);
+  line-height: 1.6;
+}
+
+.offers-compare-wrap {
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.offers-compare {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(4, 12, 8, 0.45);
+}
+
+.offers-compare-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.offers-compare-row:last-child {
+  border-bottom: none;
+}
+
+.offers-compare-row--head {
+  background: rgba(45, 178, 125, 0.08);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.offers-compare-row span:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.offers-compare-row span:not(:first-child) {
+  color: var(--text-sec);
+}
+
+.offers-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 /* ─── Support cards ─── */
 .support-cards {
   padding: var(--section-pad) clamp(20px, 4vw, 48px);
@@ -1762,8 +1888,18 @@ a.nav-logo {
 
   .metrics-band-inner,
   .intro-stats,
-  .support-cards-grid {
+  .support-cards-grid,
+  .offers-unique-grid {
     grid-template-columns: 1fr;
+  }
+
+  .offers-compare-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .offers-compare-row--head {
+    display: none;
   }
 
   .metric-card {

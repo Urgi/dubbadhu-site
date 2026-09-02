@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import AppStoreLink from "./AppStoreLink.jsx";
 
 const LINKS = [
-  { href: "#experience", label: "Experience" },
+  { href: "#offers", label: "Offers" },
   { href: "#languages", label: "Languages" },
   { href: "#curriculum", label: "Curriculum" },
   { href: "#faq", label: "FAQ" },
+  { href: "/about/", label: "About" },
 ];
 
 export default function SiteNav() {
