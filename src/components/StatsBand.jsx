@@ -38,7 +38,7 @@ export function IntroSection() {
           id="experience-heading"
           label="The Dubbadhu experience"
           title="Language learning built for how you actually speak"
-          lede="Every feature serves one goal: help you speak with confidence—not just memorize lists."
+          lede="Every feature serves one goal: Speak with Confidence through native conversation—not flashcards."
         />
         <div className="intro-stats">
           {EXPERIENCE_FEATURES.map((f) => (

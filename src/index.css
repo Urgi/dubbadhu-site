@@ -395,7 +395,15 @@ a.nav-logo {
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.product-hero-lede {
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--text-sec);
   margin-bottom: 28px;
+  max-width: 32rem;
 }
 
 .product-hero-bullets {

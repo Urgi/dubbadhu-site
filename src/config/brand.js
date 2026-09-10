@@ -14,14 +14,12 @@ export const SUPPORT_EMAIL = "support@afaantech.com";
 export const COMPANY_NAME = "Afaan LLC";
 export const PRODUCT_NAME = "Dubbadhu";
 
-export const APP_STORE_URL = "https://apps.apple.com/us/app/dubbadhu/id6765779408";
-export const PLAY_STORE_URL =
-  "https://play.google.com/store/apps/details?id=com.afaanllc.dubbadhu";
+export { APP_STORE_URL, PLAY_STORE_URL } from "./appLinks.js";
 
 /** Short facts LLMs and press can cite without ambiguity */
 export const BRAND_FACTS = {
   oneLiner:
-    "Dubbadhu is the Afaan Oromo language learning app from Afaan LLC — available on iOS and Android, with Amharic and Tigrinya coming next.",
+    "Dubbadhu is the speaking-first Afaan Oromo language learning app from Afaan LLC — native conversation, not flashcards. For learners in the Horn and US/diaspora families. Available on iOS and Android, with Amharic and Tigrinya coming next.",
   meaning: 'Dubbadhu means "speak" in Afaan Oromo.',
   availableLanguages: ["Afaan Oromo"],
   upcomingLanguages: ["Amharic", "Tigrinya"],

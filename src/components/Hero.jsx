@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchTodayWordOfTheDay, wordOfTheDayDateLabel } from "../lib/wordOfTheDay.js";
-import { HERO_BULLETS } from "../config/homeCopy.js";
+import { HERO_BULLETS, HERO_EYEBROW, HERO_HEADLINE, HERO_LEDE } from "../config/homeCopy.js";
 import AppStoreLink from "./AppStoreLink.jsx";
 import PlayStoreLink from "./PlayStoreLink.jsx";
 
@@ -51,8 +51,9 @@ export default function Hero() {
 
       <div className="product-hero-inner">
         <div className="product-hero-copy">
-          <p className="product-hero-eyebrow">Dubbadhu · Afaan Oromo language learning</p>
-          <h1 id="hero-heading">Speak Afaan Oromo with confidence</h1>
+          <p className="product-hero-eyebrow">{HERO_EYEBROW}</p>
+          <h1 id="hero-heading">{HERO_HEADLINE}</h1>
+          <p className="product-hero-lede">{HERO_LEDE}</p>
           <ul className="product-hero-bullets">
             {HERO_BULLETS.map((item) => (
               <li key={item}>{item}</li>
