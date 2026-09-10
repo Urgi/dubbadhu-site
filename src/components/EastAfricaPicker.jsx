@@ -22,6 +22,8 @@ import {
   setRegionVisibility,
 } from "../map/buildEastAfricaMap.js";
 import { joinWaitlist } from "../lib/waitlist.js";
+import AppStoreLink from "./AppStoreLink.jsx";
+import PlayStoreLink from "./PlayStoreLink.jsx";
 
 /** CSS `transform-origin` for the east SVG mover; optional per language in config `pan`. */
 function eastPanTransformOrigin(pan) {
@@ -576,10 +578,16 @@ export default function EastAfricaPicker() {
               ) : null}
             </>
           ) : (
-            <div className="country-picker-foot-cta">
-              <a className="country-picker-foot-link" href="#waitlist">
-                Get Dubbadhu →
-              </a>
+            <div className="country-picker-foot-cta country-picker-foot-cta--stores">
+              <p className="country-picker-foot-hint">Afaan Oromo is available now.</p>
+              <div className="country-picker-foot-stores">
+                <AppStoreLink className="country-picker-foot-btn country-picker-foot-btn--gold">
+                  App Store
+                </AppStoreLink>
+                <PlayStoreLink className="country-picker-foot-btn country-picker-foot-btn--play">
+                  Google Play
+                </PlayStoreLink>
+              </div>
             </div>
           )}
         </div>

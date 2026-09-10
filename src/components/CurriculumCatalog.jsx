@@ -2,6 +2,14 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabaseClient.js";
 import { launchLabel, seriesEditorial } from "../config/seriesCopy.js";
 import SectionHeader from "./SectionHeader.jsx";
+import AppStoreLink from "./AppStoreLink.jsx";
+import PlayStoreLink from "./PlayStoreLink.jsx";
+
+const CURRICULUM_UNAVAILABLE =
+  "The live curriculum catalog isn’t available here right now. Open Dubbadhu on iOS or Android to browse speaking series.";
+
+const CURRICULUM_EMPTY =
+  "No lesson series to show here right now. Open Dubbadhu on iOS or Android to browse speaking series.";
 
 function sortByOrder(a, b) {
   const ao = typeof a?.sort_order === "number" ? a.sort_order : 0;
@@ -25,8 +33,13 @@ export default function CurriculumCatalog() {
 
     async function run() {
       if (!supabase) {
+        if (import.meta.env.DEV) {
+          console.warn(
+            "[dubbadhu-site] Curriculum: set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to load live series."
+          );
+        }
         setLoading(false);
-        setErr("Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.");
+        setErr("unavailable");
         return;
       }
 
@@ -47,18 +60,22 @@ export default function CurriculumCatalog() {
         });
 
         const seriesIds = filteredSeries.map((s) => s.id).filter(Boolean);
-        const { data: lessons, error: lessonErr } = await supabase
-          .from("lessons")
-          .select("id,series_id,lesson_number,title")
-          .in("series_id", seriesIds);
-        if (lessonErr) throw lessonErr;
+        let lessons = [];
+        if (seriesIds.length) {
+          const { data, error: lessonErr } = await supabase
+            .from("lessons")
+            .select("id,series_id,lesson_number,title")
+            .in("series_id", seriesIds);
+          if (lessonErr) throw lessonErr;
+          lessons = data;
+        }
 
         if (cancelled) return;
         setSeriesRows(Array.isArray(filteredSeries) ? filteredSeries : []);
         setLessonRows(Array.isArray(lessons) ? lessons : []);
       } catch (e) {
         if (cancelled) return;
-        setErr(e?.message || "Could not load curriculum.");
+        setErr("unavailable");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -102,13 +119,18 @@ export default function CurriculumCatalog() {
           Loading curriculum…
         </p>
       ) : null}
-      {!loading && err ? (
-        <p className="curriculum-state curriculum-state--err" role="alert">
-          {err}
-        </p>
+
+      {!loading && (err || series.length === 0) ? (
+        <div className="curriculum-empty" role={err ? "alert" : "status"}>
+          <p className="curriculum-state">{err ? CURRICULUM_UNAVAILABLE : CURRICULUM_EMPTY}</p>
+          <div className="curriculum-empty-actions">
+            <AppStoreLink />
+            <PlayStoreLink className="btn btn-secondary" />
+          </div>
+        </div>
       ) : null}
 
-      {!loading && !err ? (
+      {!loading && !err && series.length > 0 ? (
         <div className="curriculum-grid">
           {series.map((s) => {
             const cover = coverForSeries(s);

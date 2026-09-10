@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { joinWaitlist, IOS_WEB_WAITLIST_LANGUAGE } from "../lib/waitlist.js";
+import { joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
 import SectionHeader from "./SectionHeader.jsx";
 import AppStoreLink from "./AppStoreLink.jsx";
@@ -27,7 +27,7 @@ export default function WaitlistSection() {
     setBusy(true);
     setMsg("");
     setErr(false);
-    const res = await joinWaitlist(email, IOS_WEB_WAITLIST_LANGUAGE);
+    const res = await joinUpcomingLanguageWaitlist(email);
     setBusy(false);
     setMsg(res.message || "");
     setErr(!res.ok);
@@ -42,18 +42,18 @@ export default function WaitlistSection() {
         <div className="waitlist-copy">
           <SectionHeader
             id="waitlist-heading"
-            label="Get Dubbadhu"
-            title="Start speaking Afaan Oromo today"
-            lede="Download on the App Store or Google Play. Join the waitlist for future language releases."
+            label="Afaan Oromo is live"
+            title="Get notified for Amharic & Tigrinya"
+            lede="Dubbadhu is already on the App Store and Google Play for Afaan Oromo. This list is only for a note when Amharic and Tigrinya ship."
           />
           <div className="waitlist-store-row">
             <AppStoreLink className="btn btn-primary waitlist-store-btn" />
             <PlayStoreLink className="btn btn-secondary waitlist-store-btn" />
           </div>
           <ul className="waitlist-trust">
+            <li>Afaan Oromo available now</li>
+            <li>Amharic &amp; Tigrinya launch notes only</li>
             <li>No spam</li>
-            <li>Launch updates only</li>
-            <li>More languages soon</li>
           </ul>
           <div className="waitlist-brand-row">
             <a
@@ -93,7 +93,7 @@ export default function WaitlistSection() {
             aria-busy={busy}
           >
             <label className="waitlist-label" htmlFor="waitlist-email">
-              Future languages
+              Notify me for Amharic &amp; Tigrinya
             </label>
             <div className="waitlist-form-row">
               <input
@@ -117,8 +117,8 @@ export default function WaitlistSection() {
             </div>
             <p id="waitlist-hint" className="waitlist-hint">
               {done
-                ? "On the list. Updates when new languages ship."
-                : "Email used for product updates only."}
+                ? "On the list for Amharic and Tigrinya."
+                : "Email used only for Amharic and Tigrinya launch updates."}
             </p>
           </form>
           <p
