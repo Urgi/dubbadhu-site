@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AppStoreLink from "./AppStoreLink.jsx";
+import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const LINKS = [
   { href: "#offers", label: "Offers" },
@@ -72,8 +73,11 @@ export default function SiteNav() {
             ))}
             <li className="nav-links-cta">
               <AppStoreLink className="nav-cta" onClick={closeMenu}>
-                Get the app
+                App Store
               </AppStoreLink>
+              <PlayStoreLink className="nav-cta nav-cta--play" onClick={closeMenu}>
+                Google Play
+              </PlayStoreLink>
             </li>
           </ul>
         </div>

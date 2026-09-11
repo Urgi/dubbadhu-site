@@ -21,7 +21,7 @@ export const PAYWALL_BENEFITS = [
 export const WHY_UNIQUE = [
   {
     title: "Teacher-validated in Oromia",
-    body: "Speaking conversations are validated by professional language teachers in Oromia—not generic phrase lists.",
+    body: "Speaking conversations are validated by professional language teachers in Oromia. Native conversation and speaking practice—not flashcards.",
   },
   {
     title: "Native-speaker conversation video",
@@ -33,7 +33,7 @@ export const WHY_UNIQUE = [
   },
   {
     title: "Built for the Horn",
-    body: "Dubbadhu starts with Afaan Oromo on iOS and Android, with Amharic and Tigrinya coming next—languages millions speak that modern apps still underserve.",
+    body: "Dubbadhu starts with Afaan Oromo on iOS and Android, with Amharic and Tigrinya coming next. Built for the Horn—and for US and diaspora families retaining the language.",
   },
   {
     title: "Mission-backed learning",

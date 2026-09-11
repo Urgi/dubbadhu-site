@@ -12,6 +12,9 @@
 import { createClient } from "@supabase/supabase-js";
 import { isValidEmail } from "./validateEmail.js";
 
+/** Upcoming languages collected by the homepage notify form (Afaan Oromo is already live). */
+export const UPCOMING_WAITLIST_LANGUAGES = ["Amharic", "Tigrinya"];
+
 const rawIosLang = import.meta.env.VITE_WAITLIST_IOS_LANGUAGE;
 export const IOS_WEB_WAITLIST_LANGUAGE =
   typeof rawIosLang === "string" && rawIosLang.trim() ? rawIosLang.trim() : "Afaan Oromo";
@@ -76,4 +79,24 @@ export async function joinWaitlist(email, languageName) {
   }
 
   return { ok: true, code: String(status || "ok"), message: "You're on the list!" };
+}
+
+/** Homepage form: notify for Amharic and Tigrinya (does not treat Afaan Oromo as unlaunched). */
+export async function joinUpcomingLanguageWaitlist(email) {
+  const names = UPCOMING_WAITLIST_LANGUAGES;
+  const results = [];
+  for (const languageName of names) {
+    const res = await joinWaitlist(email, languageName);
+    results.push(res);
+    if (!res.ok) return res;
+  }
+  const trimmed = (email || "").trim();
+  const already = results.every((r) => r.code === "already_on_list");
+  return {
+    ok: true,
+    code: already ? "already_on_list" : "added",
+    message: already
+      ? `You're already on the waitlist for Amharic and Tigrinya. We'll notify you at ${trimmed} when they ship.`
+      : `You're on the list for Amharic and Tigrinya. We'll notify you at ${trimmed} when they ship.`,
+  };
 }
