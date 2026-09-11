@@ -1199,10 +1199,15 @@ a.nav-logo {
 
 .languages-map .country-picker-inner {
   border-radius: var(--radius-lg);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .languages-map .country-picker-map-stage {
-  min-height: clamp(420px, 52vh, 560px);
+  min-height: 340px;
+  height: 360px;
+  max-height: 380px;
 }
 
 .roadmap-badge {
@@ -1508,8 +1513,9 @@ a.nav-logo {
 
 .country-picker-map-stage {
   position: relative;
-  flex: 1 1 auto;
-  min-height: clamp(400px, 58vh, 560px);
+  flex: 0 0 auto;
+  min-height: 320px;
+  height: 340px;
   width: 100%;
 }
 
@@ -1531,8 +1537,7 @@ a.nav-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Optical center: clear header, sit slightly above panel */
-  padding: 48px 6% 12%;
+  padding: 72px 10% 20px;
   box-sizing: border-box;
 }
 
@@ -1650,7 +1655,7 @@ a.nav-logo {
 }
 
 .country-picker-facts {
-  padding: 0 18px 6px;
+  padding: 8px 20px 12px;
   margin: 0;
 }
 
@@ -1694,8 +1699,8 @@ a.nav-logo {
 
 .country-picker-langrow {
   position: relative;
-  min-height: 40px;
-  padding: 2px 86px 6px 4px;
+  min-height: 36px;
+  padding: 2px 86px 8px 8px;
   box-sizing: border-box;
 }
 
@@ -1982,7 +1987,9 @@ a.nav-logo {
   }
 
   .country-picker-map-stage {
-    min-height: clamp(320px, 58vh, 500px);
+    min-height: 280px;
+    height: 300px;
+    max-height: 320px;
   }
 }
 
