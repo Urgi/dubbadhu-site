@@ -680,6 +680,7 @@ a.nav-logo {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
+  align-items: stretch;
 }
 
 .product-screen {
@@ -1107,10 +1108,6 @@ a.nav-logo {
     grid-template-columns: 1fr 1fr;
   }
 
-  .product-screens {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .product-compare-row {
     grid-template-columns: 1fr;
     gap: 4px;
@@ -1195,9 +1192,13 @@ a.nav-logo {
 
   .product-features,
   .reviews-list,
-  .product-screens,
   .proof-carousel {
     grid-template-columns: 1fr;
+  }
+
+  .product-screens {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
   }
 
   .trust-quote blockquote p {
