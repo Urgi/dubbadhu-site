@@ -10,6 +10,7 @@ import {
   HERO_SUPPORT,
 } from "../config/homeCopy.js";
 import { APP_STORE_REVIEWS_URL } from "../config/appLinks.js";
+import { displayReviewerName } from "../lib/reviewerName.js";
 import AppStoreLink from "./AppStoreLink.jsx";
 import PlayStoreLink from "./PlayStoreLink.jsx";
 
@@ -101,7 +102,7 @@ export default function Hero() {
               <p>“{review.quote}”</p>
             </blockquote>
             <figcaption>
-              <strong>{review.name}</strong>
+              <strong>{displayReviewerName(review.name)}</strong>
             </figcaption>
           </div>
           <p className="hero-review-meta">

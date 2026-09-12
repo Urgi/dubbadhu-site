@@ -1,6 +1,7 @@
 import useReveal from "../hooks/useReveal.js";
 import { APP_STORE_REVIEWS, APP_STORE_TRUST } from "../config/homeCopy.js";
 import { APP_STORE_REVIEWS_URL } from "../config/appLinks.js";
+import { displayReviewerName } from "../lib/reviewerName.js";
 
 function Stars({ count }) {
   const n = Math.max(0, Math.min(5, Number(count) || 0));
@@ -22,8 +23,7 @@ export default function ReviewsSection() {
           Loved by people learning to speak
         </h2>
         <p className="section-lede">
-          {APP_STORE_TRUST.ratingValue.toFixed(1)} from {APP_STORE_TRUST.ratingCount} ratings on the{" "}
-          {APP_STORE_TRUST.storefrontLabel}. These are written excerpts from that listing.
+          {`${APP_STORE_TRUST.ratingValue.toFixed(1)} from ${APP_STORE_TRUST.ratingCount} ratings on the ${APP_STORE_TRUST.storefrontLabel}.`}
         </p>
         <a
           className="reviews-source"
@@ -37,13 +37,13 @@ export default function ReviewsSection() {
 
       <div className="reviews-list">
         {APP_STORE_REVIEWS.map((review) => (
-          <figure key={review.name + review.title} className="review">
+          <figure key={review.title} className="review">
             <Stars count={review.stars} />
             <blockquote>
               <p>“{review.quote}”</p>
             </blockquote>
             <figcaption>
-              <strong>{review.name}</strong>
+              <strong>{displayReviewerName(review.name)}</strong>
               <span>App Store review · {review.title}</span>
             </figcaption>
           </figure>

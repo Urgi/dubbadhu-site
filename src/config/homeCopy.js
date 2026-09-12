@@ -18,12 +18,12 @@ export const APP_STORE_TRUST = {
   ratingValue: 5,
   ratingCount: 14,
   storefront: "US",
-  storefrontLabel: "App Store (United States)",
+  storefrontLabel: "App Store",
   retrieved: "2026-09-12",
 };
 
 export const FEATURED_REVIEW = {
-  name: "Mezmure T",
+  name: "Mezmure T.",
   title: "Dubbadhu is amazing!!",
   quote:
     "As someone in the diaspora, Dubbadhu has been one of the best tools for learning Afaan Oromo. It's user-friendly, beautifully designed, and genuinely enjoyable to use, which makes it easy to stay consistent. The biggest impact has been my improved ability to communicate with family and friends and feel more connected to my culture.",
@@ -33,7 +33,7 @@ export const FEATURED_REVIEW = {
 /** Authentic US App Store reviews (iTunes customer review RSS, id 6765779408). Excerpts are contiguous. */
 export const APP_STORE_REVIEWS = [
   {
-    name: "Ebenezer Yegezu",
+    name: "Ebenezer Y.",
     title: "Best app in the game",
     quote:
       "I have one side of my family that speak Oromo. While at first, I didn’t know a single word. Now this app has given me a chance to connect with them!",
@@ -47,7 +47,7 @@ export const APP_STORE_REVIEWS = [
     stars: 5,
   },
   {
-    name: "Lelise Aguma",
+    name: "Lelise A.",
     title: "Simple, Useful & Meaningful",
     quote:
       "I think this is especially valuable for those who were born and raised in the US and other countries and may not have had the opportunity to fully learn the language growing up. It’s a great way to reconnect with our language, culture, and heritage.",
