@@ -199,6 +199,7 @@ img {
 a.nav-logo {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 .nav-logo {
@@ -210,6 +211,18 @@ a.nav-logo {
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-logo:hover .nav-logo-text,
+.nav-logo:focus-visible .nav-logo-text {
+  color: var(--green);
+}
+
+.nav-logo:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
 }
 
 .nav-logo-mark {
@@ -277,16 +290,38 @@ a.nav-logo {
   text-transform: uppercase;
 }
 
+.nav-links-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
 .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--green) !important;
   color: var(--green-ink) !important;
-  padding: 8px 16px !important;
+  padding: 8px 14px !important;
   border: 2px solid var(--green);
   font-size: 12px !important;
+  white-space: nowrap;
 }
 
 .nav-cta:hover {
   background: #74d882 !important;
+}
+
+.nav-cta--secondary {
+  background: transparent !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.nav-cta--secondary:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
 }
 
 /* Hero */
@@ -668,12 +703,11 @@ a.nav-logo {
 .product-features li {
   padding: 16px 0;
   border-top: 1px solid var(--border);
-  opacity: 0.38;
-  transition: opacity 0.55s ease, border-color 0.55s ease;
+  opacity: 1;
+  transition: border-color 0.4s ease;
 }
 
 .product-features li.is-lit {
-  opacity: 1;
   border-top-color: var(--green);
 }
 
@@ -684,8 +718,8 @@ a.nav-logo {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 8px;
-  color: var(--text-muted);
-  transition: color 0.55s ease;
+  color: var(--text-sec);
+  transition: color 0.4s ease;
 }
 
 .product-features li.is-lit h3 {
@@ -695,17 +729,23 @@ a.nav-logo {
 .product-features p {
   color: var(--text-sec);
   font-size: 16px;
+  transition: color 0.4s ease;
+}
+
+.product-features li.is-lit p {
+  color: var(--text);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .product-features li {
-    opacity: 1;
+  .product-features li,
+  .product-features h3,
+  .product-features p {
     transition: none;
   }
 
-  .product-features h3 {
+  .product-features h3,
+  .product-features p {
     color: var(--text);
-    transition: none;
   }
 }
 
@@ -1113,11 +1153,26 @@ a.nav-logo {
     padding: calc(var(--nav-h) + 12px) var(--gutter) 32px;
   }
 
+  .hero-copy {
+    order: 0;
+  }
+
   .hero-visual {
-    order: -1;
+    order: 1;
     min-height: 0;
     padding: 0;
-    margin: 0 0 8px;
+    margin: 16px 0 0;
+  }
+
+  .nav-links-cta {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 8px;
+  }
+
+  .nav-cta {
+    font-size: 16px !important;
+    min-height: 48px;
   }
 
   .hero-brand {

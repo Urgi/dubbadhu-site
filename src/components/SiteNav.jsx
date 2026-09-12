@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { prefersAndroidStore } from "../config/appLinks.js";
 import AppStoreLink from "./AppStoreLink.jsx";
+import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const LINKS = [
   { href: "#product", label: "App" },
@@ -9,9 +11,19 @@ const LINKS = [
   { href: "/about/", label: "About" },
 ];
 
+function isHomePath() {
+  const path = window.location.pathname.replace(/\/index\.html$/, "/") || "/";
+  return path === "/";
+}
+
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [androidFirst, setAndroidFirst] = useState(false);
+
+  useEffect(() => {
+    setAndroidFirst(prefersAndroidStore());
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -31,13 +43,34 @@ export default function SiteNav() {
     setOpen(false);
   }
 
+  function goHome(e) {
+    closeMenu();
+    if (!isHomePath()) return;
+    e.preventDefault();
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }
+
+  const storeLinks = androidFirst
+    ? [
+        { key: "play", Link: PlayStoreLink, label: "Play", extraClass: "" },
+        { key: "ios", Link: AppStoreLink, label: "App Store", extraClass: " nav-cta--secondary" },
+      ]
+    : [
+        { key: "ios", Link: AppStoreLink, label: "App Store", extraClass: "" },
+        { key: "play", Link: PlayStoreLink, label: "Play", extraClass: " nav-cta--secondary" },
+      ];
+
   return (
-    <header className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
+    <header id="top" className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
       <a href="#main" className="skip-link">
         Skip to content
       </a>
       <nav className="site-nav" aria-label="Primary">
-        <a href="./" className="nav-logo" onClick={closeMenu}>
+        <a href="/" className="nav-logo" aria-label="Dubbadhu home" onClick={goHome}>
           <img
             className="nav-logo-mark"
             src="/assets/talking.png"
@@ -69,9 +102,11 @@ export default function SiteNav() {
               </li>
             ))}
             <li className="nav-links-cta">
-              <AppStoreLink className="nav-cta" onClick={closeMenu}>
-                Download
-              </AppStoreLink>
+              {storeLinks.map(({ key, Link, label, extraClass }) => (
+                <Link key={key} className={`nav-cta${extraClass}`} onClick={closeMenu}>
+                  {label}
+                </Link>
+              ))}
             </li>
           </ul>
         </div>

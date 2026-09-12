@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import useReveal from "../hooks/useReveal.js";
+import { useEffect, useRef, useState } from "react";
 import { PAYWALL_TAGLINE } from "../config/productOffers.js";
 import { PRODUCT_FEATURES, PRODUCT_SCREENS } from "../config/homeCopy.js";
 
-const FEATURE_HOLD_MS = 2800;
+const FEATURE_HOLD_MS = 3200;
 
 export default function ProductSection() {
-  const ref = useReveal();
+  const ref = useRef(null);
   const [activeFeature, setActiveFeature] = useState(0);
 
   useEffect(() => {
@@ -38,17 +37,17 @@ export default function ProductSection() {
         if (entry.isIntersecting) start();
         else stop();
       },
-      { threshold: 0.28 }
+      { threshold: 0, rootMargin: "80px 0px 80px 0px" }
     );
     observer.observe(node);
     return () => {
       observer.disconnect();
       stop();
     };
-  }, [ref]);
+  }, []);
 
   return (
-    <section className="product reveal" id="product" ref={ref} aria-labelledby="product-heading">
+    <section className="product" id="product" ref={ref} aria-labelledby="product-heading">
       <div className="product-split">
         <div className="product-copy">
           <p className="section-label">Inside the app</p>
