@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { prefersAndroidStore } from "../config/appLinks.js";
 import AppStoreLink from "./AppStoreLink.jsx";
 import PlayStoreLink from "./PlayStoreLink.jsx";
 
@@ -19,11 +18,6 @@ function isHomePath() {
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [androidFirst, setAndroidFirst] = useState(false);
-
-  useEffect(() => {
-    setAndroidFirst(prefersAndroidStore());
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -53,16 +47,6 @@ export default function SiteNav() {
       history.replaceState(null, "", window.location.pathname + window.location.search);
     }
   }
-
-  const storeLinks = androidFirst
-    ? [
-        { key: "play", Link: PlayStoreLink, label: "Play", extraClass: "" },
-        { key: "ios", Link: AppStoreLink, label: "App Store", extraClass: " nav-cta--secondary" },
-      ]
-    : [
-        { key: "ios", Link: AppStoreLink, label: "App Store", extraClass: "" },
-        { key: "play", Link: PlayStoreLink, label: "Play", extraClass: " nav-cta--secondary" },
-      ];
 
   return (
     <header id="top" className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
@@ -102,11 +86,12 @@ export default function SiteNav() {
               </li>
             ))}
             <li className="nav-links-cta">
-              {storeLinks.map(({ key, Link, label, extraClass }) => (
-                <Link key={key} className={`nav-cta${extraClass}`} onClick={closeMenu}>
-                  {label}
-                </Link>
-              ))}
+              <AppStoreLink className="nav-cta" onClick={closeMenu}>
+                App Store
+              </AppStoreLink>
+              <PlayStoreLink className="nav-cta nav-cta--secondary" onClick={closeMenu}>
+                Play
+              </PlayStoreLink>
             </li>
           </ul>
         </div>
