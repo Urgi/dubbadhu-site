@@ -9,3 +9,6 @@ export const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.afaanllc.dubbadhu";
 
 export const PLAY_STORE_LABEL = "Get it on Google Play";
+
+export const APP_STORE_REVIEWS_URL =
+  "https://apps.apple.com/us/app/dubbadhu-learn-afaan-oromo/id6765779408?see-all=reviews";

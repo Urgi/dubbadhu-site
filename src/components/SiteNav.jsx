@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const LINKS = [
-  { href: "#offers", label: "Offers" },
-  { href: "#languages", label: "Languages" },
-  { href: "#curriculum", label: "Curriculum" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#product", label: "App" },
+  { href: "#ethiopia", label: "Content" },
+  { href: "#mission", label: "Languages" },
+  { href: "#reviews", label: "Reviews" },
   { href: "/about/", label: "About" },
 ];
 
@@ -46,9 +45,7 @@ export default function SiteNav() {
             width={36}
             height={36}
           />
-          <span className="nav-logo-text">
-            Dubbadhu<span className="nav-logo-dot">.</span>
-          </span>
+          <span className="nav-logo-text">Dubbadhu</span>
         </a>
 
         <button
@@ -73,11 +70,8 @@ export default function SiteNav() {
             ))}
             <li className="nav-links-cta">
               <AppStoreLink className="nav-cta" onClick={closeMenu}>
-                App Store
+                Download
               </AppStoreLink>
-              <PlayStoreLink className="nav-cta nav-cta--play" onClick={closeMenu}>
-                Google Play
-              </PlayStoreLink>
             </li>
           </ul>
         </div>

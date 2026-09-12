@@ -1,33 +1,31 @@
 import { useEffect, useState } from "react";
-import { fetchTodayWordOfTheDay, wordOfTheDayDateLabel } from "../lib/wordOfTheDay.js";
-import { HERO_BULLETS, HERO_EYEBROW, HERO_HEADLINE, HERO_LEDE } from "../config/homeCopy.js";
+import { fetchTodayWordOfTheDay } from "../lib/wordOfTheDay.js";
+import {
+  APP_STORE_REVIEWS,
+  APP_STORE_TRUST,
+  FEATURED_REVIEW,
+  HERO_EYEBROW,
+  HERO_HEADLINE,
+  HERO_LEDE,
+  HERO_SUPPORT,
+} from "../config/homeCopy.js";
+import { APP_STORE_REVIEWS_URL } from "../config/appLinks.js";
 import AppStoreLink from "./AppStoreLink.jsx";
 import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const FALLBACK_WOTD = {
   oromo: "Akkam jirta?",
   english: "How are you?",
-  partOfSpeech: "phrase",
-  example: "",
 };
 
-function formatPos(pos) {
-  const p = (pos || "").trim();
-  if (!p) return "";
-  const lower = p.toLowerCase();
-  const abbr = {
-    noun: "n.",
-    verb: "v.",
-    adjective: "adj.",
-    adverb: "adv.",
-    phrase: "phr.",
-    interjection: "interj.",
-  };
-  return abbr[lower] || (p.length <= 6 ? `${p}.` : p);
-}
+const HERO_REVIEWS = [FEATURED_REVIEW, ...APP_STORE_REVIEWS];
+const HOLD_MS = 6400;
+const FADE_MS = 520;
 
 export default function Hero() {
   const [wotd, setWotd] = useState(null);
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -39,74 +37,85 @@ export default function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    if (HERO_REVIEWS.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let fadeTimer = 0;
+    const tick = window.setInterval(() => {
+      setVisible(false);
+      fadeTimer = window.setTimeout(() => {
+        setIndex((current) => (current + 1) % HERO_REVIEWS.length);
+        setVisible(true);
+      }, FADE_MS);
+    }, HOLD_MS);
+
+    return () => {
+      window.clearInterval(tick);
+      window.clearTimeout(fadeTimer);
+    };
+  }, []);
+
   const word = wotd ?? FALLBACK_WOTD;
-  const pos = formatPos(word.partOfSpeech);
+  const review = HERO_REVIEWS[index];
 
   return (
-    <section className="product-hero" aria-labelledby="hero-heading">
-      <div className="product-hero-bg" aria-hidden="true">
-        <div className="product-hero-gradient" />
-        <div className="product-hero-grid" />
+    <section className="hero" aria-labelledby="hero-heading">
+      <div className="hero-copy">
+        <p className="hero-eyebrow">{HERO_EYEBROW}</p>
+        <h1 id="hero-heading">{HERO_HEADLINE}</h1>
+        <p className="hero-lede">{HERO_LEDE}</p>
+        <p className="hero-support">{HERO_SUPPORT}</p>
+        <p className="hero-wotd">
+          Today · {word.oromo} — {word.english}
+        </p>
+        <div className="hero-actions">
+          <AppStoreLink className="btn btn-primary" />
+          <PlayStoreLink className="btn btn-secondary" />
+        </div>
       </div>
 
-      <div className="product-hero-inner">
-        <div className="product-hero-copy">
-          <p className="product-hero-eyebrow">{HERO_EYEBROW}</p>
-          <h1 id="hero-heading">{HERO_HEADLINE}</h1>
-          <p className="product-hero-lede">{HERO_LEDE}</p>
-          <ul className="product-hero-bullets">
-            {HERO_BULLETS.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <div className="product-hero-actions">
-            <AppStoreLink />
-            <PlayStoreLink className="btn btn-secondary" />
-            <a href="#curriculum" className="btn btn-secondary">
-              Explore curriculum
-            </a>
-          </div>
+      <div className="hero-visual">
+        <div className="hero-brand">
+          <div className="hero-brand-ring hero-brand-ring--outer" aria-hidden="true" />
+          <div className="hero-brand-ring hero-brand-ring--mid" aria-hidden="true" />
+          <img
+            className="hero-logo"
+            src="/assets/talking.png"
+            alt="Dubbadhu logo: two speakers, one sending a voice signal."
+            width={420}
+            height={420}
+          />
         </div>
 
-        <aside className="product-hero-aside" aria-label="Word of the day">
-          <div className="hero-card">
-            <div className="hero-card-top">
-              <img
-                className="hero-card-logo"
-                src="/assets/talking.png"
-                alt=""
-                width={40}
-                height={40}
-              />
-              <div>
-                <div className="hero-card-app">Dubbadhu</div>
-                <div className="hero-card-series">Afaan Oromo · Vocabulary</div>
-              </div>
-            </div>
-
-            <article className="hero-card-dict" aria-live="polite">
-              <div className="hero-card-dict-head">
-                <p className="hero-card-label">Word of the day</p>
-                <time className="hero-card-date" dateTime={new Date().toISOString().slice(0, 10)}>
-                  {wordOfTheDayDateLabel()}
-                </time>
-              </div>
-              <div className="hero-card-headword-row">
-                <h3 className="hero-card-headword">{word.oromo}</h3>
-                {pos ? <span className="hero-card-pos">{pos}</span> : null}
-              </div>
-              <p className="hero-card-def">{word.english}</p>
-              {word.example ? (
-                <p className="hero-card-example">&ldquo;{word.example}&rdquo;</p>
-              ) : null}
-            </article>
+        <figure className="hero-review">
+          <span className="hero-review-stars" aria-hidden="true">
+            ★★★★★
+          </span>
+          <div
+            className={`hero-review-swap${visible ? " is-in" : ""}`}
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <blockquote>
+              <p>“{review.quote}”</p>
+            </blockquote>
+            <figcaption>
+              <strong>{review.name}</strong>
+            </figcaption>
           </div>
-          <div className="hero-card-glow" aria-hidden="true" />
-        </aside>
-      </div>
-
-      <div className="product-hero-scroll" aria-hidden="true">
-        <span>Scroll to explore</span>
+          <p className="hero-review-meta">
+            App Store · {APP_STORE_TRUST.ratingValue.toFixed(1)} from {APP_STORE_TRUST.ratingCount} ratings
+          </p>
+          <a
+            className="hero-review-link"
+            href={APP_STORE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read reviews
+          </a>
+        </figure>
       </div>
     </section>
   );

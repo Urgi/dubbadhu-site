@@ -1,15 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@300;400;500;600&display=swap");
+
 /* Dubbadhu legal pages — aligned with main site tokens & typography (standalone HTML). */
 :root {
-  --bg: #070f0a;
-  --bg2: #0c1810;
-  --bg3: #111e14;
-  --green: #2db27d;
-  --green-dim: rgba(45, 178, 125, 0.12);
-  --gold: #c9973a;
-  --text: #ede9e0;
-  --text-sec: #8a9e8e;
-  --text-muted: #3d5242;
-  --border: rgba(255, 255, 255, 0.07);
+  --bg: #000000;
+  --bg2: #000000;
+  --bg3: #0a0a0a;
+  --green: #5ecf6e;
+  --green-dim: rgba(94, 207, 110, 0.14);
+  --gold: #ffffff;
+  --text: #ffffff;
+  --text-sec: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.48);
+  --border: rgba(255, 255, 255, 0.14);
 }
 
 *,
@@ -27,7 +29,7 @@ html {
 body.legal-body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "Barlow", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.65;
@@ -36,14 +38,7 @@ body.legal-body {
 }
 
 body.legal-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(ellipse 55% 45% at 50% 18%, rgba(45, 178, 125, 0.06) 0%, transparent 65%),
-    radial-gradient(ellipse 35% 28% at 85% 75%, rgba(201, 151, 58, 0.04) 0%, transparent 55%);
+  display: none;
 }
 
 /* — Nav (matches main site nav treatment) — */
@@ -57,9 +52,7 @@ body.legal-body::before {
   justify-content: space-between;
   align-items: center;
   padding: 20px 48px;
-  background: rgba(7, 15, 10, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #000;
   border-bottom: 1px solid var(--border);
 }
 
@@ -67,11 +60,12 @@ body.legal-body::before {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -94,12 +88,14 @@ body.legal-body::before {
 }
 
 .legal-nav-links a {
-  color: var(--text-sec);
+  color: #fff;
   text-decoration: none;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  transition: color 0.2s;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
 }
 
 .legal-nav-links a:hover {
@@ -107,8 +103,7 @@ body.legal-body::before {
 }
 
 .legal-nav-links a[aria-current='page'] {
-  color: var(--text);
-  font-weight: 500;
+  color: var(--green);
 }
 
 /* — Document — */
@@ -121,10 +116,12 @@ body.legal-body::before {
 }
 
 .legal-doc h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.85rem, 4.5vw, 2.35rem);
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(2.1rem, 6vw, 3.2rem);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 0.98;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   margin-bottom: 8px;
   color: var(--text);
 }
@@ -136,11 +133,9 @@ body.legal-body::before {
 }
 
 .legal-doc .intro {
-  background: var(--green-dim);
-  border: 1px solid rgba(45, 178, 125, 0.22);
-  border-left: 3px solid var(--green);
-  padding: 18px 22px;
-  border-radius: 0 10px 10px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
   margin-bottom: 40px;
   font-size: 15px;
   line-height: 1.65;
@@ -148,7 +143,7 @@ body.legal-body::before {
 }
 
 .legal-doc h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text);
@@ -161,7 +156,7 @@ body.legal-body::before {
 }
 
 .legal-doc h3.legal-h3 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "Barlow", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 600;
   color: var(--text);
@@ -249,13 +244,15 @@ body.legal-body::before {
   flex-wrap: wrap;
   gap: 16px;
   border-top: 1px solid var(--border);
-  background: rgba(7, 15, 10, 0.5);
+  background: #000;
 }
 
 .legal-footer-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--text);
 }
 
@@ -290,8 +287,14 @@ body.legal-body::before {
     padding: 16px 20px;
   }
 
+  .legal-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
   .legal-nav-links {
-    gap: 16px;
+    gap: 12px 16px;
+    flex-wrap: wrap;
   }
 
   .legal-doc {

@@ -8,15 +8,10 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer-inner">
         <div className="footer-brand">
-          <div className="footer-logo">
-            <img src="/assets/talking.png" alt="" width={28} height={28} />
-            <span>
-              Dubbadhu<span className="nav-logo-dot">.</span>
-            </span>
-          </div>
+          <div className="footer-logo">Dubbadhu</div>
           <p className="footer-tagline">
-            Afaan Oromo language learning on iOS &amp; Android. For the Horn and US diaspora. Amharic &amp;
-            Tigrinya coming next. SPEAK · LEARN · PRESERVE.
+            Afaan Oromo language learning on iOS &amp; Android. For the Horn and US diaspora.
+            Amharic &amp; Tigrinya coming next.
           </p>
         </div>
         <nav className="footer-nav" aria-label="Footer">

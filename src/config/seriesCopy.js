@@ -1,10 +1,16 @@
 /** Editorial copy for curriculum cards (keyed by lowercase title substring). */
 const BY_TITLE = [
   {
-    match: ["greeting", "hello", "salam"],
-    focus: "Everyday hellos & introductions",
-    blurb: "Start with high-frequency greetings and introductions used in everyday conversation.",
+    match: ["introduction", "origin", "greeting", "hello", "salam"],
+    focus: "Structured lessons",
+    blurb: "Video-led lessons with native speakers, pronunciation practice, and examples you can use in real conversation.",
     statusNote: "Foundational series",
+  },
+  {
+    match: ["work", "school"],
+    focus: "Structured lessons",
+    blurb: "Video-led lessons with native speakers, pronunciation practice, and examples you can use in real conversation.",
+    statusNote: "In the app",
   },
   {
     match: ["family", "home"],

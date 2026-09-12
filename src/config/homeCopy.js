@@ -1,72 +1,124 @@
-export const HERO_EYEBROW = "Dubbadhu · Afaan Oromo language learning";
+/**
+ * Homepage copy — tightened from About, Mission, and official listings.
+ * Do not invent slogans, ratings, or product claims here.
+ */
+
+export const HERO_EYEBROW = "Afaan Oromo · iOS & Android";
 
 export const HERO_HEADLINE = "Speak with Confidence";
 
 export const HERO_LEDE =
   "Native conversation and speaking practice for Afaan Oromo. Not flashcards.";
 
-export const HERO_BULLETS = [
-  "Speaking conversations validated by teachers in Oromia",
-  "Native-speaker conversation video + unlimited AI practice",
-  "For US and diaspora families retaining Afaan Oromo · Amharic & Tigrinya next",
+export const HERO_SUPPORT =
+  "For learners in Oromia and the Horn—and for US and diaspora families reconnecting with or retaining the language.";
+
+/** Verified 2026-09-12 from iTunes Lookup API, US storefront, trackId 6765779408. */
+export const APP_STORE_TRUST = {
+  ratingValue: 5,
+  ratingCount: 14,
+  storefront: "US",
+  storefrontLabel: "App Store (United States)",
+  retrieved: "2026-09-12",
+};
+
+export const FEATURED_REVIEW = {
+  name: "Mezmure T",
+  title: "Dubbadhu is amazing!!",
+  quote:
+    "As someone in the diaspora, Dubbadhu has been one of the best tools for learning Afaan Oromo. It's user-friendly, beautifully designed, and genuinely enjoyable to use, which makes it easy to stay consistent. The biggest impact has been my improved ability to communicate with family and friends and feel more connected to my culture.",
+  stars: 5,
+};
+
+/** Authentic US App Store reviews (iTunes customer review RSS, id 6765779408). Excerpts are contiguous. */
+export const APP_STORE_REVIEWS = [
+  {
+    name: "Ebenezer Yegezu",
+    title: "Best app in the game",
+    quote:
+      "I have one side of my family that speak Oromo. While at first, I didn’t know a single word. Now this app has given me a chance to connect with them!",
+    stars: 5,
+  },
+  {
+    name: "Nihalm24",
+    title: "Amazing learning tool!",
+    quote:
+      "The lessons are very well paced + the videos with real conversations is super different from other learning apps. 10/10 would recommend",
+    stars: 5,
+  },
+  {
+    name: "Lelise Aguma",
+    title: "Simple, Useful & Meaningful",
+    quote:
+      "I think this is especially valuable for those who were born and raised in the US and other countries and may not have had the opportunity to fully learn the language growing up. It’s a great way to reconnect with our language, culture, and heritage.",
+    stars: 5,
+  },
+  {
+    name: "Emu1818",
+    title: "EASY 5 STARS",
+    quote:
+      "You can tell it was created with a genuine passion for preserving language and culture. Lessons are super simple to navigate, engaging, and focused on real conversations.",
+    stars: 5,
+  },
 ];
 
-export const METRICS = [
+export const MISSION = {
+  label: "Why Dubbadhu exists",
+  title: "Dubbadhu means “speak” in Afaan Oromo",
+  lede:
+    "The brand promise is Speak with Confidence: native conversation and speaking practice, not flashcards.",
+  body:
+    "Dubbadhu is built for learners in Oromia and the Horn—and for US and diaspora families reconnecting with or retaining Afaan Oromo. Parents, children, and adults practice real conversation so they can speak with relatives, not memorize a deck of cards.",
+  welcome:
+    "Whether you are reconnecting with your roots, helping your children learn, or discovering Afaan Oromo for the first time, the app is built to help you speak with confidence.",
+  languages:
+    "Afaan Oromo is available now on iOS and Android. Amharic and Tigrinya are coming next, with more Horn and East African languages planned.",
+};
+
+export const PRODUCT_FEATURES = [
   {
-    value: "Native",
-    label: "Speaker video",
-    detail: "Conversation videos in every series",
+    title: "Teacher-validated in Oromia",
+    body: "Speaking conversations are validated by professional language teachers in Oromia.",
   },
   {
-    value: "iOS · Android",
-    label: "Available now",
-    detail: "Afaan Oromo on App Store & Google Play",
+    title: "Native-speaker conversation video",
+    body: "Learn from real conversation videos filmed with native speakers so you hear how Afaan Oromo is actually spoken.",
   },
   {
-    value: "Next",
-    label: "Amharic · Tigrinya",
-    detail: "Horn languages on the roadmap",
+    title: "Unlimited AI speaking practice",
+    body: "Premium unlocks unlimited AI practice and translate feedback so you can rehearse until you sound confident.",
+  },
+  {
+    title: "Vocabulary, quizzes, and discussions",
+    body: "Vocabulary audio, quizzes, and lesson discussions sit alongside the speaking path.",
   },
 ];
 
-export const EXPERIENCE_FEATURES = [
+export const PRODUCT_SCREENS = [
   {
-    value: "Teach",
-    title: "Teacher-validated conversations",
-    body: "All current and new speaking conversations, validated by professional language teachers in Oromia.",
+    src: "/assets/screens/screen-1.jpg",
+    alt: "App Store image: a speaker on a phone with the line Afaan Oromoo dubbadhu — Speak Afaan Oromo.",
   },
   {
-    value: "Video",
-    title: "Native-speaker video",
-    body: "Conversation videos from native speakers so you hear how Afaan Oromo is actually spoken.",
+    src: "/assets/screens/screen-4.jpg",
+    alt: "App Store image of a lesson explaining Galataa Waaqaa, a greeting of gratitude.",
   },
   {
-    value: "AI",
-    title: "Unlimited AI practice",
-    body: "Premium unlocks unlimited AI practice and translate feedback, plus vocabulary audio, quizzes, and lesson discussions.",
+    src: "/assets/screens/screen-5.jpg",
+    alt: "App Store image of the vocabulary list with Afaan Oromo greetings and audio.",
   },
 ];
 
-export const SUPPORT_CARDS = [
-  {
-    title: "Help center",
-    body: "Subscriptions, restore purchases, and common questions for iOS and Android—answered on our support page.",
-    href: "/support",
-    cta: "Visit support",
-  },
-  {
-    title: "Follow Dubbadhu",
-    body: "Product updates, roadmap news for Amharic and Tigrinya, and community posts on Instagram.",
-    href: "https://www.instagram.com/dubbadhu.app",
-    cta: "Instagram @dubbadhu.app",
-  },
-  {
-    title: "About the product",
-    body: "See what Premium includes, Free vs Premium, and why Dubbadhu is unique—same story as in the app.",
-    href: "/about",
-    cta: "Read about Dubbadhu",
-  },
-];
+export const COMPANY = {
+  label: "Afaan LLC",
+  title: "The company behind the app",
+  lede:
+    "Dubbadhu is the speaking-first Afaan Oromo language learning app from Afaan LLC.",
+  built:
+    "Dubbadhu was built by an Oromo software engineer working alongside native speakers, educators, and voice talent in Ethiopia to create a modern learning experience centered on the languages and cultures of East Africa.",
+  impact: "A portion of each subscription plan supports East Africa communities.",
+  address: ["Afaan LLC", "101 N First Ave, Suite 2325 #1087", "Phoenix, AZ 85003"],
+};
 
 export const FAQ_ITEMS = [
   {
