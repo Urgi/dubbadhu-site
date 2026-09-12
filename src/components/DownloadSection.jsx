@@ -44,8 +44,8 @@ export default function DownloadSection() {
           Speak with Confidence
         </h2>
         <p className="section-lede">
-          Afaan Oromo is on the App Store and Google Play. Download Dubbadhu and start with native
-          conversation—not flashcards.
+          Afaan Oromo is on the App Store and Google Play now. Amharic and Tigrinya are next.
+          Download and start with native conversation—not flashcards.
         </p>
         <div className="download-actions">
           <AppStoreLink className="btn btn-primary" />

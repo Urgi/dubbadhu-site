@@ -15,6 +15,9 @@ import { isValidEmail } from "./validateEmail.js";
 /** Upcoming languages collected by the homepage notify form (Afaan Oromo is already live). */
 export const UPCOMING_WAITLIST_LANGUAGES = ["Amharic", "Tigrinya"];
 
+/** Stored in waitlist_signups.language so class interest is separate from Amharic/Tigrinya. */
+export const ONLINE_CLASSES_WAITLIST = "Online classes";
+
 const rawIosLang = import.meta.env.VITE_WAITLIST_IOS_LANGUAGE;
 export const IOS_WEB_WAITLIST_LANGUAGE =
   typeof rawIosLang === "string" && rawIosLang.trim() ? rawIosLang.trim() : "Afaan Oromo";
@@ -98,5 +101,22 @@ export async function joinUpcomingLanguageWaitlist(email) {
     message: already
       ? `You're already on the waitlist for Amharic and Tigrinya. We'll notify you at ${trimmed} when they ship.`
       : `You're on the list for Amharic and Tigrinya. We'll notify you at ${trimmed} when they ship.`,
+  };
+}
+
+/** Homepage interest form for live online classes. */
+export async function joinOnlineClassesInterest(email) {
+  const trimmed = (email || "").trim();
+  const res = await joinWaitlist(trimmed, ONLINE_CLASSES_WAITLIST);
+  if (!res.ok) return res;
+  if (res.code === "already_on_list") {
+    return {
+      ...res,
+      message: `You're already on the interest list. We'll email ${trimmed} when online classes open.`,
+    };
+  }
+  return {
+    ...res,
+    message: `You're on the list. We'll email ${trimmed} when online classes open.`,
   };
 }

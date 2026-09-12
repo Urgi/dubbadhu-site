@@ -17,7 +17,7 @@ export default function OffersSection() {
           id="offers-heading"
           label="What you get with Dubbadhu"
           title={PAYWALL_TAGLINE}
-          lede={`${PAYWALL_COMMUNITY_IMPACT}. Speaking-first Afaan Oromo—native conversation, not flashcards—on iOS and Android today, with Amharic and Tigrinya coming next.`}
+          lede={`${PAYWALL_COMMUNITY_IMPACT}. Speaking-first African languages—native conversation, not flashcards. Amharic and Tigrinya are next.`}
         />
 
         <ul className="offers-benefits">

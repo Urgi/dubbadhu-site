@@ -25,7 +25,7 @@ export const WHY_UNIQUE = [
   },
   {
     title: "Native-speaker conversation video",
-    body: "Learn from real conversation videos filmed with native speakers so you hear how Afaan Oromo is actually spoken.",
+    body: "Learn from real conversation videos filmed with native speakers so you hear how the language is actually spoken.",
   },
   {
     title: "Unlimited AI speaking practice",
@@ -33,7 +33,7 @@ export const WHY_UNIQUE = [
   },
   {
     title: "Built for the Horn",
-    body: "Dubbadhu starts with Afaan Oromo on iOS and Android, with Amharic and Tigrinya coming next. Built for the Horn—and for US and diaspora families retaining the language.",
+    body: "Dubbadhu is built for African languages on iOS and Android. Amharic and Tigrinya are next. For the Horn—and for diaspora families retaining their language.",
   },
   {
     title: "Mission-backed learning",

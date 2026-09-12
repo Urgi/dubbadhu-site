@@ -33,8 +33,7 @@ export default function LanguagesSection() {
           Dubbadhu means “speak”
         </h2>
         <p className="languages-lede">
-          Speak with Confidence: native conversation, not flashcards. Afaan Oromo is on iOS and
-          Android now. Amharic and Tigrinya are next.
+          Horn and East African languages on iOS and Android. Amharic and Tigrinya are next.
         </p>
 
         <ul className="languages-roadmap languages-roadmap--stack" aria-label="Language availability">

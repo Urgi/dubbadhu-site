@@ -3,15 +3,15 @@
  * Do not invent slogans, ratings, or product claims here.
  */
 
-export const HERO_EYEBROW = "Afaan Oromo · iOS & Android";
+export const HERO_EYEBROW = "African Languages · App Store · Play Store";
 
 export const HERO_HEADLINE = "Speak with Confidence";
 
 export const HERO_LEDE =
-  "Native conversation and speaking practice for Afaan Oromo. Not flashcards.";
+  "Native conversation and speaking practice for African languages. Not flashcards.";
 
 export const HERO_SUPPORT =
-  "For learners in Oromia and the Horn—and for US and diaspora families reconnecting with or retaining the language.";
+  "For learners in the Horn—and for diaspora families reconnecting with or retaining their language. Amharic and Tigrinya are next.";
 
 /** Verified 2026-09-12 from iTunes Lookup API, US storefront, trackId 6765779408. */
 export const APP_STORE_TRUST = {
@@ -68,9 +68,9 @@ export const MISSION = {
   lede:
     "The brand promise is Speak with Confidence: native conversation and speaking practice, not flashcards.",
   body:
-    "Dubbadhu is built for learners in Oromia and the Horn—and for US and diaspora families reconnecting with or retaining Afaan Oromo. Parents, children, and adults practice real conversation so they can speak with relatives, not memorize a deck of cards.",
+    "Dubbadhu is built for learners in the Horn—and for diaspora families reconnecting with or retaining their languages. Parents, children, and adults practice real conversation so they can speak with relatives, not memorize a deck of cards.",
   welcome:
-    "Whether you are reconnecting with your roots, helping your children learn, or discovering Afaan Oromo for the first time, the app is built to help you speak with confidence.",
+    "Whether you are reconnecting with your roots, helping your children learn, or discovering a Horn language for the first time, the app is built to help you speak with confidence.",
   languages:
     "Afaan Oromo is available now on iOS and Android. Amharic and Tigrinya are coming next, with more Horn and East African languages planned.",
 };
@@ -82,7 +82,7 @@ export const PRODUCT_FEATURES = [
   },
   {
     title: "Native-speaker conversation video",
-    body: "Learn from real conversation videos filmed with native speakers so you hear how Afaan Oromo is actually spoken.",
+    body: "Learn from real conversation videos filmed with native speakers so you hear how the language is actually spoken.",
   },
   {
     title: "Unlimited AI speaking practice",
@@ -113,7 +113,7 @@ export const COMPANY = {
   label: "Afaan LLC",
   title: "The company behind the app",
   lede:
-    "Dubbadhu is the speaking-first Afaan Oromo language learning app from Afaan LLC.",
+    "Dubbadhu is the speaking-first language learning app from Afaan LLC for African languages.",
   built:
     "Dubbadhu was built by an Oromo software engineer working alongside native speakers, educators, and voice talent in Ethiopia to create a modern learning experience centered on the languages and cultures of East Africa.",
   impact: "A portion of each subscription plan supports East Africa communities.",
@@ -126,12 +126,12 @@ export const FAQ_ITEMS = [
     a: "Full access to every speaking conversation—current and new releases. That means all teacher-validated speaking conversations from Oromia, conversation videos from native speakers, unlimited AI practice and translate feedback, plus vocabulary audio, quizzes, and lesson discussions. A portion of each plan supports East Africa communities.",
   },
   {
-    q: "Why is Dubbadhu unique for Afaan Oromo?",
-    a: "Dubbadhu is speaking-first: native conversation and speaking practice, not flashcards. Content is validated by professional language teachers in Oromia, with native-speaker conversation video and unlimited AI practice on Premium. It is built for the Horn—and for US and diaspora families retaining Afaan Oromo—with Amharic and Tigrinya coming next.",
+    q: "Why is Dubbadhu unique?",
+    a: "Dubbadhu is speaking-first: native conversation and speaking practice, not flashcards. It is built for African languages—and for diaspora families retaining them. Content is validated by professional language teachers in Oromia. Amharic and Tigrinya are next.",
   },
   {
     q: "Who is Dubbadhu for?",
-    a: "Learners who want to speak Afaan Oromo with confidence: people in Oromia and the Horn, and US and diaspora families reconnecting with or retaining the language. Download on iOS or Android.",
+    a: "Learners who want to speak Horn languages with confidence: people in the Horn, and diaspora families reconnecting with or retaining their language. Afaan Oromo is on iOS and Android now.",
   },
   {
     q: "Which languages are available?",
@@ -144,5 +144,9 @@ export const FAQ_ITEMS = [
   {
     q: "Where can I find Dubbadhu online?",
     a: "Website: dubbadhu.com. Instagram and TikTok: @dubbadhu.app. App Store and Google Play: search Dubbadhu. Support: support@afaantech.com.",
+  },
+  {
+    q: "Do you offer online classes?",
+    a: "The app is available now for daily speaking practice. Register interest on this site for online classes and we’ll email you when they open.",
   },
 ];

@@ -3,9 +3,9 @@ import AppStoreLink from "./AppStoreLink.jsx";
 
 const LINKS = [
   { href: "#product", label: "App" },
-  { href: "#ethiopia", label: "Content" },
   { href: "#mission", label: "Languages" },
   { href: "#reviews", label: "Reviews" },
+  { href: "#classes", label: "Classes" },
   { href: "/about/", label: "About" },
 ];
 

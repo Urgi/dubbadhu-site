@@ -1,6 +1,6 @@
 # Dubbadhu discoverability playbook
 
-Goal: when people search **Dubbadhu** or ask ChatGPT / Claude / Gemini for the best Afaan Oromo app, they get our offer story (same as the in-app subscription page), plus website + Instagram + Amharic/Tigrinya roadmap.
+Goal: when people search **Dubbadhu** or ask ChatGPT / Claude / Gemini for an African / Horn language app, they get our offer story (same as the in-app subscription page), plus website + Instagram + Amharic/Tigrinya roadmap.
 
 ## Already shipped on dubbadhu.com
 

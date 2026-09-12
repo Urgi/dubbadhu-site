@@ -295,36 +295,40 @@ a.nav-logo {
   min-height: 100vh;
   min-height: 100svh;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.7fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: clamp(32px, 6vw, 80px);
+  gap: clamp(16px, 3vw, 40px);
   overflow: hidden;
   background:
-    radial-gradient(ellipse 50% 45% at 78% 48%, var(--green-dim) 0%, transparent 62%),
+    radial-gradient(ellipse 58% 70% at 78% 50%, rgba(94, 207, 110, 0.16) 0%, transparent 64%),
     #000;
-  padding: calc(var(--nav-h) + 32px) var(--gutter) 72px;
+  padding: calc(var(--nav-h) + 24px) 0 24px var(--gutter);
 }
 
 .hero-copy {
   position: relative;
-  z-index: 1;
-  width: min(760px, 100%);
+  z-index: 2;
+  width: min(640px, 100%);
+  padding-right: 12px;
 }
 
 .hero-visual {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: min(380px, 100%);
-  margin-left: 0;
-  justify-self: start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  min-height: calc(100svh - var(--nav-h) - 24px);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: end;
+  justify-items: center;
+  padding: 0 var(--gutter) 28px 0;
 }
 
 .hero-brand {
   position: relative;
-  width: min(260px, 68%);
+  align-self: center;
+  width: min(56vh, 72%);
+  max-width: 560px;
   aspect-ratio: 1;
   margin: 0;
   display: grid;
@@ -406,7 +410,10 @@ a.nav-logo {
 }
 
 .hero-review {
-  width: 100%;
+  position: relative;
+  z-index: 2;
+  width: min(420px, 100%);
+  margin: 0;
   text-align: center;
 }
 
@@ -480,6 +487,7 @@ a.nav-logo {
 .reviews--split,
 .company--split,
 .download--split,
+.classes--split,
 .faq--split,
 .product-split {
   display: grid;
@@ -794,6 +802,22 @@ a.nav-logo {
   font-size: 18px;
 }
 
+/* Online classes */
+.classes {
+  padding: var(--pad) var(--gutter);
+  border-top: 1px solid var(--border);
+  background: var(--bg-raise);
+}
+
+.classes--split {
+  align-items: center;
+}
+
+.classes-copy,
+.classes .download-form {
+  min-width: 0;
+}
+
 /* Download */
 .download {
   padding: var(--pad) var(--gutter);
@@ -1029,6 +1053,7 @@ a.nav-logo {
   .reviews--split,
   .company--split,
   .download--split,
+  .classes--split,
   .faq--split,
   .product-split {
     grid-template-columns: 1fr;
@@ -1085,20 +1110,22 @@ a.nav-logo {
 
   .hero {
     grid-template-columns: 1fr;
-    padding-top: calc(var(--nav-h) + 16px);
+    padding: calc(var(--nav-h) + 12px) var(--gutter) 32px;
   }
 
   .hero-visual {
     order: -1;
-    margin: 0 auto 8px;
+    min-height: 0;
+    padding: 0;
+    margin: 0 0 8px;
   }
 
   .hero-brand {
-    width: min(200px, 52vw);
+    width: min(42vw, 220px);
   }
 
   .hero-review {
-    min-height: 0;
+    width: 100%;
   }
 }
 

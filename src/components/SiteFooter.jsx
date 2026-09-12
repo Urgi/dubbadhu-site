@@ -10,14 +10,15 @@ export default function SiteFooter() {
         <div className="footer-brand">
           <div className="footer-logo">Dubbadhu</div>
           <p className="footer-tagline">
-            Afaan Oromo language learning on iOS &amp; Android. For the Horn and US diaspora.
-            Amharic &amp; Tigrinya coming next.
+            African language learning on iOS &amp; Android. For the Horn and diaspora. Amharic &amp;
+            Tigrinya coming next.
           </p>
         </div>
         <nav className="footer-nav" aria-label="Footer">
           <a href="/about/">About</a>
           <a href="/afaan-oromo/">Afaan Oromo</a>
           <a href="/languages/">Languages</a>
+          <a href="/#classes">Online classes</a>
           <a href="/support/">Support</a>
           <a href="/delete-account/">Delete account</a>
           <a href="/privacy/">Privacy</a>
