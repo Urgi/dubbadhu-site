@@ -6,6 +6,7 @@ const LINKS = [
   { href: "#product", label: "App" },
   { href: "#mission", label: "Languages" },
   { href: "#classes", label: "Classes" },
+  { href: "#careers", label: "Team" },
   { href: "/about/", label: "About" },
 ];
 

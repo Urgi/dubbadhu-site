@@ -149,4 +149,8 @@ export const FAQ_ITEMS = [
     q: "Do you offer online classes?",
     a: "The app is available now for daily speaking practice. Register interest on this site for online classes and we’ll email you when they open.",
   },
+  {
+    q: "Are you hiring?",
+    a: "Yes. We have openings for an Amharic language professional, a Tigrinya language professional, a language professional, a project manager, and a social media manager. Apply on this site with your resume and why you’re a good fit.",
+  },
 ];

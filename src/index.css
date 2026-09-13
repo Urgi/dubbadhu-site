@@ -837,6 +837,218 @@ a.nav-logo {
   min-width: 0;
 }
 
+.careers {
+  padding: var(--pad) var(--gutter);
+  border-top: 1px solid var(--border);
+  background: var(--bg-raise);
+}
+
+.careers-steps {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 28px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.careers-steps li.is-current {
+  color: var(--green);
+}
+
+.careers-panel {
+  max-width: 52rem;
+}
+
+.careers-panel--apply {
+  max-width: 36rem;
+}
+
+.careers-tracks {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 32px 0 36px;
+}
+
+.careers-tracks li {
+  padding: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.careers-tracks h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.careers-tracks p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-sec);
+}
+
+.careers-roles {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0 20px;
+}
+
+.careers-back {
+  display: inline-block;
+  margin: 8px 0 28px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.careers-back:hover {
+  color: var(--text);
+}
+
+.careers-role {
+  width: 100%;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  color: inherit;
+  padding: 18px 18px 16px;
+  cursor: pointer;
+}
+
+.careers-role:hover,
+.careers-role--selected {
+  border-color: rgba(94, 207, 110, 0.5);
+}
+
+.careers-role-kicker {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.careers-role h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.careers-role p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-sec);
+}
+
+.careers-role-cta {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.careers-form {
+  min-width: 0;
+}
+
+.careers-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--text-sec);
+}
+
+.careers-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.careers-field-row .careers-field:only-child {
+  grid-column: 1 / -1;
+}
+
+.careers-form input,
+.careers-form select,
+.careers-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  color: var(--text);
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+
+.careers-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.careers-form input:focus,
+.careers-form select:focus,
+.careers-form textarea:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.careers-form select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
+    linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.careers-file {
+  position: relative;
+  cursor: pointer;
+}
+
+.careers-file input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.careers-file-name {
+  display: block;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  padding: 14px 16px;
+  color: var(--text-muted);
+}
+
+.careers-file:hover .careers-file-name,
+.careers-file:focus-within .careers-file-name {
+  border-color: var(--green);
+}
+
 /* Download */
 .download {
   padding: var(--pad) var(--gutter);
@@ -994,14 +1206,15 @@ a.nav-logo {
 
 /* Footer */
 .site-footer {
-  padding: 40px var(--gutter) 48px;
+  padding: 56px var(--gutter) 40px;
   border-top: 1px solid var(--border);
 }
 
 .site-footer-inner {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 20px 32px;
+  grid-template-columns: minmax(16rem, 1.1fr) minmax(0, 2fr);
+  gap: 40px 64px;
+  align-items: start;
 }
 
 .footer-logo {
@@ -1010,27 +1223,44 @@ a.nav-logo {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .footer-tagline {
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.55;
   color: var(--text-muted);
   max-width: 28rem;
 }
 
 .footer-nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 24px;
+  justify-content: stretch;
+}
+
+.footer-col {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px 22px;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-col-label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
 }
 
 .footer-nav a {
-  font-family: var(--font-display);
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--text-sec);
   text-decoration: none;
 }
@@ -1043,7 +1273,8 @@ a.nav-logo {
   grid-column: 1 / -1;
   font-size: 13px;
   color: var(--text-muted);
-  padding-top: 8px;
+  padding-top: 24px;
+  margin-top: 8px;
   border-top: 1px solid var(--border);
 }
 
@@ -1075,6 +1306,12 @@ a.nav-logo {
   .classes--split,
   .faq--split,
   .product-split {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-field-row,
+  .careers-tracks,
+  .careers-roles {
     grid-template-columns: 1fr;
   }
 
@@ -1189,10 +1426,12 @@ a.nav-logo {
 
   .site-footer-inner {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .footer-nav {
-    justify-content: flex-start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
   }
 }
 
