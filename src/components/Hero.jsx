@@ -11,8 +11,6 @@ import {
 } from "../config/homeCopy.js";
 import { APP_STORE_REVIEWS_URL } from "../config/appLinks.js";
 import { displayReviewerName } from "../lib/reviewerName.js";
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const FALLBACK_WOTD = {
   oromo: "Akkam jirta?",
@@ -70,29 +68,22 @@ export default function Hero() {
         <p className="hero-wotd">
           Today · {word.oromo} — {word.english}
         </p>
-        <div className="hero-actions">
-          <AppStoreLink className="btn btn-primary" />
-          <PlayStoreLink className="btn btn-secondary" />
-        </div>
       </div>
 
       <div className="hero-visual">
-        <div className="hero-brand">
-          <div className="hero-brand-ring hero-brand-ring--outer" aria-hidden="true" />
-          <div className="hero-brand-ring hero-brand-ring--mid" aria-hidden="true" />
-          <img
-            className="hero-logo"
-            src="/assets/talking.png"
-            alt="Dubbadhu logo: two speakers, one sending a voice signal."
-            width={420}
-            height={420}
-          />
-        </div>
-
         <figure className="hero-review">
-          <span className="hero-review-stars" aria-hidden="true">
-            ★★★★★
-          </span>
+          <div className="hero-review-brand">
+            <img
+              className="hero-review-logo"
+              src="/assets/talking.png"
+              alt="Dubbadhu"
+              width={160}
+              height={160}
+            />
+            <span className="hero-review-stars" aria-hidden="true">
+              ★★★★★
+            </span>
+          </div>
           <div
             className={`hero-review-swap${visible ? " is-in" : ""}`}
             aria-live="polite"

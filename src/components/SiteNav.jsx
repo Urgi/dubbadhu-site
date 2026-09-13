@@ -5,7 +5,6 @@ import PlayStoreLink from "./PlayStoreLink.jsx";
 const LINKS = [
   { href: "#product", label: "App" },
   { href: "#mission", label: "Languages" },
-  { href: "#reviews", label: "Reviews" },
   { href: "#classes", label: "Classes" },
   { href: "/about/", label: "About" },
 ];

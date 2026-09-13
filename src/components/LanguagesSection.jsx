@@ -40,7 +40,7 @@ export default function LanguagesSection() {
           {ROADMAP.map((item) => (
             <li key={item.status} className={`languages-roadmap-item languages-roadmap-item--${item.tone}`}>
               <span className={`roadmap-badge roadmap-badge--${item.tone}`}>{item.status}</span>
-              <span>
+              <span className="languages-roadmap-text">
                 <span className="languages-roadmap-label">{item.label}</span>
                 <span className="languages-roadmap-detail">{item.detail}</span>
               </span>
@@ -50,7 +50,9 @@ export default function LanguagesSection() {
       </div>
 
       <div id="country-picker-root" className="country-picker languages-map" aria-label="Regional language picker">
-        <EastAfricaPicker />
+        <div className="languages-map-card">
+          <EastAfricaPicker />
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { PAYWALL_TAGLINE } from "../config/productOffers.js";
 import { PRODUCT_FEATURES, PRODUCT_SCREENS } from "../config/homeCopy.js";
+import AppStoreLink from "./AppStoreLink.jsx";
+import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const FEATURE_HOLD_MS = 3200;
 
@@ -57,6 +59,10 @@ export default function ProductSection() {
           <p className="section-lede">
             {PAYWALL_TAGLINE}. Premium includes native-speaker video and unlimited AI practice.
           </p>
+          <div className="hero-actions">
+            <AppStoreLink className="btn btn-primary" />
+            <PlayStoreLink className="btn btn-secondary" />
+          </div>
         </div>
 
         <div className="product-screens" aria-label="Official App Store screenshots">
