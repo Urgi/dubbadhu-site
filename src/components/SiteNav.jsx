@@ -57,7 +57,7 @@ export default function SiteNav() {
         <a href="/" className="nav-logo" aria-label="Dubbadhu home" onClick={goHome}>
           <img
             className="nav-logo-mark"
-            src="/assets/talking.png"
+            src="/assets/app-icon.png"
             alt=""
             width={36}
             height={36}

@@ -70,8 +70,10 @@ body.legal-body::before {
 .legal-nav-logo-mark {
   width: 28px;
   height: 28px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 22.37%;
   flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .legal-nav-logo span span {

@@ -75,7 +75,7 @@ export default function Hero() {
           <div className="hero-review-brand">
             <img
               className="hero-review-logo"
-              src="/assets/talking.png"
+              src="/assets/app-icon.png"
               alt="Dubbadhu"
               width={160}
               height={160}

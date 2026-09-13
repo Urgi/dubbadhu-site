@@ -63,7 +63,7 @@ export default function WaitlistSection() {
               rel="noopener noreferrer"
               aria-label="Download Dubbadhu on the App Store"
             >
-              <img className="waitlist-brand-logo" src="/assets/talking.png" alt="" width={36} height={36} />
+              <img className="waitlist-brand-logo" src="/assets/app-icon.png" alt="" width={36} height={36} />
               <div>
                 <div className="waitlist-brand-name">Dubbadhu</div>
                 <div className="waitlist-brand-store">On the App Store</div>
@@ -76,7 +76,7 @@ export default function WaitlistSection() {
               rel="noopener noreferrer"
               aria-label="Get Dubbadhu on Google Play"
             >
-              <img className="waitlist-brand-logo" src="/assets/talking.png" alt="" width={36} height={36} />
+              <img className="waitlist-brand-logo" src="/assets/app-icon.png" alt="" width={36} height={36} />
               <div>
                 <div className="waitlist-brand-name">Dubbadhu</div>
                 <div className="waitlist-brand-store">On Google Play</div>
