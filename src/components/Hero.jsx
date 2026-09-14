@@ -36,12 +36,12 @@ export default function Hero() {
       <div className="hero-copy">
         <p className="hero-eyebrow">{HERO_EYEBROW}</p>
         <h1 id="hero-heading">
-          {HERO_HEADLINE_BEFORE}{" "}
+          {HERO_HEADLINE_BEFORE ? <>{HERO_HEADLINE_BEFORE} </> : null}
           <span className="text-gradient">{HERO_HEADLINE_ACCENT}</span>{" "}
           {HERO_HEADLINE_AFTER}
         </h1>
         <p className="hero-lede">{HERO_LEDE}</p>
-        <p className="hero-support">{HERO_SUPPORT}</p>
+        {HERO_SUPPORT ? <p className="hero-support">{HERO_SUPPORT}</p> : null}
         <div className="hero-actions">
           <AppStoreLink className="btn btn-primary" />
           <PlayStoreLink className="btn btn-secondary" />

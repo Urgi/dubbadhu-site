@@ -6,17 +6,16 @@
 export const HERO_EYEBROW = "African Languages · iOS · Android";
 
 /** BiAI-style headline: plain + gradient accent + plain */
-export const HERO_HEADLINE_BEFORE = "We're helping you";
-export const HERO_HEADLINE_ACCENT = "speak";
-export const HERO_HEADLINE_AFTER = "African languages with confidence";
+export const HERO_HEADLINE_BEFORE = "";
+export const HERO_HEADLINE_ACCENT = "Speak";
+export const HERO_HEADLINE_AFTER = "with confidence";
 
 export const HERO_HEADLINE = "Speak with Confidence";
 
 export const HERO_LEDE =
-  "Native conversation and speaking practice for African languages. Not flashcards.";
+  "Native conversation for African languages—Horn and diaspora.";
 
-export const HERO_SUPPORT =
-  "For learners in the Horn—and for diaspora families reconnecting with or retaining their language. Amharic and Tigrinya are in development.";
+export const HERO_SUPPORT = "";
 
 /** Verified 2026-09-14 from iTunes Lookup API, US storefront, trackId 6765779408. */
 export const APP_STORE_TRUST = {
