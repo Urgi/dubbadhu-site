@@ -21,6 +21,11 @@ function servePublicHtmlDirs() {
         const match = STATIC_DIRS.find((dir) => path === dir || path === `${dir}/`);
         if (match) {
           req.url = `${match}/index.html`;
+          next();
+          return;
+        }
+        if (path === "/apply" || path.startsWith("/apply/") || path === "/careers" || path === "/careers/") {
+          req.url = "/index.html";
         }
         next();
       });

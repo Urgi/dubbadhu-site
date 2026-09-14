@@ -1,4 +1,5 @@
 import EastAfricaPicker from "./EastAfricaPicker.jsx";
+import HighlightsStrip from "./HighlightsStrip.jsx";
 import useReveal from "../hooks/useReveal.js";
 
 const ROADMAP = [
@@ -9,10 +10,10 @@ const ROADMAP = [
     detail: "iOS · Android",
   },
   {
-    status: "Next",
+    status: "In development",
     tone: "next",
     label: "Amharic · Tigrinya",
-    detail: "In development",
+    detail: "Speaking curriculum",
   },
   {
     status: "Planned",
@@ -26,33 +27,42 @@ export default function LanguagesSection() {
   const ref = useReveal();
 
   return (
-    <section className="languages languages--split reveal" id="mission" ref={ref} aria-labelledby="mission-heading">
-      <div className="languages-copy">
+    <section
+      className="languages languages--with-reviews reveal"
+      id="mission"
+      ref={ref}
+      aria-labelledby="mission-heading"
+    >
+      <div className="languages-intro">
         <p className="section-label">Languages</p>
         <h2 id="mission-heading" className="section-title">
-          Dubbadhu means “speak”
+          Dubbadhu means “Speak”
         </h2>
-        <p className="languages-lede">
-          Horn and East African languages on iOS and Android. Amharic and Tigrinya are next.
-        </p>
-
-        <ul className="languages-roadmap languages-roadmap--stack" aria-label="Language availability">
+        <ul className="languages-roadmap languages-roadmap--plain" aria-label="Language availability">
           {ROADMAP.map((item) => (
-            <li key={item.status} className={`languages-roadmap-item languages-roadmap-item--${item.tone}`}>
-              <span className={`roadmap-badge roadmap-badge--${item.tone}`}>{item.status}</span>
-              <span className="languages-roadmap-text">
-                <span className="languages-roadmap-label">{item.label}</span>
-                <span className="languages-roadmap-detail">{item.detail}</span>
+            <li key={item.label} className={`languages-roadmap-plain languages-roadmap-plain--${item.tone}`}>
+              <span className="languages-roadmap-label">{item.label}</span>
+              <span className="languages-roadmap-meta">
+                {item.status}
+                {item.detail ? ` · ${item.detail}` : ""}
               </span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div id="country-picker-root" className="country-picker languages-map" aria-label="Regional language picker">
-        <div className="languages-map-card">
-          <EastAfricaPicker />
+      <div className="languages-duo">
+        <div
+          id="country-picker-root"
+          className="country-picker languages-map"
+          aria-label="Regional language picker"
+        >
+          <div className="languages-map-card">
+            <EastAfricaPicker />
+          </div>
         </div>
+
+        <HighlightsStrip embedded />
       </div>
     </section>
   );

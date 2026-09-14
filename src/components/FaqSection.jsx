@@ -48,6 +48,11 @@ export default function FaqSection() {
                   hidden={!open}
                 >
                   <p>{item.a}</p>
+                  {item.link ? (
+                    <p className="faq-answer-link">
+                      <a href={item.link.href}>{item.link.label}</a>
+                    </p>
+                  ) : null}
                 </div>
               </article>
             );

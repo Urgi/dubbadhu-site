@@ -3,7 +3,12 @@
  * Do not invent slogans, ratings, or product claims here.
  */
 
-export const HERO_EYEBROW = "African Languages · App Store · Play Store";
+export const HERO_EYEBROW = "African Languages · iOS · Android";
+
+/** BiAI-style headline: plain + gradient accent + plain */
+export const HERO_HEADLINE_BEFORE = "We're helping you";
+export const HERO_HEADLINE_ACCENT = "speak";
+export const HERO_HEADLINE_AFTER = "African languages with confidence";
 
 export const HERO_HEADLINE = "Speak with Confidence";
 
@@ -11,15 +16,15 @@ export const HERO_LEDE =
   "Native conversation and speaking practice for African languages. Not flashcards.";
 
 export const HERO_SUPPORT =
-  "For learners in the Horn—and for diaspora families reconnecting with or retaining their language. Amharic and Tigrinya are next.";
+  "For learners in the Horn—and for diaspora families reconnecting with or retaining their language. Amharic and Tigrinya are in development.";
 
-/** Verified 2026-09-12 from iTunes Lookup API, US storefront, trackId 6765779408. */
+/** Verified 2026-09-14 from iTunes Lookup API, US storefront, trackId 6765779408. */
 export const APP_STORE_TRUST = {
   ratingValue: 5,
-  ratingCount: 14,
+  ratingCount: 15,
   storefront: "US",
   storefrontLabel: "App Store",
-  retrieved: "2026-09-12",
+  retrieved: "2026-09-14",
 };
 
 export const FEATURED_REVIEW = {
@@ -64,7 +69,7 @@ export const APP_STORE_REVIEWS = [
 
 export const MISSION = {
   label: "Why Dubbadhu exists",
-  title: "Dubbadhu means “speak” in Afaan Oromo",
+  title: "Dubbadhu means “Speak” in Afaan Oromo",
   lede:
     "The brand promise is Speak with Confidence: native conversation and speaking practice, not flashcards.",
   body:
@@ -72,7 +77,7 @@ export const MISSION = {
   welcome:
     "Whether you are reconnecting with your roots, helping your children learn, or discovering a Horn language for the first time, the app is built to help you speak with confidence.",
   languages:
-    "Afaan Oromo is available now on iOS and Android. Amharic and Tigrinya are coming next, with more Horn and East African languages planned.",
+    "Afaan Oromo is available now on iOS and Android. Amharic and Tigrinya are in development, with more Horn and East African languages planned.",
 };
 
 export const PRODUCT_FEATURES = [
@@ -127,7 +132,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Why is Dubbadhu unique?",
-    a: "Dubbadhu is speaking-first: native conversation and speaking practice, not flashcards. It is built for African languages—and for diaspora families retaining them. Content is validated by professional language teachers in Oromia. Amharic and Tigrinya are next.",
+    a: "Dubbadhu is speaking-first: native conversation and speaking practice, not flashcards. It is built for African languages—and for diaspora families retaining them. Content is validated by professional language teachers in Oromia. Amharic and Tigrinya are in development.",
   },
   {
     q: "Who is Dubbadhu for?",
@@ -135,7 +140,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Which languages are available?",
-    a: "Afaan Oromo is available on iOS and Android today. Amharic and Tigrinya are coming next, with more Horn and East African languages planned. Follow @dubbadhu.app on Instagram for roadmap updates.",
+    a: "Afaan Oromo is available on iOS and Android today. Amharic and Tigrinya are in development, with more Horn and East African languages planned. Follow @dubbadhu.app on Instagram for roadmap updates.",
   },
   {
     q: "How do I subscribe or cancel?",
@@ -151,6 +156,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Are you hiring?",
-    a: "Yes. We have openings for an Amharic language professional, a Tigrinya language professional, a language professional, a project manager, and a social media manager. Apply on this site with your resume and why you’re a good fit.",
+    a: "Yes. All openings are part-time: Amharic language professional, Tigrinya language professional, Learning and Development researcher, project manager, and social media manager.",
+    link: { href: "/careers", label: "Learn about the roles and apply" },
   },
 ];

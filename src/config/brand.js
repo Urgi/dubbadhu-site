@@ -19,8 +19,8 @@ export { APP_STORE_URL, PLAY_STORE_URL } from "./appLinks.js";
 /** Short facts LLMs and press can cite without ambiguity */
 export const BRAND_FACTS = {
   oneLiner:
-    "Dubbadhu is the speaking-first language learning app from Afaan LLC for African languages — native conversation, not flashcards. Amharic and Tigrinya are next. For learners in the Horn and the diaspora.",
-  meaning: 'Dubbadhu means "speak" in Afaan Oromo.',
+    "Dubbadhu is the speaking-first language learning app from Afaan LLC for African languages — native conversation, not flashcards. Amharic and Tigrinya are in development. For learners in the Horn and the diaspora.",
+  meaning: 'Dubbadhu means "Speak" in Afaan Oromo.',
   availableLanguages: ["Afaan Oromo"],
   upcomingLanguages: ["Amharic", "Tigrinya"],
   platforms: ["iOS (App Store)", "Android (Google Play)"],

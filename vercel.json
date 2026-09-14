@@ -8,7 +8,13 @@
     { "source": "/delete-account/", "destination": "/delete-account", "permanent": true },
     { "source": "/about/", "destination": "/about", "permanent": true },
     { "source": "/afaan-oromo/", "destination": "/afaan-oromo", "permanent": true },
-    { "source": "/languages/", "destination": "/languages", "permanent": true }
+    { "source": "/languages/", "destination": "/languages", "permanent": true },
+    { "source": "/apply/", "destination": "/apply", "permanent": true },
+    { "source": "/careers/", "destination": "/careers", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/apply", "destination": "/index.html" },
+    { "source": "/apply/:roleId", "destination": "/index.html" },
+    { "source": "/careers", "destination": "/index.html" }
   ]
 }
-

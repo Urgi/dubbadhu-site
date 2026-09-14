@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import AppStoreLink from "./AppStoreLink.jsx";
 import PlayStoreLink from "./PlayStoreLink.jsx";
 
-const LINKS = [
-  { href: "#product", label: "App" },
-  { href: "#mission", label: "Languages" },
-  { href: "#classes", label: "Classes" },
-  { href: "#careers", label: "Team" },
+const HOME_LINKS = [
+  { href: "/#product", label: "App" },
+  { href: "/#mission", label: "Languages" },
+  { href: "/#classes", label: "Classes" },
   { href: "/about/", label: "About" },
 ];
 
@@ -18,6 +17,14 @@ function isHomePath() {
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const links = isHomePath()
+    ? [
+        { href: "#product", label: "App" },
+        { href: "#mission", label: "Languages" },
+        { href: "#classes", label: "Classes" },
+        { href: "/about/", label: "About" },
+      ]
+    : HOME_LINKS;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -78,7 +85,7 @@ export default function SiteNav() {
 
         <div id="nav-panel" className={`nav-panel${open ? " nav-panel--open" : ""}`}>
           <ul className="nav-links">
-            {LINKS.map((l) => (
+            {links.map((l) => (
               <li key={l.href}>
                 <a href={l.href} onClick={closeMenu}>
                   {l.label}
@@ -87,10 +94,10 @@ export default function SiteNav() {
             ))}
             <li className="nav-links-cta">
               <AppStoreLink className="nav-cta" onClick={closeMenu}>
-                App Store
+                Get the app
               </AppStoreLink>
-              <PlayStoreLink className="nav-cta nav-cta--secondary" onClick={closeMenu}>
-                Play
+              <PlayStoreLink className="nav-cta nav-cta--ghost" onClick={closeMenu}>
+                Play Store
               </PlayStoreLink>
             </li>
           </ul>

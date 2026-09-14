@@ -203,6 +203,22 @@ export default function EastAfricaPicker() {
     syncMapToLanguage(activeIndex);
   }, [activeIndex, mapReady, syncMapToLanguage]);
 
+  /** Auto-cycle languages once the intro map animation is ready. */
+  useEffect(() => {
+    if (!mapReady) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const HOLD_MS = 5600;
+    const tick = window.setInterval(() => {
+      const focused = document.activeElement;
+      if (focused?.classList?.contains("country-picker-foot-input")) return;
+      const next = (activeIndexRef.current + 1) % EAST_AFRICA_LANGS.length;
+      goToIndex(next);
+    }, HOLD_MS);
+
+    return () => window.clearInterval(tick);
+  }, [mapReady, goToIndex]);
+
   useEffect(() => {
     const timeouts = [];
     let cancelled = false;
@@ -490,16 +506,20 @@ export default function EastAfricaPicker() {
                       {lg.speakers} speakers
                     </span>
                   </div>
-                  <div
-                    className={
-                      "country-picker-slide-badge-slot" +
-                      (LANGUAGE_IDS_WAITLIST.includes(i)
-                        ? " country-picker-slide-badge-slot--waitlist"
-                        : "")
-                    }
-                  >
-                    {mapReady && on && !LANGUAGE_IDS_WAITLIST.includes(i) ? (
-                      <span className="country-picker-slide-badge">Available in app</span>
+                  <div className="country-picker-slide-badge-slot">
+                    {mapReady && on ? (
+                      <span
+                        className={
+                          "country-picker-slide-badge" +
+                          (LANGUAGE_IDS_WAITLIST.includes(i)
+                            ? " country-picker-slide-badge--dev"
+                            : "")
+                        }
+                      >
+                        {LANGUAGE_IDS_WAITLIST.includes(i)
+                          ? "In development"
+                          : "Available in app"}
+                      </span>
                     ) : null}
                   </div>
                   </div>
@@ -543,7 +563,7 @@ export default function EastAfricaPicker() {
                   (activeIndex === 2 ? " country-picker-foot-hint--facts-gap" : "")
                 }
               >
-                Notifications when this language launches.
+                Notifications when this language launches. Currently in development.
               </p>
               <form className="country-picker-foot-form" onSubmit={onFooterSubmit}>
                 <input

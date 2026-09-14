@@ -44,7 +44,7 @@ export default function DownloadSection() {
           Speak with Confidence
         </h2>
         <p className="section-lede">
-          Afaan Oromo is on the App Store and Google Play now. Amharic and Tigrinya are next.
+          Afaan Oromo is on the App Store and Google Play now. Amharic and Tigrinya are in development.
           Download and start with native conversation—not flashcards.
         </p>
         <div className="download-actions">

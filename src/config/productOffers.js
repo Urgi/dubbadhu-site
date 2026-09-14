@@ -33,7 +33,7 @@ export const WHY_UNIQUE = [
   },
   {
     title: "Built for the Horn",
-    body: "Dubbadhu is built for African languages on iOS and Android. Amharic and Tigrinya are next. For the Horn—and for diaspora families retaining their language.",
+    body: "Dubbadhu is built for African languages on iOS and Android. Amharic and Tigrinya are in development. For the Horn—and for diaspora families retaining their language.",
   },
   {
     title: "Mission-backed learning",

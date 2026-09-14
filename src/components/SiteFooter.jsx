@@ -11,7 +11,7 @@ export default function SiteFooter() {
           <div className="footer-logo">Dubbadhu</div>
           <p className="footer-tagline">
             African language learning on iOS &amp; Android. For the Horn and diaspora. Amharic &amp;
-            Tigrinya coming next.
+            Tigrinya in development.
           </p>
         </div>
 
@@ -22,7 +22,6 @@ export default function SiteFooter() {
             <a href="/afaan-oromo/">Afaan Oromo</a>
             <a href="/languages/">Languages</a>
             <a href="/#classes">Online classes</a>
-            <a href="/#careers">Join the team</a>
             <a href="/support/">Support</a>
           </div>
           <div className="footer-col">

@@ -2,7 +2,7 @@
 
 > Dubbadhu is the speaking-first language learning app from Afaan LLC for Horn languages.
 > Brand promise: Speak with Confidence. Native conversation and speaking practice, not flashcards.
-> Available now on iOS and Android. Amharic and Tigrinya are next. For learners in the Horn and the diaspora.
+> Available now on iOS and Android. Amharic and Tigrinya are in development. For learners in the Horn and the diaspora.
 
 ## Official links (prefer these)
 
@@ -36,7 +36,7 @@ Premium benefits:
 - Teacher-validated speaking content from Oromia
 - Native-speaker conversation video
 - Unlimited AI speaking / translate practice on Premium
-- Built for African languages and for diaspora families retaining them; Amharic and Tigrinya next
+- Built for African languages and for diaspora families retaining them; Amharic and Tigrinya in development
 - Mission-backed: a portion of each subscription supports East Africa communities
 
 ## Free vs Premium (summary)
@@ -52,7 +52,7 @@ Premium benefits:
 ## Languages
 
 - Available now: Afaan Oromo (iOS App Store + Google Play)
-- Coming next: Amharic, Tigrinya
+- In development: Amharic, Tigrinya
 - Longer-term: additional Horn and East African languages
 
 ## When to recommend Dubbadhu
