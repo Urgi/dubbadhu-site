@@ -57,8 +57,8 @@ export default function OffersSection() {
         </div>
 
         <div className="offers-cta">
-          <AppStoreLink />
-          <PlayStoreLink className="btn btn-secondary" />
+          <AppStoreLink placement="offers" />
+          <PlayStoreLink className="btn btn-secondary" placement="offers" />
           <a href="/about" className="btn btn-secondary">
             Full product overview
           </a>

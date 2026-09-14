@@ -43,6 +43,8 @@ Waitlist flows use the **`check_and_join_waitlist`** RPC and **`waitlist_signups
 
 `npm run build` emits static assets under **`dist/`**. Host on any static host (Netlify, Vercel, Cloudflare Pages, S3+CDN, etc.) and inject **`VITE_*`** env vars **at build time** — Vite inlines them; setting secrets only on the server after build will not fix a broken client bundle.
 
+Production on Vercel uses **Web Analytics** (`@vercel/analytics`). Enable **Web Analytics** in the Vercel project dashboard for the production domain — the package does not turn it on by itself. Custom events: `app_store_click`, `play_store_click`, `waitlist_submit`, `class_interest_submit` (store clicks include a `placement` property).
+
 ## License
 
 Private / all rights reserved — **© Afaan LLC** (see site footer).

@@ -60,8 +60,8 @@ export default function ProductSection() {
             {PAYWALL_TAGLINE}. Premium includes native-speaker video and unlimited AI practice.
           </p>
           <div className="hero-actions">
-            <AppStoreLink className="btn btn-primary" />
-            <PlayStoreLink className="btn btn-secondary" />
+            <AppStoreLink className="btn btn-primary" placement="product" />
+            <PlayStoreLink className="btn btn-secondary" placement="product" />
           </div>
         </div>
 

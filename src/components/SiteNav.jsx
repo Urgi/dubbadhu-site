@@ -93,10 +93,10 @@ export default function SiteNav() {
               </li>
             ))}
             <li className="nav-links-cta">
-              <AppStoreLink className="nav-cta" onClick={closeMenu}>
+              <AppStoreLink className="nav-cta" placement="nav" onClick={closeMenu}>
                 Get the app
               </AppStoreLink>
-              <PlayStoreLink className="nav-cta nav-cta--ghost" onClick={closeMenu}>
+              <PlayStoreLink className="nav-cta nav-cta--ghost" placement="nav" onClick={closeMenu}>
                 Play Store
               </PlayStoreLink>
             </li>

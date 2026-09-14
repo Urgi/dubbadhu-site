@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
 import SectionHeader from "./SectionHeader.jsx";
@@ -32,6 +33,7 @@ export default function WaitlistSection() {
     setMsg(res.message || "");
     setErr(!res.ok);
     if (res.ok && (res.code === "added" || res.code === "already_on_list")) {
+      track("waitlist_submit", { placement: "waitlist" });
       setDone(true);
     }
   }
@@ -47,8 +49,8 @@ export default function WaitlistSection() {
             lede="Dubbadhu is already on the App Store and Google Play for Afaan Oromo. This list is only for a note when Amharic and Tigrinya ship."
           />
           <div className="waitlist-store-row">
-            <AppStoreLink className="btn btn-primary waitlist-store-btn" />
-            <PlayStoreLink className="btn btn-secondary waitlist-store-btn" />
+            <AppStoreLink className="btn btn-primary waitlist-store-btn" placement="waitlist" />
+            <PlayStoreLink className="btn btn-secondary waitlist-store-btn" placement="waitlist" />
           </div>
           <ul className="waitlist-trust">
             <li>Afaan Oromo available now</li>

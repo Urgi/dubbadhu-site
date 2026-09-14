@@ -42,8 +42,12 @@ export default function SiteFooter() {
           </div>
           <div className="footer-col">
             <p className="footer-col-label">Get the app</p>
-            <AppStoreLink className="footer-app-link">App Store</AppStoreLink>
-            <PlayStoreLink className="footer-app-link">Google Play</PlayStoreLink>
+            <AppStoreLink className="footer-app-link" placement="footer">
+              App Store
+            </AppStoreLink>
+            <PlayStoreLink className="footer-app-link" placement="footer">
+              Google Play
+            </PlayStoreLink>
           </div>
         </nav>
 

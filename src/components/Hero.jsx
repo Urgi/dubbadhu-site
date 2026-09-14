@@ -44,8 +44,8 @@ export default function Hero() {
         <p className="hero-lede">{HERO_LEDE}</p>
         {HERO_SUPPORT ? <p className="hero-support">{HERO_SUPPORT}</p> : null}
         <div className="hero-actions">
-          <AppStoreLink className="btn btn-primary" />
-          <PlayStoreLink className="btn btn-secondary" />
+          <AppStoreLink className="btn btn-primary" placement="hero" />
+          <PlayStoreLink className="btn btn-secondary" placement="hero" />
         </div>
         <p className="hero-wotd">
           Today · {word.oromo} — {word.english}

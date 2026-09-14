@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import SiteNav from "./components/SiteNav.jsx";
 import Hero from "./components/Hero.jsx";
 import ProductSection from "./components/ProductSection.jsx";
@@ -55,14 +56,21 @@ export default function App() {
     }
   }, [route]);
 
+  let page;
   if (route.name === "apply") {
-    return <ApplyPage role={route.role} />;
+    page = <ApplyPage role={route.role} />;
+  } else if (route.name === "apply-index") {
+    page = <ApplyIndexPage />;
+  } else if (route.name === "careers") {
+    page = <CareersPage />;
+  } else {
+    page = <HomePage />;
   }
-  if (route.name === "apply-index") {
-    return <ApplyIndexPage />;
-  }
-  if (route.name === "careers") {
-    return <CareersPage />;
-  }
-  return <HomePage />;
+
+  return (
+    <>
+      {page}
+      <Analytics />
+    </>
+  );
 }

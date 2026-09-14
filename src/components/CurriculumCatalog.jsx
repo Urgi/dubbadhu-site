@@ -124,8 +124,8 @@ export default function CurriculumCatalog() {
         <div className="curriculum-empty" role={err ? "alert" : "status"}>
           <p className="curriculum-state">{err ? CURRICULUM_UNAVAILABLE : CURRICULUM_EMPTY}</p>
           <div className="curriculum-empty-actions">
-            <AppStoreLink />
-            <PlayStoreLink className="btn btn-secondary" />
+            <AppStoreLink placement="curriculum" />
+            <PlayStoreLink className="btn btn-secondary" placement="curriculum" />
           </div>
         </div>
       ) : null}

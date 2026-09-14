@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { joinOnlineClassesInterest } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
 import useReveal from "../hooks/useReveal.js";
@@ -30,6 +31,7 @@ export default function OnlineClassesSection() {
     setMsg(res.message || "");
     setErr(!res.ok);
     if (res.ok && (res.code === "added" || res.code === "already_on_list")) {
+      track("class_interest_submit", { placement: "classes" });
       setDone(true);
     }
   }

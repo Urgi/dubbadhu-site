@@ -21,6 +21,7 @@ import {
   interpolatePan,
   setRegionVisibility,
 } from "../map/buildEastAfricaMap.js";
+import { track } from "@vercel/analytics";
 import { joinWaitlist } from "../lib/waitlist.js";
 import AppStoreLink from "./AppStoreLink.jsx";
 import PlayStoreLink from "./PlayStoreLink.jsx";
@@ -412,6 +413,7 @@ export default function EastAfricaPicker() {
     setFootMsg(res.message || "");
     setFootErr(!res.ok);
     if (res.ok && (res.code === "added" || res.code === "already_on_list")) {
+      track("waitlist_submit", { placement: "languages", language: pLanguage });
       setFootDone(true);
     }
   };
@@ -601,10 +603,10 @@ export default function EastAfricaPicker() {
             <div className="country-picker-foot-cta country-picker-foot-cta--stores">
               <p className="country-picker-foot-hint">Afaan Oromo is available now.</p>
               <div className="country-picker-foot-stores">
-                <AppStoreLink className="country-picker-foot-btn country-picker-foot-btn--gold">
+                <AppStoreLink className="country-picker-foot-btn country-picker-foot-btn--gold" placement="languages">
                   App Store
                 </AppStoreLink>
-                <PlayStoreLink className="country-picker-foot-btn country-picker-foot-btn--play">
+                <PlayStoreLink className="country-picker-foot-btn country-picker-foot-btn--play" placement="languages">
                   Google Play
                 </PlayStoreLink>
               </div>

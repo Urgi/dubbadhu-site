@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
 import AppStoreLink from "./AppStoreLink.jsx";
@@ -32,6 +33,7 @@ export default function DownloadSection() {
     setMsg(res.message || "");
     setErr(!res.ok);
     if (res.ok && (res.code === "added" || res.code === "already_on_list")) {
+      track("waitlist_submit", { placement: "download" });
       setDone(true);
     }
   }
@@ -48,8 +50,8 @@ export default function DownloadSection() {
           Download and start with native conversation—not flashcards.
         </p>
         <div className="download-actions">
-          <AppStoreLink className="btn btn-primary" />
-          <PlayStoreLink className="btn btn-secondary" />
+          <AppStoreLink className="btn btn-primary" placement="download" />
+          <PlayStoreLink className="btn btn-secondary" placement="download" />
         </div>
       </div>
 
