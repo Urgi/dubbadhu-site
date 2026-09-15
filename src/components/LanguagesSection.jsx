@@ -1,34 +1,28 @@
-import EastAfricaPicker from "./EastAfricaPicker.jsx";
-import HighlightsStrip from "./HighlightsStrip.jsx";
 import useReveal from "../hooks/useReveal.js";
+import { EAST_AFRICA_LANGS } from "../config/eastAfricaLanguagesConfig.js";
 
-const ROADMAP = [
-  {
-    status: "Available",
-    tone: "live",
-    label: "Afaan Oromo",
-    detail: "iOS · Android",
-  },
-  {
-    status: "In development",
-    tone: "next",
-    label: "Amharic · Tigrinya",
-    detail: "Speaking curriculum",
-  },
-  {
-    status: "Planned",
-    tone: "planned",
-    label: "More Horn languages",
-    detail: "After Amharic & Tigrinya",
-  },
-];
+const LANGUAGE_INFO = EAST_AFRICA_LANGS.map((lang) => {
+  const status =
+    lang.id === 0
+      ? { label: "Available now", tone: "live", meta: "iOS · Android" }
+      : { label: "In development", tone: "next", meta: "Speaking curriculum" };
+
+  return {
+    name: lang.name,
+    native: lang.native,
+    family: lang.family,
+    speakers: lang.speakers,
+    fact: lang.facts[0],
+    ...status,
+  };
+});
 
 export default function LanguagesSection() {
   const ref = useReveal();
 
   return (
     <section
-      className="languages languages--with-reviews reveal"
+      className="languages languages--info reveal"
       id="mission"
       ref={ref}
       aria-labelledby="mission-heading"
@@ -38,32 +32,29 @@ export default function LanguagesSection() {
         <h2 id="mission-heading" className="section-title">
           Dubbadhu means “Speak”
         </h2>
-        <ul className="languages-roadmap languages-roadmap--plain" aria-label="Language availability">
-          {ROADMAP.map((item) => (
-            <li key={item.label} className={`languages-roadmap-plain languages-roadmap-plain--${item.tone}`}>
-              <span className="languages-roadmap-label">{item.label}</span>
-              <span className="languages-roadmap-meta">
-                {item.status}
-                {item.detail ? ` · ${item.detail}` : ""}
-              </span>
-            </li>
-          ))}
-        </ul>
       </div>
 
-      <div className="languages-duo">
-        <div
-          id="country-picker-root"
-          className="country-picker languages-map"
-          aria-label="Regional language picker"
-        >
-          <div className="languages-map-card">
-            <EastAfricaPicker />
-          </div>
-        </div>
-
-        <HighlightsStrip embedded />
-      </div>
+      <ul className="languages-info" aria-label="Language details">
+        {LANGUAGE_INFO.map((lang) => (
+          <li key={lang.name} className={`languages-info-item languages-info-item--${lang.tone}`}>
+            <div className="languages-info-top">
+              <h3 className="languages-info-name">{lang.name}</h3>
+              <p className="languages-info-status">
+                {lang.label}
+                {lang.meta ? ` · ${lang.meta}` : ""}
+              </p>
+            </div>
+            <p className="languages-info-meta">
+              <span>{lang.native}</span>
+              <span aria-hidden="true"> · </span>
+              <span>{lang.family}</span>
+              <span aria-hidden="true"> · </span>
+              <span>{lang.speakers} speakers</span>
+            </p>
+            <p className="languages-info-fact">{lang.fact}</p>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

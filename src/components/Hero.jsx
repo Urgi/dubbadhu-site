@@ -9,6 +9,7 @@ import {
   HERO_SUPPORT,
 } from "../config/homeCopy.js";
 import AppStoreLink from "./AppStoreLink.jsx";
+import HighlightsStrip from "./HighlightsStrip.jsx";
 import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const FALLBACK_WOTD = {
@@ -51,19 +52,24 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="hero-media" aria-hidden="true">
-        <video
-          className="hero-media-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/assets/intro-poster.jpg"
-        >
-          <source src="/assets/IntroVideo.mp4" type="video/mp4" />
-        </video>
-        <div className="hero-media-shade" />
+      <div className="hero-reviews">
+        <div className="hero-reviews-media" aria-hidden="true">
+          <video
+            className="hero-reviews-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/assets/intro-poster.jpg"
+          >
+            <source src="/assets/IntroVideo.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-reviews-mask" />
+        </div>
+        <div className="hero-reviews-content">
+          <HighlightsStrip embedded />
+        </div>
       </div>
     </section>
   );

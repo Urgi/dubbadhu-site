@@ -78,7 +78,8 @@ export default function CareersSection() {
             Choose a position
           </h2>
           <p className="section-lede">
-            Pick the role that fits. Apply opens a dedicated page for your resume and fit note.
+            Part-time openings for Amharic, Tigrinya, and the work around them. Apply opens a
+            dedicated page for your resume and fit note.
           </p>
           <ul className="careers-roles">
             {CAREERS_ROLES.map((item) => (
