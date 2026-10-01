@@ -3,9 +3,27 @@ import { track } from "@vercel/analytics";
 import { joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
 import SectionHeader from "./SectionHeader.jsx";
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
-import { APP_STORE_URL, PLAY_STORE_URL } from "../config/appLinks.js";
+import DownloadButton, { trackDownloadClick, useDownloadOffer } from "./DownloadButton.jsx";
+
+function WaitlistBrandLink() {
+  const offer = useDownloadOffer();
+
+  return (
+    <a
+      className="waitlist-brand"
+      href={offer.href}
+      aria-label={offer.label}
+      onClick={() => trackDownloadClick(offer, "waitlist")}
+      {...(offer.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
+      <img className="waitlist-brand-logo" src="/assets/app-icon.png" alt="" width={36} height={36} />
+      <div>
+        <div className="waitlist-brand-name">Dubbadhu</div>
+        <div className="waitlist-brand-store">{offer.label}</div>
+      </div>
+    </a>
+  );
+}
 
 export default function WaitlistSection() {
   const [email, setEmail] = useState("");
@@ -49,8 +67,7 @@ export default function WaitlistSection() {
             lede="Dubbadhu is already on the App Store and Google Play for Afaan Oromo. This list is only for a note when Amharic and Tigrinya ship."
           />
           <div className="waitlist-store-row">
-            <AppStoreLink className="btn btn-primary waitlist-store-btn" placement="waitlist" />
-            <PlayStoreLink className="btn btn-secondary waitlist-store-btn" placement="waitlist" />
+            <DownloadButton className="btn btn-primary waitlist-store-btn" placement="waitlist" />
           </div>
           <ul className="waitlist-trust">
             <li>Afaan Oromo available now</li>
@@ -58,32 +75,7 @@ export default function WaitlistSection() {
             <li>No spam</li>
           </ul>
           <div className="waitlist-brand-row">
-            <a
-              className="waitlist-brand"
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download Dubbadhu on the App Store"
-            >
-              <img className="waitlist-brand-logo" src="/assets/app-icon.png" alt="" width={36} height={36} />
-              <div>
-                <div className="waitlist-brand-name">Dubbadhu</div>
-                <div className="waitlist-brand-store">On the App Store</div>
-              </div>
-            </a>
-            <a
-              className="waitlist-brand"
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get Dubbadhu on Google Play"
-            >
-              <img className="waitlist-brand-logo" src="/assets/app-icon.png" alt="" width={36} height={36} />
-              <div>
-                <div className="waitlist-brand-name">Dubbadhu</div>
-                <div className="waitlist-brand-store">On Google Play</div>
-              </div>
-            </a>
+            <WaitlistBrandLink />
           </div>
         </div>
 

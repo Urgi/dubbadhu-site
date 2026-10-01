@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { PAYWALL_TAGLINE } from "../config/productOffers.js";
 import { PRODUCT_FEATURES, PRODUCT_SCREENS } from "../config/homeCopy.js";
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
+import DownloadButton from "./DownloadButton.jsx";
 
 const FEATURE_HOLD_MS = 3200;
 
@@ -57,11 +56,10 @@ export default function ProductSection() {
             Native conversation, not flashcards
           </h2>
           <p className="section-lede">
-            {PAYWALL_TAGLINE}. Premium includes native-speaker video and unlimited AI practice.
+            {PAYWALL_TAGLINE}. Premium includes native-speaker video plus unlimited AI practice and translate feedback.
           </p>
           <div className="hero-actions">
-            <AppStoreLink className="btn btn-primary" placement="product" />
-            <PlayStoreLink className="btn btn-secondary" placement="product" />
+            <DownloadButton className="btn btn-primary" placement="product" />
           </div>
         </div>
 

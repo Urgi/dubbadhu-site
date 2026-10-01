@@ -10,6 +10,7 @@ import FaqSection from "./components/FaqSection.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
 import ApplyPage from "./components/ApplyPage.jsx";
 import CareersPage from "./components/CareersPage.jsx";
+import DownloadPage from "./components/DownloadPage.jsx";
 import { parseAppRoute, redirectLegacyApplyHash } from "./lib/routes.js";
 
 function HomePage() {
@@ -51,6 +52,8 @@ export default function App() {
       document.title = "Apply — Dubbadhu careers";
     } else if (route.name === "careers") {
       document.title = "Careers — Dubbadhu";
+    } else if (route.name === "download") {
+      document.title = "Download Dubbadhu";
     } else {
       document.title = "Dubbadhu | Speak with Confidence — African languages";
     }
@@ -63,6 +66,8 @@ export default function App() {
     page = <ApplyIndexPage />;
   } else if (route.name === "careers") {
     page = <CareersPage />;
+  } else if (route.name === "download") {
+    page = <DownloadPage />;
   } else {
     page = <HomePage />;
   }

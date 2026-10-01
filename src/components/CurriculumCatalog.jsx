@@ -2,8 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabaseClient.js";
 import { launchLabel, seriesEditorial } from "../config/seriesCopy.js";
 import SectionHeader from "./SectionHeader.jsx";
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
+import DownloadButton from "./DownloadButton.jsx";
 
 const CURRICULUM_UNAVAILABLE =
   "The live curriculum catalog isn’t available here right now. Open Dubbadhu on iOS or Android to browse speaking series.";
@@ -124,8 +123,7 @@ export default function CurriculumCatalog() {
         <div className="curriculum-empty" role={err ? "alert" : "status"}>
           <p className="curriculum-state">{err ? CURRICULUM_UNAVAILABLE : CURRICULUM_EMPTY}</p>
           <div className="curriculum-empty-actions">
-            <AppStoreLink placement="curriculum" />
-            <PlayStoreLink className="btn btn-secondary" placement="curriculum" />
+            <DownloadButton placement="curriculum" />
           </div>
         </div>
       ) : null}

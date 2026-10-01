@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
+import DownloadButton from "./DownloadButton.jsx";
 
 const HOME_LINKS = [
   { href: "/#product", label: "App" },
@@ -93,12 +92,7 @@ export default function SiteNav() {
               </li>
             ))}
             <li className="nav-links-cta">
-              <AppStoreLink className="nav-cta" placement="nav" onClick={closeMenu}>
-                Get the app
-              </AppStoreLink>
-              <PlayStoreLink className="nav-cta nav-cta--ghost" placement="nav" onClick={closeMenu}>
-                Play Store
-              </PlayStoreLink>
+              <DownloadButton className="nav-cta" placement="nav" onClick={closeMenu} />
             </li>
           </ul>
         </div>

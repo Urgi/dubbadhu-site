@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Dubbadhu</title>
+    <meta
+      name="description"
+      content="Download Dubbadhu, the speaking-first app for African languages. iPhone and iPad open the App Store. Android opens Google Play."
+    />
+    <link rel="canonical" href="https://dubbadhu.com/download" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#050705" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dubbadhu" />
+    <meta property="og:url" content="https://dubbadhu.com/download" />
+    <meta property="og:title" content="Download Dubbadhu" />
+    <meta
+      property="og:description"
+      content="Speak with Confidence. Get Dubbadhu for iPhone, iPad, or Android."
+    />
+    <meta property="og:image" content="https://dubbadhu.com/apple-touch-icon.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Download Dubbadhu" />
+    <meta
+      name="twitter:description"
+      content="Speak with Confidence. Get Dubbadhu for iPhone, iPad, or Android."
+    />
+    <meta name="twitter:image" content="https://dubbadhu.com/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/index.css" />
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <header class="site-header site-header--scrolled">
+      <a href="#main" class="skip-link">Skip to content</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/" class="nav-logo" aria-label="Dubbadhu home">
+          <img
+            class="nav-logo-mark"
+            src="/assets/app-icon.png"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <span class="nav-logo-text">Dubbadhu</span>
+        </a>
+      </nav>
+    </header>
+
+    <main id="main" class="download-landing">
+      <div class="download-landing-inner">
+        <img
+          class="download-landing-icon"
+          src="/assets/app-icon.png"
+          alt=""
+          width="72"
+          height="72"
+        />
+        <p class="section-label">Get the app</p>
+        <h1 class="section-title">Download Dubbadhu</h1>
+        <p class="section-lede">
+          Speak with Confidence. Afaan Oromo is available now on iPhone, iPad, and Android.
+          Amharic and Tigrinya are in development.
+        </p>
+        <!-- Store URLs match src/config/appLinks.js. Both stay in the HTML so the page works with JavaScript off, and if the store hop does not start. -->
+        <div class="download-actions">
+          <a
+            class="btn btn-primary"
+            href="https://apps.apple.com/us/app/dubbadhu-learn-afaan-oromo/id6765779408"
+            onclick="va('event', { name: 'app_store_click', data: { placement: 'download-page' } })"
+          >
+            Download on the App Store
+          </a>
+          <a
+            class="btn btn-secondary"
+            href="https://play.google.com/store/apps/details?id=com.afaanllc.dubbadhu"
+            onclick="va('event', { name: 'play_store_click', data: { placement: 'download-page' } })"
+          >
+            Get it on Google Play
+          </a>
+        </div>
+        <p class="download-hint">
+          iPhone and iPad open the App Store. Android opens Google Play. If that does not happen, choose a store above.
+        </p>
+      </div>
+    </main>
+
+    <script type="module">
+      import { redirectMobileStore } from "/src/lib/detectDevice.js";
+      redirectMobileStore();
+    </script>
+  </body>
+</html>

@@ -1,5 +1,4 @@
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
+import DownloadButton from "./DownloadButton.jsx";
 import { INSTAGRAM_URL, TIKTOK_URL } from "../config/brand.js";
 
 export default function SiteFooter() {
@@ -42,12 +41,7 @@ export default function SiteFooter() {
           </div>
           <div className="footer-col">
             <p className="footer-col-label">Get the app</p>
-            <AppStoreLink className="footer-app-link" placement="footer">
-              App Store
-            </AppStoreLink>
-            <PlayStoreLink className="footer-app-link" placement="footer">
-              Google Play
-            </PlayStoreLink>
+            <DownloadButton className="footer-app-link" placement="footer" />
           </div>
         </nav>
 

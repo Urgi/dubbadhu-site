@@ -10,7 +10,8 @@
     { "source": "/afaan-oromo/", "destination": "/afaan-oromo", "permanent": true },
     { "source": "/languages/", "destination": "/languages", "permanent": true },
     { "source": "/apply/", "destination": "/apply", "permanent": true },
-    { "source": "/careers/", "destination": "/careers", "permanent": true }
+    { "source": "/careers/", "destination": "/careers", "permanent": true },
+    { "source": "/download/", "destination": "/download", "permanent": true }
   ],
   "rewrites": [
     { "source": "/apply", "destination": "/index.html" },

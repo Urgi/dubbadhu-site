@@ -2,8 +2,7 @@ import { useState } from "react";
 import { track } from "@vercel/analytics";
 import { joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
+import DownloadButton from "./DownloadButton.jsx";
 import useReveal from "../hooks/useReveal.js";
 
 export default function DownloadSection() {
@@ -50,8 +49,7 @@ export default function DownloadSection() {
           Download and start with native conversation—not flashcards.
         </p>
         <div className="download-actions">
-          <AppStoreLink className="btn btn-primary" placement="download" />
-          <PlayStoreLink className="btn btn-secondary" placement="download" />
+          <DownloadButton className="btn btn-primary" placement="download" />
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+import { DOWNLOAD_PATH } from "../config/appLinks.js";
 import { CAREERS_ROLES, careerRoleById } from "../config/careers.js";
 
 /** Path for a role application page, e.g. `/apply/amharic-language-professional`. */
@@ -19,6 +20,9 @@ export function parseAppRoute(pathname = window.location.pathname) {
   }
   if (path === "/careers") {
     return { name: "careers" };
+  }
+  if (path === DOWNLOAD_PATH) {
+    return { name: "download" };
   }
   return { name: "home" };
 }

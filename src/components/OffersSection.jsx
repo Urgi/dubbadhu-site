@@ -6,8 +6,7 @@ import {
   PLAN_COMPARISON,
   WHY_UNIQUE,
 } from "../config/productOffers.js";
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
+import DownloadButton from "./DownloadButton.jsx";
 
 export default function OffersSection() {
   return (
@@ -57,8 +56,7 @@ export default function OffersSection() {
         </div>
 
         <div className="offers-cta">
-          <AppStoreLink placement="offers" />
-          <PlayStoreLink className="btn btn-secondary" placement="offers" />
+          <DownloadButton placement="offers" />
           <a href="/about" className="btn btn-secondary">
             Full product overview
           </a>

@@ -8,9 +8,8 @@ import {
   HERO_LEDE,
   HERO_SUPPORT,
 } from "../config/homeCopy.js";
-import AppStoreLink from "./AppStoreLink.jsx";
+import DownloadButton from "./DownloadButton.jsx";
 import HighlightsStrip from "./HighlightsStrip.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
 
 const FALLBACK_WOTD = {
   oromo: "Akkam jirta?",
@@ -44,8 +43,7 @@ export default function Hero() {
         <p className="hero-lede">{HERO_LEDE}</p>
         {HERO_SUPPORT ? <p className="hero-support">{HERO_SUPPORT}</p> : null}
         <div className="hero-actions">
-          <AppStoreLink className="btn btn-primary" placement="hero" />
-          <PlayStoreLink className="btn btn-secondary" placement="hero" />
+          <DownloadButton className="btn btn-primary" placement="hero" />
         </div>
         <p className="hero-wotd">
           Today · {word.oromo} — {word.english}

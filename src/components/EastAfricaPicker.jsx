@@ -23,8 +23,7 @@ import {
 } from "../map/buildEastAfricaMap.js";
 import { track } from "@vercel/analytics";
 import { joinWaitlist } from "../lib/waitlist.js";
-import AppStoreLink from "./AppStoreLink.jsx";
-import PlayStoreLink from "./PlayStoreLink.jsx";
+import DownloadButton from "./DownloadButton.jsx";
 
 /** CSS `transform-origin` for the east SVG mover; optional per language in config `pan`. */
 function eastPanTransformOrigin(pan) {
@@ -603,12 +602,7 @@ export default function EastAfricaPicker() {
             <div className="country-picker-foot-cta country-picker-foot-cta--stores">
               <p className="country-picker-foot-hint">Afaan Oromo is available now.</p>
               <div className="country-picker-foot-stores">
-                <AppStoreLink className="country-picker-foot-btn country-picker-foot-btn--gold" placement="languages">
-                  App Store
-                </AppStoreLink>
-                <PlayStoreLink className="country-picker-foot-btn country-picker-foot-btn--play" placement="languages">
-                  Google Play
-                </PlayStoreLink>
+                <DownloadButton className="country-picker-foot-btn country-picker-foot-btn--gold" placement="languages" />
               </div>
             </div>
           )}
