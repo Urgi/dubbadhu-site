@@ -44,8 +44,8 @@ export default function OnlineClassesSection() {
           Live speaking classes
         </h2>
         <p className="section-lede">
-          Register interest for online speaking classes. The app stays the place to practice every
-          day. We’ll email you when classes open.
+          Interested in live online speaking classes? Leave your email and we’ll let you know when
+          they start.
         </p>
       </div>
 

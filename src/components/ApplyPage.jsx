@@ -4,7 +4,7 @@ import CareerApplyForm from "./CareerApplyForm.jsx";
 import SiteFooter from "./SiteFooter.jsx";
 import SiteNav from "./SiteNav.jsx";
 
-export default function ApplyPage({ role }) {
+export default function ApplyPage({ role, isIndex = false }) {
   if (!role) {
     return (
       <>
@@ -12,9 +12,11 @@ export default function ApplyPage({ role }) {
         <main id="main" className="apply-page">
           <div className="apply-page-inner">
             <p className="section-label">Careers</p>
-            <h1 className="section-title">Role not found</h1>
+            <h1 className="section-title">{isIndex ? "Open roles" : "Role not found"}</h1>
             <p className="section-lede">
-              That opening isn’t listed right now. Choose a current role below.
+              {isIndex
+                ? "Pick a role below to apply."
+                : "That opening isn’t listed right now. Choose a current role below."}
             </p>
             <ul className="careers-roles">
               {CAREERS_ROLES.map((item) => (

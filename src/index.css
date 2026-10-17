@@ -2019,6 +2019,11 @@ a.nav-logo {
     transform: translateX(0);
   }
 
+  /* backdrop-filter makes the nav the containing block for the fixed panel, collapsing it */
+  .site-header--scrolled .site-nav {
+    backdrop-filter: none;
+  }
+
   .nav-links {
     flex-direction: column;
     align-items: stretch;
@@ -2142,9 +2147,53 @@ a.nav-logo {
     grid-template-columns: 1fr;
   }
 
+  .product {
+    padding-top: var(--pad);
+    scroll-margin-top: var(--nav-h);
+  }
+
+  /* Swipeable screenshots instead of three tiny columns */
   .product-screens {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 68%;
+    gap: 12px;
+    margin: 0 calc(-1 * var(--gutter));
+    padding: 0 var(--gutter) 4px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--gutter);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product-screens::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-screen {
+    scroll-snap-align: start;
+  }
+
+  .product-screen img {
+    border-radius: var(--radius-md);
+  }
+
+  /* All-caps headings wrap badly at phone width */
+  .product-features h3,
+  .faq-question {
+    font-size: 17px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .faq-question {
+    padding: 16px 0;
+  }
+
+  .hero-reviews .highlights-footer a {
+    display: inline-block;
+    padding: 10px 0;
   }
 
   .trust-quote blockquote p {
@@ -2163,6 +2212,18 @@ a.nav-logo {
   .footer-nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: stretch;
+  }
+
+  .footer-col {
+    gap: 0;
+  }
+
+  .footer-col-label {
+    margin-bottom: 6px;
+  }
+
+  .footer-nav a {
+    padding: 8px 0;
   }
 }
 

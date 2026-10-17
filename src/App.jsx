@@ -31,7 +31,7 @@ function HomePage() {
 }
 
 function ApplyIndexPage() {
-  return <ApplyPage role={null} />;
+  return <ApplyPage role={null} isIndex />;
 }
 
 export default function App() {

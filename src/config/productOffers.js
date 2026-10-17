@@ -28,8 +28,8 @@ export const WHY_UNIQUE = [
     body: "Learn from real conversation videos filmed with native speakers so you hear how the language is actually spoken.",
   },
   {
-    title: "Unlimited AI speaking practice",
-    body: "Premium unlocks unlimited AI practice and translate feedback so you can rehearse until you sound confident.",
+    title: "Unlimited AI practice & translate feedback",
+    body: "Premium unlocks unlimited AI practice and translate feedback to help you check understanding as you learn.",
   },
   {
     title: "Built for the Horn",
