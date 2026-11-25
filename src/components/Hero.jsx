@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchTodayWordOfTheDay } from "../lib/wordOfTheDay.js";
 import {
-  HERO_EYEBROW,
   HERO_HEADLINE_AFTER,
   HERO_HEADLINE_ACCENT,
   HERO_HEADLINE_BEFORE,
@@ -34,10 +33,9 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
       <div className="hero-copy">
-        <p className="hero-eyebrow">{HERO_EYEBROW}</p>
         <h1 id="hero-heading">
           {HERO_HEADLINE_BEFORE ? <>{HERO_HEADLINE_BEFORE} </> : null}
-          <span className="text-gradient">{HERO_HEADLINE_ACCENT}</span>{" "}
+          {HERO_HEADLINE_ACCENT}{" "}
           {HERO_HEADLINE_AFTER}
         </h1>
         <p className="hero-lede">{HERO_LEDE}</p>

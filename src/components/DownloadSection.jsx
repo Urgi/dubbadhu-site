@@ -3,10 +3,8 @@ import { track } from "@vercel/analytics";
 import { joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
 import DownloadButton from "./DownloadButton.jsx";
-import useReveal from "../hooks/useReveal.js";
 
 export default function DownloadSection() {
-  const ref = useReveal();
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
   const [err, setErr] = useState(false);
@@ -38,7 +36,7 @@ export default function DownloadSection() {
   }
 
   return (
-    <section className="download download--split reveal" id="download" ref={ref} aria-labelledby="download-heading">
+    <section className="download download--split" id="download" aria-labelledby="download-heading">
       <div className="download-copy">
         <p className="section-label">Get the app</p>
         <h2 id="download-heading" className="section-title">

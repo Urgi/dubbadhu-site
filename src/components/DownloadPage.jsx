@@ -33,7 +33,6 @@ export default function DownloadPage() {
       <main id="main" className="download-landing">
         <div className="download-landing-inner">
           <img className="download-landing-icon" src="/assets/app-icon.png" alt="" width={72} height={72} />
-          <p className="section-label">Get the app</p>
           <h1 className="section-title">Download Dubbadhu</h1>
           <p className="section-lede">
             Speak with Confidence. Afaan Oromo is available now on iPhone, iPad, and Android. Amharic

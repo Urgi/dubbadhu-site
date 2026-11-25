@@ -2,10 +2,8 @@ import { useState } from "react";
 import { track } from "@vercel/analytics";
 import { joinOnlineClassesInterest } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
-import useReveal from "../hooks/useReveal.js";
 
 export default function OnlineClassesSection() {
-  const ref = useReveal();
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
   const [err, setErr] = useState(false);
@@ -37,9 +35,8 @@ export default function OnlineClassesSection() {
   }
 
   return (
-    <section className="classes classes--split reveal" id="classes" ref={ref} aria-labelledby="classes-heading">
+    <section className="classes classes--split" id="classes" aria-labelledby="classes-heading">
       <div className="classes-copy">
-        <p className="section-label">Online classes</p>
         <h2 id="classes-heading" className="section-title">
           Live speaking classes
         </h2>

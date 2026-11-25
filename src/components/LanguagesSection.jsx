@@ -1,10 +1,9 @@
-import useReveal from "../hooks/useReveal.js";
 import { EAST_AFRICA_LANGS } from "../config/eastAfricaLanguagesConfig.js";
 
 const LANGUAGE_INFO = EAST_AFRICA_LANGS.map((lang) => {
   const status =
     lang.id === 0
-      ? { label: "Available now", tone: "live", meta: "iOS · Android" }
+      ? { label: "Available now", tone: "live", meta: "iOS and Android" }
       : { label: "In development", tone: "next", meta: "Speaking curriculum" };
 
   return {
@@ -18,17 +17,13 @@ const LANGUAGE_INFO = EAST_AFRICA_LANGS.map((lang) => {
 });
 
 export default function LanguagesSection() {
-  const ref = useReveal();
-
   return (
     <section
-      className="languages languages--info reveal"
+      className="languages languages--info"
       id="mission"
-      ref={ref}
       aria-labelledby="mission-heading"
     >
       <div className="languages-intro">
-        <p className="section-label">Languages</p>
         <h2 id="mission-heading" className="section-title">
           Dubbadhu means “Speak”
         </h2>
@@ -41,15 +36,11 @@ export default function LanguagesSection() {
               <h3 className="languages-info-name">{lang.name}</h3>
               <p className="languages-info-status">
                 {lang.label}
-                {lang.meta ? ` · ${lang.meta}` : ""}
+                {lang.meta ? `, ${lang.meta}` : ""}
               </p>
             </div>
             <p className="languages-info-meta">
-              <span>{lang.native}</span>
-              <span aria-hidden="true"> · </span>
-              <span>{lang.family}</span>
-              <span aria-hidden="true"> · </span>
-              <span>{lang.speakers} speakers</span>
+              {lang.native}, {lang.family}, {lang.speakers} speakers
             </p>
             <p className="languages-info-fact">{lang.fact}</p>
           </li>

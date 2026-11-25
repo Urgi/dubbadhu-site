@@ -54,13 +54,6 @@ body {
   overflow-x: hidden;
 }
 
-.text-gradient {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -121,17 +114,6 @@ img {
   line-height: 1.7;
   max-width: 38rem;
   margin-bottom: 18px;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
 }
 
 .btn {
@@ -362,10 +344,7 @@ a.nav-logo {
   overflow: hidden;
   padding: calc(var(--nav-h) + 28px) var(--gutter) clamp(40px, 6vh, 72px);
   border-top: none;
-  background:
-    radial-gradient(ellipse 70% 55% at 72% 35%, rgba(94, 207, 110, 0.09), transparent 58%),
-    radial-gradient(ellipse 55% 45% at 18% 75%, rgba(212, 164, 55, 0.07), transparent 52%),
-    var(--bg);
+  background: var(--bg);
 }
 
 .hero-copy {
@@ -538,16 +517,6 @@ a.nav-logo {
 
 .hero-visual {
   display: none;
-}
-
-.hero-eyebrow {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 18px;
 }
 
 .hero h1 {
@@ -1486,10 +1455,7 @@ a.nav-logo {
 .apply-page {
   min-height: 70vh;
   padding: calc(var(--nav-h) + 40px) var(--gutter) clamp(56px, 9vh, 100px);
-  background:
-    radial-gradient(ellipse 60% 45% at 80% 12%, rgba(94, 207, 110, 0.08), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 10% 70%, rgba(212, 164, 55, 0.06), transparent 50%),
-    var(--bg);
+  background: var(--bg);
 }
 
 .apply-page-inner {
@@ -1616,9 +1582,7 @@ a.nav-logo {
 .download {
   padding: var(--pad) var(--gutter);
   border-top: 1px solid var(--border);
-  background:
-    radial-gradient(ellipse 60% 50% at 10% 80%, var(--green-dim) 0%, transparent 60%),
-    #000;
+  background: #000;
 }
 
 .download-copy,
@@ -1635,10 +1599,7 @@ a.nav-logo {
   display: flex;
   align-items: center;
   padding: calc(var(--nav-h) + 48px) var(--gutter) 80px;
-  background:
-    radial-gradient(ellipse 70% 55% at 78% 18%, rgba(94, 207, 110, 0.1), transparent 58%),
-    radial-gradient(ellipse 50% 42% at 12% 88%, rgba(212, 164, 55, 0.08), transparent 52%),
-    var(--bg);
+  background: var(--bg);
 }
 
 .download-landing-inner {
@@ -1937,12 +1898,6 @@ a.nav-logo {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 
   .hero-review-swap {

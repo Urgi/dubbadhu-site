@@ -2,35 +2,35 @@ export const CAREERS_ROLES = [
   {
     id: "amharic-language-professional",
     title: "Amharic language professional",
-    location: "Part-time · Remote · Horn & diaspora",
+    location: "Part-time, remote, Horn & diaspora",
     blurb:
-      "Help us ship Amharic the way Afaan Oromo shipped: native conversation, teacher-validated speaking, and real video—not flashcards.",
+      "Help us ship Amharic the way Afaan Oromo shipped: native conversation, teacher-validated speaking, and native video—not flashcards.",
   },
   {
     id: "tigrinya-language-professional",
     title: "Tigrinya language professional",
-    location: "Part-time · Remote · Horn & diaspora",
+    location: "Part-time, remote, Horn & diaspora",
     blurb:
       "Build Tigrinya speaking lessons with native speakers and educators so learners can talk with family, not memorize a deck.",
   },
   {
     id: "learning-and-development-researcher",
     title: "Learning and Development researcher",
-    location: "Part-time · Remote · curriculum & research",
+    location: "Part-time, remote, curriculum & research",
     blurb:
-      "Research how learners speak and stick with Horn languages—inform conversation lessons, practice design, and quality so every series feels teachable and real.",
+      "Research how learners speak and stick with Horn languages—inform conversation lessons, practice design, and quality so every series feels teachable.",
   },
   {
     id: "social-media-manager",
     title: "Social media manager",
-    location: "Part-time · Remote · Instagram & TikTok",
+    location: "Part-time, remote, Instagram & TikTok",
     blurb:
       "Run @dubbadhu.app. Show speaking-first learning, upcoming Amharic and Tigrinya, and the diaspora story without turning the brand into generic language-app ads.",
   },
   {
     id: "project-manager",
     title: "Project manager",
-    location: "Part-time · Remote · product & languages",
+    location: "Part-time, remote, product & languages",
     blurb:
       "Keep Amharic, Tigrinya, and language work on schedule: teachers, video, review, and ship dates. Coordinate the team so speaking lessons actually land.",
   },
@@ -44,7 +44,7 @@ const ROLE_ALIASES = {
 export const CAREERS_TRACKS = [
   {
     title: "Languages",
-    body: "Amharic and Tigrinya language professionals, plus Learning and Development research—so speaking lessons stay native, teachable, and real.",
+    body: "Amharic and Tigrinya language professionals, plus Learning and Development research—so speaking lessons stay native and teachable.",
   },
   {
     title: "Product",

@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { FAQ_ITEMS } from "../config/homeCopy.js";
-import useReveal from "../hooks/useReveal.js";
 
 export default function FaqSection() {
-  const ref = useReveal();
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="faq faq--split reveal" id="faq" ref={ref} aria-labelledby="faq-heading">
+    <section className="faq faq--split" id="faq" aria-labelledby="faq-heading">
       <div className="faq-copy">
-        <p className="section-label">FAQ</p>
         <h2 id="faq-heading" className="section-title">
           More questions?
         </h2>

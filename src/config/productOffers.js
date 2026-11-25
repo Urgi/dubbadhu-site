@@ -25,7 +25,7 @@ export const WHY_UNIQUE = [
   },
   {
     title: "Native-speaker conversation video",
-    body: "Learn from real conversation videos filmed with native speakers so you hear how the language is actually spoken.",
+    body: "Learn from conversation videos filmed with native speakers so you hear how the language is actually spoken.",
   },
   {
     title: "Unlimited AI practice & translate feedback",

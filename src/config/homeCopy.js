@@ -3,8 +3,6 @@
  * Do not invent slogans, ratings, or product claims here.
  */
 
-export const HERO_EYEBROW = "African Languages · iOS · Android";
-
 /** BiAI-style headline: plain + gradient accent + plain */
 export const HERO_HEADLINE_BEFORE = "";
 export const HERO_HEADLINE_ACCENT = "Speak";
@@ -17,13 +15,13 @@ export const HERO_LEDE =
 
 export const HERO_SUPPORT = "";
 
-/** Verified 2026-09-14 from iTunes Lookup API, US storefront, trackId 6765779408. */
+/** Verified 2026-11-25 on the App Store listing, US storefront, trackId 6765779408. */
 export const APP_STORE_TRUST = {
   ratingValue: 5,
-  ratingCount: 15,
+  ratingCount: 20,
   storefront: "US",
   storefrontLabel: "App Store",
-  retrieved: "2026-09-14",
+  retrieved: "2026-11-25",
 };
 
 export const FEATURED_REVIEW = {
@@ -72,7 +70,7 @@ export const MISSION = {
   lede:
     "The brand promise is Speak with Confidence: native conversation and speaking practice, not flashcards.",
   body:
-    "Dubbadhu is built for learners in the Horn—and for diaspora families reconnecting with or retaining their languages. Parents, children, and adults practice real conversation so they can speak with relatives, not memorize a deck of cards.",
+    "Dubbadhu is built for learners in the Horn—and for diaspora families reconnecting with or retaining their languages. Parents, children, and adults practice conversation so they can speak with relatives, not memorize a deck of cards.",
   welcome:
     "Whether you are reconnecting with your roots, helping your children learn, or discovering a Horn language for the first time, the app is built to help you speak with confidence.",
   languages:
@@ -86,7 +84,7 @@ export const PRODUCT_FEATURES = [
   },
   {
     title: "Native-speaker conversation video",
-    body: "Learn from real conversation videos filmed with native speakers so you hear how the language is actually spoken.",
+    body: "Learn from conversation videos filmed with native speakers so you hear how the language is actually spoken.",
   },
   {
     title: "Unlimited AI practice & translate feedback",

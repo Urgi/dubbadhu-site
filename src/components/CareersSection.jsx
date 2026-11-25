@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { CAREERS_ROLES, CAREERS_TRACKS } from "../config/careers.js";
 import { applyPathForRole } from "../lib/routes.js";
-import useReveal from "../hooks/useReveal.js";
 
 function stepFromLocation() {
   const hash = (window.location.hash || "").replace(/^#/, "");
@@ -17,7 +16,6 @@ function setHash(hash) {
 }
 
 export default function CareersSection() {
-  const ref = useReveal();
   const [step, setStep] = useState(() =>
     typeof window !== "undefined" ? stepFromLocation() : "learn"
   );
@@ -39,7 +37,7 @@ export default function CareersSection() {
   }
 
   return (
-    <section className="careers reveal" id="careers" ref={ref} aria-labelledby="careers-heading">
+    <section className="careers" id="careers" aria-labelledby="careers-heading">
       <ol className="careers-steps" aria-label="Application steps">
         <li className={step === "learn" ? "is-current" : ""}>Learn</li>
         <li className={step === "roles" ? "is-current" : ""}>Roles</li>
@@ -48,7 +46,6 @@ export default function CareersSection() {
 
       {step === "learn" ? (
         <div className="careers-panel">
-          <p className="section-label">Join the team</p>
           <h2 id="careers-heading" className="section-title">
             Learn about the roles
           </h2>
@@ -73,7 +70,6 @@ export default function CareersSection() {
 
       {step === "roles" ? (
         <div className="careers-panel">
-          <p className="section-label">Open roles</p>
           <h2 id="careers-heading" className="section-title">
             Choose a position
           </h2>

@@ -11,7 +11,6 @@ export default function ApplyPage({ role, isIndex = false }) {
         <SiteNav />
         <main id="main" className="apply-page">
           <div className="apply-page-inner">
-            <p className="section-label">Careers</p>
             <h1 className="section-title">{isIndex ? "Open roles" : "Role not found"}</h1>
             <p className="section-lede">
               {isIndex
