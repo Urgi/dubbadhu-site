@@ -4,10 +4,10 @@ import SiteNav from "./components/SiteNav.jsx";
 import Hero from "./components/Hero.jsx";
 import ProductSection from "./components/ProductSection.jsx";
 import LanguagesSection from "./components/LanguagesSection.jsx";
-import OnlineClassesSection from "./components/OnlineClassesSection.jsx";
 import DownloadSection from "./components/DownloadSection.jsx";
 import FaqSection from "./components/FaqSection.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
+import MobileDownloadBar from "./components/MobileDownloadBar.jsx";
 import ApplyPage from "./components/ApplyPage.jsx";
 import CareersPage from "./components/CareersPage.jsx";
 import DownloadPage from "./components/DownloadPage.jsx";
@@ -21,11 +21,11 @@ function HomePage() {
         <Hero />
         <ProductSection />
         <LanguagesSection />
-        <OnlineClassesSection />
         <DownloadSection />
         <FaqSection />
       </main>
       <SiteFooter />
+      <MobileDownloadBar />
     </>
   );
 }

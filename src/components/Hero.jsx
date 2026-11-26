@@ -6,6 +6,7 @@ import {
   HERO_HEADLINE_BEFORE,
   HERO_LEDE,
   HERO_SUPPORT,
+  PRODUCT_SCREENS,
 } from "../config/homeCopy.js";
 import DownloadButton from "./DownloadButton.jsx";
 import HighlightsStrip from "./HighlightsStrip.jsx";
@@ -15,8 +16,22 @@ const FALLBACK_WOTD = {
   english: "How are you?",
 };
 
+const HERO_SCREEN = PRODUCT_SCREENS[0];
+
+/** Phones get the poster image instead of the 2.4 MB video. */
+function wantsHeroVideo() {
+  if (typeof window === "undefined" || !window.matchMedia) return false;
+  if (navigator.connection?.saveData) return false;
+  return window.matchMedia("(min-width: 769px)").matches;
+}
+
 export default function Hero() {
   const [wotd, setWotd] = useState(null);
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    setShowVideo(wantsHeroVideo());
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -46,21 +61,33 @@ export default function Hero() {
         <p className="hero-wotd">
           Today · {word.oromo} — {word.english}
         </p>
+        <img
+          className="hero-shot"
+          src={HERO_SCREEN.src}
+          alt={HERO_SCREEN.alt}
+          width="1242"
+          height="2688"
+          decoding="async"
+        />
       </div>
 
       <div className="hero-reviews">
         <div className="hero-reviews-media" aria-hidden="true">
-          <video
-            className="hero-reviews-video"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/assets/intro-poster.jpg"
-          >
-            <source src="/assets/IntroVideo.mp4" type="video/mp4" />
-          </video>
+          {showVideo ? (
+            <video
+              className="hero-reviews-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/assets/intro-poster.jpg"
+            >
+              <source src="/assets/IntroVideo.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <img className="hero-reviews-video" src="/assets/intro-poster.jpg" alt="" />
+          )}
           <div className="hero-reviews-mask" />
         </div>
         <div className="hero-reviews-content">

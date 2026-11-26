@@ -292,8 +292,21 @@ body.legal-body::before {
 
   .legal-nav-links {
     width: 100%;
-    gap: 10px 14px;
+    gap: 0 18px;
     flex-wrap: wrap;
+  }
+
+  /* 44px tap targets on phones */
+  .legal-nav-links a,
+  .legal-footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .legal-footer-links {
+    justify-content: center;
+    gap: 0 20px;
   }
 
   .legal-doc {

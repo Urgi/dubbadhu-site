@@ -358,7 +358,9 @@ a.nav-logo {
   padding: 0;
 }
 
-.hero-media {
+.hero-media,
+.hero-shot,
+.mobile-cta {
   display: none;
 }
 
@@ -2130,6 +2132,12 @@ a.nav-logo {
     scroll-snap-align: start;
   }
 
+  /* The hero already shows the first screenshot, and the sticky bar covers the button */
+  .product-screen:first-child,
+  .product .hero-actions {
+    display: none;
+  }
+
   .product-screen img {
     border-radius: var(--radius-md);
   }
@@ -2180,6 +2188,87 @@ a.nav-logo {
   .footer-nav a {
     padding: 8px 0;
   }
+
+  /* App screenshot in the first screen on phones */
+  .hero-shot {
+    display: block;
+    width: min(56vw, 220px);
+    height: auto;
+    margin: 28px auto 0;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+  }
+
+  /* Sticky download bar once the hero button scrolls away */
+  .mobile-cta {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: rgba(11, 18, 14, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    transform: translateY(calc(100% + 24px));
+    visibility: hidden;
+    transition: transform 0.25s ease, visibility 0s linear 0.25s;
+  }
+
+  .mobile-cta.is-shown {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-cta-icon {
+    flex: none;
+    border-radius: 10px;
+  }
+
+  .mobile-cta-btn {
+    flex: 1;
+    min-width: 0;
+    padding: 0 12px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    box-shadow: none;
+  }
+
+  /* Room so the bar never covers the end of the footer */
+  .site-footer:has(+ .mobile-cta) {
+    padding-bottom: 96px;
+  }
+}
+
+.download-form-options {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 4px 0 12px;
+}
+
+.download-form-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 15px;
+  color: var(--text-sec);
+  cursor: pointer;
+}
+
+.download-form-options input {
+  flex: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--green);
 }
 
 @media (prefers-reduced-motion: reduce) {

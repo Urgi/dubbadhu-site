@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { track } from "@vercel/analytics";
-import { joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
+import { joinOnlineClassesInterest, joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
 import DownloadButton from "./DownloadButton.jsx";
 
@@ -11,6 +11,8 @@ export default function DownloadSection() {
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [touched, setTouched] = useState(false);
+  const [wantLanguages, setWantLanguages] = useState(true);
+  const [wantClasses, setWantClasses] = useState(false);
 
   const showInvalid = touched && email.trim() && !isValidEmail(email);
 
@@ -22,17 +24,34 @@ export default function DownloadSection() {
       setMsg("Please enter a valid email address.");
       return;
     }
+    if (!wantLanguages && !wantClasses) {
+      setErr(true);
+      setMsg("Pick at least one update.");
+      return;
+    }
     setBusy(true);
     setMsg("");
     setErr(false);
-    const res = await joinUpcomingLanguageWaitlist(email);
-    setBusy(false);
-    setMsg(res.message || "");
-    setErr(!res.ok);
-    if (res.ok && (res.code === "added" || res.code === "already_on_list")) {
-      track("waitlist_submit", { placement: "download" });
-      setDone(true);
+    const messages = [];
+    let failed = null;
+    if (wantLanguages) {
+      const res = await joinUpcomingLanguageWaitlist(email);
+      if (res.ok) {
+        track("waitlist_submit", { placement: "download" });
+        messages.push(res.message);
+      } else failed = res;
     }
+    if (!failed && wantClasses) {
+      const res = await joinOnlineClassesInterest(email);
+      if (res.ok) {
+        track("class_interest_submit", { placement: "download" });
+        messages.push(res.message);
+      } else failed = res;
+    }
+    setBusy(false);
+    setMsg(failed ? failed.message || "" : messages.join(" "));
+    setErr(Boolean(failed));
+    if (!failed) setDone(true);
   }
 
   return (
@@ -59,8 +78,28 @@ export default function DownloadSection() {
         aria-busy={busy}
       >
           <label className="download-label" htmlFor="waitlist-email">
-            Get notified for Amharic &amp; Tigrinya
+            Get updates by email
           </label>
+          <div className="download-form-options">
+            <label>
+              <input
+                type="checkbox"
+                checked={wantLanguages}
+                disabled={done || busy}
+                onChange={(e) => setWantLanguages(e.target.checked)}
+              />
+              Amharic &amp; Tigrinya launch
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={wantClasses}
+                disabled={done || busy}
+                onChange={(e) => setWantClasses(e.target.checked)}
+              />
+              Live online speaking classes
+            </label>
+          </div>
           <div className="download-form-row">
             <input
               id="waitlist-email"
@@ -83,8 +122,8 @@ export default function DownloadSection() {
           </div>
           <p id="waitlist-hint" className="download-hint">
             {done
-              ? "On the list for Amharic and Tigrinya."
-              : "Email used only for Amharic and Tigrinya launch updates."}
+              ? "You're on the list."
+              : "Email used only for the updates you pick."}
           </p>
           <p
             id="waitlist-msg"
