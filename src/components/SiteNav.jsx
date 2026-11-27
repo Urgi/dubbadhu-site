@@ -4,7 +4,7 @@ import DownloadButton from "./DownloadButton.jsx";
 const HOME_LINKS = [
   { href: "/#product", label: "App" },
   { href: "/#mission", label: "Languages" },
-  { href: "/#classes", label: "Classes" },
+  { href: "/#waitlist", label: "Classes" },
   { href: "/about/", label: "About" },
 ];
 
@@ -20,7 +20,7 @@ export default function SiteNav() {
     ? [
         { href: "#product", label: "App" },
         { href: "#mission", label: "Languages" },
-        { href: "#classes", label: "Classes" },
+        { href: "#waitlist", label: "Classes" },
         { href: "/about/", label: "About" },
       ]
     : HOME_LINKS;
