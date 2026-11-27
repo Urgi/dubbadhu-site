@@ -18,7 +18,6 @@
   ],
   "rewrites": [
     { "source": "/apply", "destination": "/" },
-    { "source": "/apply/:roleId", "destination": "/" },
     { "source": "/careers", "destination": "/" }
   ]
 }

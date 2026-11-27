@@ -2,6 +2,7 @@
 
 /* Dubbadhu legal pages — aligned with main site tokens & typography (standalone HTML). */
 :root {
+  color-scheme: dark;
   --bg: #000000;
   --bg2: #000000;
   --bg3: #0a0a0a;
@@ -104,6 +105,22 @@ body.legal-body::before {
 
 .legal-nav-links a[aria-current='page'] {
   color: var(--green);
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 200;
+  padding: 10px 16px;
+  background: var(--green);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
 }
 
 /* — Document — */

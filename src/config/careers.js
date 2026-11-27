@@ -37,7 +37,7 @@ export const CAREERS_ROLES = [
 ];
 
 /** Old apply URLs still resolve. */
-const ROLE_ALIASES = {
+export const ROLE_ALIASES = {
   "language-professional": "learning-and-development-researcher",
 };
 

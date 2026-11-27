@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
 import { joinOnlineClassesInterest, joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
@@ -14,6 +14,16 @@ export default function DownloadSection() {
   const [touched, setTouched] = useState(false);
   const [wantLanguages, setWantLanguages] = useState(true);
   const [wantClasses, setWantClasses] = useState(false);
+
+  // The Classes links land on #classes: pre-tick the classes box for them.
+  useEffect(() => {
+    const sync = () => {
+      if (window.location.hash === "#classes") setWantClasses(true);
+    };
+    sync();
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
 
   const showInvalid = touched && email.trim() && !isValidEmail(email);
 
@@ -79,6 +89,7 @@ export default function DownloadSection() {
         onSubmit={onSubmit}
         aria-busy={busy}
       >
+          <span id="classes" className="download-form-anchor" aria-hidden="true" />
           <label className="download-label" htmlFor="waitlist-email">
             Get updates by email
           </label>

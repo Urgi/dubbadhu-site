@@ -5,7 +5,7 @@ import { currentPath, normalizePath } from "../lib/routes.js";
 const HOME_LINKS = [
   { href: "/#product", label: "App" },
   { href: "/#mission", label: "Languages" },
-  { href: "/#waitlist", label: "Classes" },
+  { href: "/#classes", label: "Classes" },
   { href: "/about/", label: "About" },
 ];
 
@@ -20,7 +20,7 @@ export default function SiteNav() {
     ? [
         { href: "#product", label: "App" },
         { href: "#mission", label: "Languages" },
-        { href: "#waitlist", label: "Classes" },
+        { href: "#classes", label: "Classes" },
         { href: "/about/", label: "About" },
       ]
     : HOME_LINKS;

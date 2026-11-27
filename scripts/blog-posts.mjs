@@ -13,7 +13,7 @@
  *   today        optional  One sentence for the "One thing to do today" section.
  *   related      optional  List of 2–3 other post slugs for "Related guides".
  *   homepage     optional  { worry, answer } to list the post in the homepage "Sound familiar?" block.
- *   draft        optional  true keeps the post out of the blog index, sitemap and homepage, and marks it noindex.
+ *   draft        optional  true builds the post only on the dev server and preview deploys (noindex there), never in production.
  *
  * Body: Markdown, with GitHub tables. A short audio clip goes on its own line:
  *   {{audio https://example.com/clip.m4a "Akkam jirta? — How are you?"}}
@@ -109,8 +109,8 @@ function parseFile(file) {
   };
 }
 
-/** All posts, newest first. Drafts are included and flagged. */
-export function loadPosts(dir) {
+/** All posts, newest first. Every file is checked; drafts are returned only when includeDrafts is set. */
+export function loadPosts(dir, { includeDrafts = true } = {}) {
   let files = [];
   try {
     files = readdirSync(dir).filter((f) => f.endsWith(".md"));
@@ -134,5 +134,7 @@ export function loadPosts(dir) {
     }
   }
 
-  return posts.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  return posts
+    .filter((p) => includeDrafts || !p.draft)
+    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 }

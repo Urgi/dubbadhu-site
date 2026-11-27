@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --bg: #050705;
   --bg-raise: #0b120e;
   --charcoal: #121a15;
@@ -359,9 +360,47 @@ a.nav-logo {
 }
 
 .hero-media,
-.hero-shot,
 .mobile-cta {
   display: none;
+}
+
+/* App screenshot: centred under the copy on phones and tablets, beside it on desktop */
+.hero-shot {
+  display: block;
+  width: min(56vw, 220px);
+  height: auto;
+  margin: 28px auto 0;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+}
+
+/* Two-column hero (961px+): screenshot under the copy, then beside it once there is room */
+@media (min-width: 961px) {
+  .hero-shot {
+    width: 160px;
+    margin: 28px 0 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: clamp(24px, 3vw, 40px);
+    max-width: none;
+  }
+
+  .hero-copy > * {
+    grid-column: 1;
+  }
+
+  .hero-copy > .hero-shot {
+    grid-column: 2;
+    grid-row: 1 / span 6;
+    align-self: center;
+    width: clamp(140px, 12vw, 180px);
+    margin: 0;
+  }
 }
 
 .hero-reviews {
@@ -563,6 +602,7 @@ a.nav-logo {
 }
 
 .store-links a {
+  white-space: nowrap;
   color: var(--text);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -2201,16 +2241,6 @@ a.nav-logo {
     padding: 8px 0;
   }
 
-  /* App screenshot in the first screen on phones */
-  .hero-shot {
-    display: block;
-    width: min(56vw, 220px);
-    height: auto;
-    margin: 28px auto 0;
-    border: 1px solid var(--border);
-    border-radius: 22px;
-  }
-
   /* Sticky download bar once the hero button scrolls away */
   .mobile-cta {
     position: fixed;
@@ -2256,6 +2286,16 @@ a.nav-logo {
   .site-footer:has(+ .mobile-cta) {
     padding-bottom: 96px;
   }
+}
+
+/* Anchors for the form sit below the fixed nav when jumped to */
+#waitlist,
+.download-form-anchor {
+  scroll-margin-top: calc(var(--nav-h) + 16px);
+}
+
+.download-form-anchor {
+  display: block;
 }
 
 .download-form-options {
@@ -3304,6 +3344,7 @@ a.nav-logo {
 .blog-crumbs {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 6px;
   margin-bottom: 24px;
   font-size: 14px;
@@ -3565,8 +3606,9 @@ a.nav-logo {
     font-size: 17px;
   }
 
-  .blog-crumbs a,
-  .blog-meta a {
+  .blog-crumbs > *,
+  .blog-meta a,
+  .store-links a {
     display: inline-flex;
     align-items: center;
     min-height: 44px;

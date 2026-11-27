@@ -2,12 +2,12 @@ import { renderToString } from "react-dom/server";
 import App from "./App.jsx";
 import { parseAppRoute, setServerPath } from "./lib/routes.js";
 import { pageMeta } from "./lib/pageMeta.js";
-import { CAREERS_ROLES } from "./config/careers.js";
+import { CAREERS_ROLES, ROLE_ALIASES } from "./config/careers.js";
 import { posts } from "virtual:blog-posts";
 
 export { posts };
 
-/** Every path the build writes as static HTML. Drafts are built (noindex) so they can be reviewed by URL. */
+/** Every path the build writes as static HTML. Drafts are only present on dev and preview builds. */
 export function prerenderPaths() {
   const categories = [...new Set(posts.map((p) => p.categorySlug))];
   return [
@@ -18,6 +18,8 @@ export function prerenderPaths() {
     "/careers",
     "/apply",
     ...CAREERS_ROLES.map((r) => `/apply/${r.id}`),
+    // Old role links still resolve; their canonical points at the current role.
+    ...Object.keys(ROLE_ALIASES).map((id) => `/apply/${id}`),
   ];
 }
 

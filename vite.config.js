@@ -11,15 +11,23 @@ const BLOG_MODULE_ID = "\0" + BLOG_MODULE;
 
 /** Exposes content/blog/*.md to the app as `import { posts } from "virtual:blog-posts"`. */
 function blogPosts() {
+  // Drafts show on the dev server and Vercel preview deploys, never in production.
+  let includeDrafts = false;
   return {
     name: "blog-posts",
+    configResolved(config) {
+      includeDrafts =
+        config.command === "serve" ||
+        process.env.VERCEL_ENV === "preview" ||
+        process.env.BLOG_DRAFTS === "1";
+    },
     resolveId(id) {
       return id === BLOG_MODULE ? BLOG_MODULE_ID : null;
     },
     load(id) {
       if (id !== BLOG_MODULE_ID) return null;
       this.addWatchFile(BLOG_DIR);
-      return `export const posts = ${JSON.stringify(loadPosts(BLOG_DIR))};`;
+      return `export const posts = ${JSON.stringify(loadPosts(BLOG_DIR, { includeDrafts }))};`;
     },
     configureServer(server) {
       server.watcher.add(BLOG_DIR);

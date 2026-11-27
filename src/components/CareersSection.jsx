@@ -46,9 +46,9 @@ export default function CareersSection() {
 
       {step === "learn" ? (
         <div className="careers-panel">
-          <h2 id="careers-heading" className="section-title">
+          <h1 id="careers-heading" className="section-title">
             Learn about the roles
-          </h2>
+          </h1>
           <p className="section-lede">
             Dubbadhu is speaking-first African language learning. Afaan Oromo is live. Amharic and
             Tigrinya are in development. We hire part-time teammates who can make those languages, keep the
@@ -70,9 +70,9 @@ export default function CareersSection() {
 
       {step === "roles" ? (
         <div className="careers-panel">
-          <h2 id="careers-heading" className="section-title">
+          <h1 id="careers-heading" className="section-title">
             Choose a position
-          </h2>
+          </h1>
           <p className="section-lede">
             Part-time openings for Amharic, Tigrinya, and the work around them. Apply opens a
             dedicated page for your resume and fit note.

@@ -20,7 +20,7 @@ export default function SiteFooter() {
             <a href="/about/">About</a>
             <a href="/afaan-oromo/">Afaan Oromo</a>
             <a href="/languages/">Languages</a>
-            <a href="/#waitlist">Online classes</a>
+            <a href="/#classes">Online classes</a>
             <a href="/support/">Support</a>
           </div>
           <div className="footer-col">
