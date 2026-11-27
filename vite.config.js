@@ -2,8 +2,39 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { loadPosts } from "./scripts/blog-posts.mjs";
 
 const root = fileURLToPath(new URL(".", import.meta.url));
+const BLOG_DIR = resolve(root, "content/blog");
+const BLOG_MODULE = "virtual:blog-posts";
+const BLOG_MODULE_ID = "\0" + BLOG_MODULE;
+
+/** Exposes content/blog/*.md to the app as `import { posts } from "virtual:blog-posts"`. */
+function blogPosts() {
+  return {
+    name: "blog-posts",
+    resolveId(id) {
+      return id === BLOG_MODULE ? BLOG_MODULE_ID : null;
+    },
+    load(id) {
+      if (id !== BLOG_MODULE_ID) return null;
+      this.addWatchFile(BLOG_DIR);
+      return `export const posts = ${JSON.stringify(loadPosts(BLOG_DIR))};`;
+    },
+    configureServer(server) {
+      server.watcher.add(BLOG_DIR);
+      const reload = (file) => {
+        if (!file.startsWith(BLOG_DIR)) return;
+        const mod = server.moduleGraph.getModuleById(BLOG_MODULE_ID);
+        if (mod) server.moduleGraph.invalidateModule(mod);
+        server.ws.send({ type: "full-reload" });
+      };
+      server.watcher.on("add", reload);
+      server.watcher.on("change", reload);
+      server.watcher.on("unlink", reload);
+    },
+  };
+}
 
 const STATIC_DIRS = [
   "/about",
@@ -46,7 +77,14 @@ function servePublicHtmlDirs() {
           next();
           return;
         }
-        if (path === "/apply" || path.startsWith("/apply/") || path === "/careers" || path === "/careers/") {
+        if (
+          path === "/apply" ||
+          path.startsWith("/apply/") ||
+          path === "/careers" ||
+          path === "/careers/" ||
+          path === "/blog" ||
+          path.startsWith("/blog/")
+        ) {
           req.url = "/index.html";
         }
         next();
@@ -56,7 +94,7 @@ function servePublicHtmlDirs() {
 }
 
 export default defineConfig({
-  plugins: [react(), servePublicHtmlDirs()],
+  plugins: [react(), blogPosts(), servePublicHtmlDirs()],
   publicDir: "public",
   build: {
     rollupOptions: {

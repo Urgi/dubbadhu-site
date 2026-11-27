@@ -7,11 +7,44 @@ export function applyPathForRole(roleId) {
 }
 
 export const CAREERS_PATH = "/careers";
+export const BLOG_PATH = "/blog";
 
-export function parseAppRoute(
-  pathname = typeof window !== "undefined" ? window.location.pathname : "/"
-) {
-  const path = (pathname || "/").replace(/\/index\.html$/, "").replace(/\/$/, "") || "/";
+export function blogPostPath(slug) {
+  return `${BLOG_PATH}/${slug}`;
+}
+
+export function blogCategoryPath(categorySlug) {
+  return `${BLOG_PATH}/category/${categorySlug}`;
+}
+
+export function normalizePath(pathname) {
+  return (pathname || "/").replace(/\/index\.html$/, "").replace(/\/$/, "") || "/";
+}
+
+let serverPath = "/";
+
+/** Build-time rendering has no window; the prerender sets the path it is rendering. */
+export function setServerPath(path) {
+  serverPath = path;
+}
+
+export function currentPath() {
+  return typeof window !== "undefined" ? window.location.pathname : serverPath;
+}
+
+export function parseAppRoute(pathname = currentPath()) {
+  const path = normalizePath(pathname);
+  if (path === BLOG_PATH) {
+    return { name: "blog" };
+  }
+  const categoryMatch = path.match(/^\/blog\/category\/([^/]+)$/);
+  if (categoryMatch) {
+    return { name: "blog-category", category: decodeURIComponent(categoryMatch[1]) };
+  }
+  const postMatch = path.match(/^\/blog\/([^/]+)$/);
+  if (postMatch) {
+    return { name: "blog-post", slug: decodeURIComponent(postMatch[1]) };
+  }
   const applyMatch = path.match(/^\/apply\/([^/]+)$/);
   if (applyMatch) {
     const roleId = decodeURIComponent(applyMatch[1]);

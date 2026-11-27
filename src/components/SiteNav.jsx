@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DownloadButton from "./DownloadButton.jsx";
+import { currentPath, normalizePath } from "../lib/routes.js";
 
 const HOME_LINKS = [
   { href: "/#product", label: "App" },
@@ -9,9 +10,7 @@ const HOME_LINKS = [
 ];
 
 function isHomePath() {
-  if (typeof window === "undefined") return true;
-  const path = window.location.pathname.replace(/\/index\.html$/, "/") || "/";
-  return path === "/";
+  return normalizePath(currentPath()) === "/";
 }
 
 export default function SiteNav() {

@@ -11,7 +11,10 @@
     { "source": "/languages/", "destination": "/languages", "permanent": true },
     { "source": "/apply/", "destination": "/apply", "permanent": true },
     { "source": "/careers/", "destination": "/careers", "permanent": true },
-    { "source": "/download/", "destination": "/download", "permanent": true }
+    { "source": "/download/", "destination": "/download", "permanent": true },
+    { "source": "/blog/", "destination": "/blog", "permanent": true },
+    { "source": "/blog/category/:category/", "destination": "/blog/category/:category", "permanent": true },
+    { "source": "/blog/:slug/", "destination": "/blog/:slug", "permanent": true }
   ],
   "rewrites": [
     { "source": "/apply", "destination": "/" },

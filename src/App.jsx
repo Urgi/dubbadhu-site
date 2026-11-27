@@ -8,6 +8,10 @@ import DownloadSection from "./components/DownloadSection.jsx";
 import FaqSection from "./components/FaqSection.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
 import MobileDownloadBar from "./components/MobileDownloadBar.jsx";
+import SoundFamiliarSection from "./components/SoundFamiliarSection.jsx";
+import BlogIndexPage from "./components/BlogIndexPage.jsx";
+import BlogPostPage from "./components/BlogPostPage.jsx";
+import { HOME_TITLE, pageMeta } from "./lib/pageMeta.js";
 import ApplyPage from "./components/ApplyPage.jsx";
 import CareersPage from "./components/CareersPage.jsx";
 import DownloadPage from "./components/DownloadPage.jsx";
@@ -21,6 +25,7 @@ function HomePage() {
         <Hero />
         <ProductSection />
         <LanguagesSection />
+        <SoundFamiliarSection />
         <DownloadSection />
         <FaqSection />
       </main>
@@ -46,17 +51,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (route.name === "apply" && route.role) {
-      document.title = `Apply · ${route.role.title} — Dubbadhu`;
-    } else if (route.name === "apply" || route.name === "apply-index") {
-      document.title = "Apply — Dubbadhu careers";
-    } else if (route.name === "careers") {
-      document.title = "Careers — Dubbadhu";
-    } else if (route.name === "download") {
-      document.title = "Download Dubbadhu";
-    } else {
-      document.title = "Dubbadhu: Learn Afaan Oromo App | Speak with Confidence";
-    }
+    document.title = pageMeta(route)?.title || HOME_TITLE;
   }, [route]);
 
   let page;
@@ -68,6 +63,12 @@ export default function App() {
     page = <CareersPage />;
   } else if (route.name === "download") {
     page = <DownloadPage />;
+  } else if (route.name === "blog") {
+    page = <BlogIndexPage />;
+  } else if (route.name === "blog-category") {
+    page = <BlogIndexPage category={route.category} />;
+  } else if (route.name === "blog-post") {
+    page = <BlogPostPage slug={route.slug} />;
   } else {
     page = <HomePage />;
   }
