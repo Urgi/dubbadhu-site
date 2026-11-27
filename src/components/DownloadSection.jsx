@@ -3,6 +3,7 @@ import { track } from "@vercel/analytics";
 import { joinOnlineClassesInterest, joinUpcomingLanguageWaitlist } from "../lib/waitlist.js";
 import { isValidEmail } from "../lib/validateEmail.js";
 import DownloadButton from "./DownloadButton.jsx";
+import StoreLinks from "./StoreLinks.jsx";
 
 export default function DownloadSection() {
   const [email, setEmail] = useState("");
@@ -68,6 +69,7 @@ export default function DownloadSection() {
         <div className="download-actions">
           <DownloadButton className="btn btn-primary" placement="download" />
         </div>
+        <StoreLinks placement="download" />
       </div>
 
       <form

@@ -8,7 +8,9 @@ export function applyPathForRole(roleId) {
 
 export const CAREERS_PATH = "/careers";
 
-export function parseAppRoute(pathname = window.location.pathname) {
+export function parseAppRoute(
+  pathname = typeof window !== "undefined" ? window.location.pathname : "/"
+) {
   const path = (pathname || "/").replace(/\/index\.html$/, "").replace(/\/$/, "") || "/";
   const applyMatch = path.match(/^\/apply\/([^/]+)$/);
   if (applyMatch) {

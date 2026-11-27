@@ -10,6 +10,7 @@ import {
 } from "../config/homeCopy.js";
 import DownloadButton from "./DownloadButton.jsx";
 import HighlightsStrip from "./HighlightsStrip.jsx";
+import StoreLinks from "./StoreLinks.jsx";
 
 const FALLBACK_WOTD = {
   oromo: "Akkam jirta?",
@@ -58,6 +59,7 @@ export default function Hero() {
         <div className="hero-actions">
           <DownloadButton className="btn btn-primary" placement="hero" />
         </div>
+        <StoreLinks placement="hero" />
         <p className="hero-wotd">
           Today · {word.oromo} — {word.english}
         </p>

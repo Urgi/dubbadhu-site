@@ -55,7 +55,7 @@ export default function App() {
     } else if (route.name === "download") {
       document.title = "Download Dubbadhu";
     } else {
-      document.title = "Dubbadhu | Speak with Confidence — African languages";
+      document.title = "Dubbadhu: Learn Afaan Oromo App | Speak with Confidence";
     }
   }, [route]);
 

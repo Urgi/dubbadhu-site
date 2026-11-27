@@ -556,6 +556,18 @@ a.nav-logo {
   margin: 22px 0 0;
 }
 
+.store-links {
+  margin: 14px 0 0;
+  font-size: 15px;
+  color: var(--text-sec);
+}
+
+.store-links a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .hero-actions,
 .download-actions {
   display: flex;

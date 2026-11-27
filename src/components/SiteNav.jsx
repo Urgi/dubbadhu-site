@@ -9,6 +9,7 @@ const HOME_LINKS = [
 ];
 
 function isHomePath() {
+  if (typeof window === "undefined") return true;
   const path = window.location.pathname.replace(/\/index\.html$/, "/") || "/";
   return path === "/";
 }
